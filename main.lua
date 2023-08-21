@@ -431,6 +431,7 @@ local eventslist = {"blurevent"}
 
 
 function module.GameMain()
+	gameactive = true
 	script.Parent.Visible = true
 	notification.Notif("Game Started!", 1, 1)
 	local nextevent = events[eventslist[math.random(1,#eventslist)]]
