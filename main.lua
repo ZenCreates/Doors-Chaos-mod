@@ -448,6 +448,7 @@ function module.GameMain()
 	script.Parent.Visible = true
 	notification.Notif("Game Started!", 1, 1)
 	local nextevent = events[eventslist[math.random(1,#eventslist)]]
+	print(nextevent)
 	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
 	while gameactive == true do
 		countdown = countdown - 1
@@ -514,7 +515,7 @@ local script = G2L["19"];
 	end)
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.3 | Glitch Testing")
+	print("V0.3 | Glitch Testing 3")
 	local sound = Instance.new("Sound", script.Parent.Parent)
 	sound.Name = "Music"
 	sound.SoundId = "rbxassetid://9039982062"
