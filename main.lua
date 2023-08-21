@@ -413,6 +413,7 @@ local gameactive = false
 local notification = require(script.Parent.Parent.AlwaysOn.Notification)
 local countdown = 10
 local nextevent = nil
+local playername = game.Players.LocalPlayer.Name
 local events = {
 	blurevent = {
 		Name = "Blur",
@@ -454,7 +455,7 @@ function module.GameMain()
 	notification.Notif("Game Started!", 1, 1)
 	local nextevent = events[eventslist[math.random(1,#eventslist)]]
 	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
-	while gameactive == true and game.Workspace.LocalPlayer.Humanoid.Health ~= 0 do
+	while gameactive == true and game.Workspace[playername].Health ~= 0 do
 		countdown = countdown - 1
 		--print(countdown)
 		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
@@ -521,7 +522,7 @@ local script = G2L["19"];
 	end)
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.3 | Glitch Testing 7")
+	print("V0.3 | Glitch Testing 8")
 	local sound = Instance.new("Sound", script.Parent.Parent)
 	sound.Name = "Music"
 	sound.SoundId = "rbxassetid://9039982062"
