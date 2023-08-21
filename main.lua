@@ -425,9 +425,22 @@ local events = {
 				blur:Destroy()
 			end)
 		end,
+	},
+	glitchevent = {
+		Name = "Glitch",
+		Event = function()
+			local glitch = game.Players.LocalPlayer.PlayerGui.MainUI.MainFrame.GlitchScreen
+			local effect = game.Players.LocalPlayer.PlayerGui.MainUI.MainFrame.GlitchEffect
+			glitch.Visible = true
+			effect.Visible = true
+			task.delay(8, function()
+				glitch.Visible = false
+				effect.Visible = false
+			end)
+		end,
 	}
 }
-local eventslist = {"blurevent"}
+local eventslist = {"blurevent", "glitchevent"}
 
 
 function module.GameMain()
@@ -442,6 +455,7 @@ function module.GameMain()
 		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 		if countdown == 0 then
 			countdown = 10
+			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			spawn(nextevent.Event)
 		end
 		task.wait(1)
