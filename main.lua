@@ -269,7 +269,7 @@ cursor.Visible = false
 
 game:GetService("RunService").RenderStepped:Connect(function()
 	if on  == true then
-		cursor.Position = UDim2.new(0, mouse.X, 0, mouse.Y)
+		cursor.Position = UDim2.new(0, mouse.X, 0.06, mouse.Y)
 	end
 end)
 
