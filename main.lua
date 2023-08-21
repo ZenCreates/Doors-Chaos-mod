@@ -439,7 +439,7 @@ function module.GameMain()
 		countdown = countdown - 1
 		script.Parent.TimetoNext.Text = tostring(countdown)
 		if countdown == 0 then
-			spawn(nextevent)
+			spawn(nextevent.Event)
 		end
 		task.wait(1)
 	end
