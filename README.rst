@@ -17,8 +17,7 @@ None
 NEWS
 ^^^^
 
-It's a fucking beta, don't be surprised if shit breaks.
-Let us cook first.
+let us cook before you snort.
 
 .. image:: Resources/updateimage.jpg
   :width: 100
