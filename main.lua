@@ -301,8 +301,12 @@ local script = G2L["15"];
 	}
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.CursorHandeler)
-	print("V0.11")
-	
+	print("V0.13")
+	local sound = Instance.new("Sound", script.Parent)
+	sound.SoundId = "rbxassetid://9039982062"
+	sound.Volume = 1
+	sound.Looped = true
+	game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.PreRun.Music:Stop()
 	script.Parent.Parent.Visible = true
 	script.Parent.Size = UDim2.new(3,0,3,0)
 	script.Parent.Position = UDim2.new(-1, 0,-1, 0)
@@ -318,6 +322,7 @@ local script = G2L["15"];
 	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Size = UDim2.new(1,0,1,0), Position = UDim2.new(0,0,0,0), Rotation = 0, ImageColor3 = Color3.new(1, 1, 1)}):Play()
 	ts:Create(buttons.Logo, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {ImageTransparency = 0}):Play()
 	wait(0.5)
+	sound:Play()
 	ts:Create(buttons.Play, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.071, 0, 0.429, 0)}):Play()
 	task.wait(0.1)
 	ts:Create(buttons.Settings, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.071, 0, 0.553, 0)}):Play()
