@@ -425,6 +425,18 @@ local events = {
 				blur:Destroy()
 			end)
 		end,
+	},
+	blurevent2 = {
+		Name = "Blur",
+		Event = function()
+			local blur = Instance.new("BlurEffect", game.Lighting)
+			blur.Name = "EventBlur"
+			blur.Enabled = true
+			blur.Size = 38
+			task.delay(8, function()
+				blur:Destroy()
+			end)
+		end,
 	}
 }
 
@@ -438,7 +450,7 @@ function module.GameMain()
 		countdown = countdown - 1
 		script.Parent.TimetoNext.Text = tostring(countdown)
 		if countdown == 0 then
-			spawn(events.blurevent)
+			spawn(nextevent)
 		end
 		task.wait(1)
 	end
