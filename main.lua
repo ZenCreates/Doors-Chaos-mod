@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 30 | Scripts: 2 | Modules: 2
+-- Instances: 36 | Scripts: 2 | Modules: 3
 local G2L = {};
 
 -- StarterGui.ChaosMod
@@ -259,6 +259,61 @@ G2L["1d"]["CornerRadius"] = UDim.new(1, 0);
 G2L["1e"] = Instance.new("ModuleScript", G2L["1"]);
 G2L["1e"]["Name"] = [[CursorHandeler]];
 
+-- StarterGui.ChaosMod.GameUI
+G2L["1f"] = Instance.new("Frame", G2L["1"]);
+G2L["1f"]["BorderSizePixel"] = 0;
+G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1f"]["BackgroundTransparency"] = 1;
+G2L["1f"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["1f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1f"]["Visible"] = false;
+G2L["1f"]["Name"] = [[GameUI]];
+
+-- StarterGui.ChaosMod.GameUI.NextEvent
+G2L["20"] = Instance.new("TextLabel", G2L["1f"]);
+G2L["20"]["TextWrapped"] = true;
+G2L["20"]["BorderSizePixel"] = 0;
+G2L["20"]["TextScaled"] = true;
+G2L["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["20"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+G2L["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["20"]["TextSize"] = 14;
+G2L["20"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
+G2L["20"]["Size"] = UDim2.new(0.24016010761260986, 0, 0.06109725683927536, 0);
+G2L["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["20"]["Text"] = [[Next Event: Unknown]];
+G2L["20"]["Name"] = [[NextEvent]];
+G2L["20"]["BackgroundTransparency"] = 1;
+G2L["20"]["Position"] = UDim2.new(0.7444963455200195, 0, 0.9201995134353638, 0);
+
+-- StarterGui.ChaosMod.GameUI.NextEvent.UIStroke
+G2L["21"] = Instance.new("UIStroke", G2L["20"]);
+
+
+-- StarterGui.ChaosMod.GameUI.TimetoNext
+G2L["22"] = Instance.new("TextLabel", G2L["1f"]);
+G2L["22"]["TextWrapped"] = true;
+G2L["22"]["BorderSizePixel"] = 0;
+G2L["22"]["TextScaled"] = true;
+G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["22"]["TextSize"] = 14;
+G2L["22"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
+G2L["22"]["Size"] = UDim2.new(0.24016010761260986, 0, 0.0972568541765213, 0);
+G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["22"]["Text"] = [[10 Seconds]];
+G2L["22"]["Name"] = [[TimetoNext]];
+G2L["22"]["BackgroundTransparency"] = 1;
+G2L["22"]["Position"] = UDim2.new(0.379586398601532, 0, 0.027431420981884003, 0);
+
+-- StarterGui.ChaosMod.GameUI.TimetoNext.UIStroke
+G2L["23"] = Instance.new("UIStroke", G2L["22"]);
+
+
+-- StarterGui.ChaosMod.GameUI.ModuleScript
+G2L["24"] = Instance.new("ModuleScript", G2L["1f"]);
+
+
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
 local G2L_MODULES = {};
@@ -349,6 +404,54 @@ return module
 
 end;
 };
+G2L_MODULES[G2L["24"]] = {
+Closure = function()
+    local script = G2L["24"];
+local module = {}
+
+local gameactive = false
+local notification = require(script.Parent.Parent.AlwaysOn.Notification)
+local countdown = 10
+local nextevent = nil
+local events = {
+	blurevent = {
+		Name = "Blur",
+		Event = function()
+			local blur = Instance.new("BlurEffect", game.Lighting)
+			blur.Name = "EventBlur"
+			blur.Enabled = true
+			blur.Size = 38
+			task.delay(8, function()
+				blur:Destroy()
+			end)
+		end,
+	}
+}
+
+
+function module.GameMain()
+	script.Parent.Visible = true
+	notification.Notif("Game Started!", 1, 1)
+	local nextevent = events[math.random(1, #events)]
+	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
+	while gameactive == true do
+		countdown = countdown - 1
+		script.Parent.TimetoNext.Text = tostring(countdown)
+		if countdown == 0 then
+			spawn(events.blurevent)
+		end
+		task.wait(1)
+	end
+end
+
+function module.PauseGame()
+	gameactive = false
+end
+
+return module
+
+end;
+};
 -- StarterGui.ChaosMod.MainMenu.Holder.Play.LocalScript
 local function C_10()
 local script = G2L["10"];
@@ -369,6 +472,10 @@ local script = G2L["10"];
 		task.wait(2)
 		buttons.Visible = false
 		ts:Create(script.Parent.Parent.Parent, TweenInfo.new(1), {BackgroundTransparency = 1}):Play()
+		task.delay(5, function()
+			local g = require(script.Parent.Parent.Parent.Parent.GameUI.ModuleScript)
+			g.GameMain()
+		end)
 	end)
 end;
 task.spawn(C_10);
@@ -389,7 +496,7 @@ local script = G2L["19"];
 	end)
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.14")
+	print("V0.2")
 	local sound = Instance.new("Sound", script.Parent.Parent)
 	sound.Name = "Music"
 	sound.SoundId = "rbxassetid://9039982062"
