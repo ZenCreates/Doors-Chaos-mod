@@ -18,3 +18,7 @@ NEWS
 
 It's a fucking beta, don't be surprised if shit breaks.
 Let us cook first.
+
+.. image:: Resources/updateimage.jpg
+  :width: 100
+  :alt: Let us cook first.
