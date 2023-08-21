@@ -438,7 +438,8 @@ function module.GameMain()
 	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
 	while gameactive == true do
 		countdown = countdown - 1
-		script.Parent.TimetoNext.Text = tostring(countdown)
+		print(countdown)
+		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 		if countdown == 0 then
 			countdown = 10
 			spawn(nextevent.Event)
