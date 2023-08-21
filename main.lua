@@ -425,18 +425,6 @@ local events = {
 				blur:Destroy()
 			end)
 		end,
-	},
-	blurevent2 = {
-		Name = "Blur",
-		Event = function()
-			local blur = Instance.new("BlurEffect", game.Lighting)
-			blur.Name = "EventBlur"
-			blur.Enabled = true
-			blur.Size = 38
-			task.delay(8, function()
-				blur:Destroy()
-			end)
-		end,
 	}
 }
 
@@ -444,7 +432,8 @@ local events = {
 function module.GameMain()
 	script.Parent.Visible = true
 	notification.Notif("Game Started!", 1, 1)
-	local nextevent = events[math.random(1, #events)]
+	local nextevent = events[1]
+	--local nextevent = events[math.random(1, #events)]
 	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
 	while gameactive == true do
 		countdown = countdown - 1
