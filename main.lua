@@ -451,7 +451,7 @@ function module.GameMain()
 	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
 	while gameactive == true do
 		countdown = countdown - 1
-		print(countdown)
+		--print(countdown)
 		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 		if countdown == 0 then
 			countdown = 10
@@ -514,7 +514,7 @@ local script = G2L["19"];
 	end)
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.2")
+	print("V0.3 | Glitch Testing")
 	local sound = Instance.new("Sound", script.Parent.Parent)
 	sound.Name = "Music"
 	sound.SoundId = "rbxassetid://9039982062"
