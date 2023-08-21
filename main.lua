@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 25 | Scripts: 1 | Modules: 2
+-- Instances: 30 | Scripts: 1 | Modules: 2
 local G2L = {};
 
 -- StarterGui.ChaosMod
@@ -63,7 +63,6 @@ G2L["7"]["BorderSizePixel"] = 0;
 G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["7"]["Size"] = UDim2.new(1, 0, 1, 0);
 G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7"]["Visible"] = false;
 G2L["7"]["Name"] = [[MainMenu]];
 
 -- StarterGui.ChaosMod.MainMenu.UIGradient
@@ -179,27 +178,80 @@ G2L["14"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.f
 G2L["15"] = Instance.new("LocalScript", G2L["13"]);
 
 
+-- StarterGui.ChaosMod.MainMenu.Folder
+G2L["16"] = Instance.new("Folder", G2L["7"]);
+
+
+-- StarterGui.ChaosMod.MainMenu.Credits
+G2L["17"] = Instance.new("Frame", G2L["7"]);
+G2L["17"]["BorderSizePixel"] = 0;
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["17"]["BackgroundTransparency"] = 1;
+G2L["17"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["Name"] = [[Credits]];
+
+-- StarterGui.ChaosMod.MainMenu.Credits.Max
+G2L["18"] = Instance.new("TextLabel", G2L["17"]);
+G2L["18"]["TextWrapped"] = true;
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["TextScaled"] = true;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+G2L["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["18"]["TextSize"] = 14;
+G2L["18"]["TextColor3"] = Color3.fromRGB(255, 229, 186);
+G2L["18"]["Size"] = UDim2.new(0.28685787320137024, 0, 0.05173604562878609, 0);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["Text"] = [[Tested by M4X4]];
+G2L["18"]["Name"] = [[Max]];
+G2L["18"]["BackgroundTransparency"] = 1;
+G2L["18"]["Position"] = UDim2.new(0.7131420969963074, 0, 0.948263943195343, 0);
+
+-- StarterGui.ChaosMod.MainMenu.Credits.UIListLayout
+G2L["19"] = Instance.new("UIListLayout", G2L["17"]);
+G2L["19"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
+G2L["19"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
+G2L["19"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+-- StarterGui.ChaosMod.MainMenu.Credits.Zen
+G2L["1a"] = Instance.new("TextLabel", G2L["17"]);
+G2L["1a"]["TextWrapped"] = true;
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["TextScaled"] = true;
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1a"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+G2L["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1a"]["TextSize"] = 14;
+G2L["1a"]["TextColor3"] = Color3.fromRGB(255, 229, 186);
+G2L["1a"]["Size"] = UDim2.new(0.28685787320137024, 0, 0.05674276500940323, 0);
+G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["Text"] = [[Programmed by: ZennFake]];
+G2L["1a"]["Name"] = [[Zen]];
+G2L["1a"]["BackgroundTransparency"] = 1;
+G2L["1a"]["Position"] = UDim2.new(0.7131420969963074, 0, 0.8915212154388428, 0);
+
 -- StarterGui.ChaosMod.Cursor
-G2L["16"] = Instance.new("Frame", G2L["1"]);
-G2L["16"]["BorderSizePixel"] = 0;
-G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["16"]["Size"] = UDim2.new(0.0040160175412893295, 0, 0.00750624667853117, 0);
-G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["16"]["Position"] = UDim2.new(0.7224816679954529, 0, 0.6795511245727539, 0);
-G2L["16"]["Visible"] = false;
-G2L["16"]["Name"] = [[Cursor]];
+G2L["1b"] = Instance.new("Frame", G2L["1"]);
+G2L["1b"]["BorderSizePixel"] = 0;
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1b"]["Size"] = UDim2.new(0.0040160175412893295, 0, 0.00750624667853117, 0);
+G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["Position"] = UDim2.new(0.7224816679954529, 0, 0.6795511245727539, 0);
+G2L["1b"]["Visible"] = false;
+G2L["1b"]["Name"] = [[Cursor]];
 
 -- StarterGui.ChaosMod.Cursor.UIAspectRatioConstraint
-G2L["17"] = Instance.new("UIAspectRatioConstraint", G2L["16"]);
+G2L["1c"] = Instance.new("UIAspectRatioConstraint", G2L["1b"]);
 
 
 -- StarterGui.ChaosMod.Cursor.UICorner
-G2L["18"] = Instance.new("UICorner", G2L["16"]);
-G2L["18"]["CornerRadius"] = UDim.new(1, 0);
+G2L["1d"] = Instance.new("UICorner", G2L["1b"]);
+G2L["1d"]["CornerRadius"] = UDim.new(1, 0);
 
 -- StarterGui.ChaosMod.CursorHandeler
-G2L["19"] = Instance.new("ModuleScript", G2L["1"]);
-G2L["19"]["Name"] = [[CursorHandeler]];
+G2L["1e"] = Instance.new("ModuleScript", G2L["1"]);
+G2L["1e"]["Name"] = [[CursorHandeler]];
 
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
@@ -257,9 +309,9 @@ return module
 
 end;
 };
-G2L_MODULES[G2L["19"]] = {
+G2L_MODULES[G2L["1e"]] = {
 Closure = function()
-    local script = G2L["19"];
+    local script = G2L["1e"];
 local module = {}
 
 local mouse = game.Players.LocalPlayer:GetMouse()
@@ -299,6 +351,11 @@ local script = G2L["15"];
 		"rbxassetid://14515760224",
 		"rbxassetid://14515777756"
 	}
+	local shop = game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop
+	if shop.Visible == true then
+		local remoteshop:RemoteEvent = ((game:GetService("ReplicatedStorage")):WaitForChild("EntityInfo")):WaitForChild("PreRunShop")
+		remoteshop:FireServer({})
+	end
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.CursorHandeler)
 	print("V0.13")
