@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 21 | Scripts: 1 | Modules: 1
+-- Instances: 25 | Scripts: 1 | Modules: 2
 local G2L = {};
 
 -- StarterGui.ChaosMod
@@ -87,6 +87,7 @@ G2L["9"]["Position"] = UDim2.new(0.015343562699854374, 0, 0.02244389057159424, 0
 G2L["a"] = Instance.new("TextButton", G2L["7"]);
 G2L["a"]["TextWrapped"] = true;
 G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["Modal"] = true;
 G2L["a"]["TextScaled"] = true;
 G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 214, 172);
 G2L["a"]["TextSize"] = 14;
@@ -178,6 +179,28 @@ G2L["14"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.f
 G2L["15"] = Instance.new("LocalScript", G2L["13"]);
 
 
+-- StarterGui.ChaosMod.Cursor
+G2L["16"] = Instance.new("Frame", G2L["1"]);
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["Size"] = UDim2.new(0.0040160175412893295, 0, 0.00750624667853117, 0);
+G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["Position"] = UDim2.new(0.7224816679954529, 0, 0.6795511245727539, 0);
+G2L["16"]["Visible"] = false;
+G2L["16"]["Name"] = [[Cursor]];
+
+-- StarterGui.ChaosMod.Cursor.UIAspectRatioConstraint
+G2L["17"] = Instance.new("UIAspectRatioConstraint", G2L["16"]);
+
+
+-- StarterGui.ChaosMod.Cursor.UICorner
+G2L["18"] = Instance.new("UICorner", G2L["16"]);
+G2L["18"]["CornerRadius"] = UDim.new(1, 0);
+
+-- StarterGui.ChaosMod.CursorHandeler
+G2L["19"] = Instance.new("ModuleScript", G2L["1"]);
+G2L["19"]["Name"] = [[CursorHandeler]];
+
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
 local G2L_MODULES = {};
@@ -234,6 +257,40 @@ return module
 
 end;
 };
+G2L_MODULES[G2L["19"]] = {
+Closure = function()
+    local script = G2L["19"];
+local module = {}
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+local on = false
+local cursor = script.Parent.Cursor
+cursor.Visible = false
+
+game:GetService("RunService").RenderStepped:Connect(function()
+	if on  == true then
+		cursor.Position = UDim2.new(0, mouse.X, 0, mouse.Y)
+	end
+end)
+
+function module.Show()
+	if on ~= true then
+		on = true
+		cursor.Visible = true
+	end
+end
+
+function module.Hide()
+	if on ~= false then
+		on = false
+		cursor.Visible = false
+	end
+end
+
+return module
+
+end;
+};
 -- StarterGui.ChaosMod.MainMenu.Background.LocalScript
 local function C_15()
 local script = G2L["15"];
@@ -243,6 +300,7 @@ local script = G2L["15"];
 		"rbxassetid://14515777756"
 	}
 	local ts = game:GetService("TweenService")
+	local cmoudule = require(script.Parent.Parent.Parent.CursorHandeler)
 	print("V0.1")
 	
 	script.Parent.Parent.Visible = true
@@ -265,6 +323,7 @@ local script = G2L["15"];
 	ts:Create(buttons.Settings, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.071, 0, 0.553, 0)}):Play()
 	task.wait(0.1)
 	ts:Create(buttons.List, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.071, 0, 0.672, 0)}):Play()
+	cmoudule.Show()
 	
 	
 end;
