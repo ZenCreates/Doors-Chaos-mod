@@ -244,7 +244,7 @@ local script = G2L["15"];
 	}
 	local ts = game:GetService("TweenService")
 	
-	script.Parent.Visible = true
+	script.Parent.Parent.Visible = true
 	script.Parent.Size = UDim2.new(3,0,3,0)
 	script.Parent.Position = UDim2.new(-1, 0,-1, 0)
 	script.Parent.Image = backgrounds[math.random(1,#backgrounds)]
