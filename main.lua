@@ -243,6 +243,7 @@ local script = G2L["15"];
 		"rbxassetid://14515777756"
 	}
 	local ts = game:GetService("TweenService")
+	print("V0.1")
 	
 	script.Parent.Parent.Visible = true
 	script.Parent.Size = UDim2.new(3,0,3,0)
@@ -255,9 +256,7 @@ local script = G2L["15"];
 	buttons.Settings.Position = UDim2.new(0.071, 0, buttons.Settings.Position.Y.Scale + 1.553, 0)
 	buttons.List.Position = UDim2.new(0.071, 0, buttons.List.Position.Y.Scale + 1.672, 0)
 	buttons.Logo.ImageTransparency = 1
-	--if game:GetService("RunService"):IsStudio() then
-	--	wait(3)
-	--end
+	wait(2)
 	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Size = UDim2.new(1,0,1,0), Position = UDim2.new(0,0,0,0), Rotation = 0, ImageColor3 = Color3.new(1, 1, 1)}):Play()
 	ts:Create(buttons.Logo, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {ImageTransparency = 0}):Play()
 	wait(0.5)
