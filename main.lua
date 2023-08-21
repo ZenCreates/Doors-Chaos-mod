@@ -413,7 +413,9 @@ local gameactive = false
 local notification = require(script.Parent.Parent.AlwaysOn.Notification)
 local countdown = 10
 local nextevent = nil
-local playername = game.Players.LocalPlayer.Name
+local player = game.Players.LocalPlayer
+local hum:Humanoid = player.Character:WaitForChild("Humanoid")
+local collision:Part = player.Character:FindFirstChild("Collision")
 local events = {
 	blurevent = {
 		Name = "Blur",
@@ -445,9 +447,28 @@ local events = {
 				sound.Looped = false
 			end)
 		end,
+	},
+	deathoncrouch = {
+		Name = "Death on Crouch",
+		Event = function()
+			local hascrouched = false
+			local killoncrouch = true
+			task.delay(10, function()
+				killoncrouch = false
+			end)
+			while killoncrouch == true and hum.Health ~= 0 do
+				collision.Changed:Connect(function(property)
+					if property == "CollisionGroupId" then
+						if collision.CollisionGroupId == 10 then
+							hum.Health = 0
+						end
+					end
+				end)
+			end
+		end,
 	}
 }
-local eventslist = {"blurevent", "glitchevent"}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch"}
 
 function module.GameMain()
 	gameactive = true
@@ -455,7 +476,7 @@ function module.GameMain()
 	notification.Notif("Game Started!", 1, 1)
 	local nextevent = events[eventslist[math.random(1,#eventslist)]]
 	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
-	while gameactive == true and game.Workspace[playername].Health ~= 0 do
+	while gameactive == true and hum.Health ~= 0 do
 		countdown = countdown - 1
 		--print(countdown)
 		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
@@ -522,7 +543,7 @@ local script = G2L["19"];
 	end)
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.3 | Glitch Testing 8")
+	print("V0.31 | Crouch 1")
 	local sound = Instance.new("Sound", script.Parent.Parent)
 	sound.Name = "Music"
 	sound.SoundId = "rbxassetid://9039982062"
@@ -551,8 +572,6 @@ local script = G2L["19"];
 	ts:Create(buttons.List, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.071, 0, 0.672, 0)}):Play()
 	buttons.Credits.Visible = true
 	cmoudule.Show()
-	
-	
 end;
 task.spawn(C_19);
 
