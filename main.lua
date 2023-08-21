@@ -442,7 +442,6 @@ local events = {
 }
 local eventslist = {"blurevent", "glitchevent"}
 
-
 function module.GameMain()
 	gameactive = true
 	script.Parent.Visible = true
@@ -458,6 +457,7 @@ function module.GameMain()
 			countdown = 10
 			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			spawn(nextevent.Event)
+			nextevent = events[eventslist[math.random(1,#eventslist)]]
 		end
 		task.wait(1)
 	end
@@ -515,7 +515,7 @@ local script = G2L["19"];
 	end)
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.3 | Glitch Testing 3")
+	print("V0.3 | Glitch Testing 4")
 	local sound = Instance.new("Sound", script.Parent.Parent)
 	sound.Name = "Music"
 	sound.SoundId = "rbxassetid://9039982062"
