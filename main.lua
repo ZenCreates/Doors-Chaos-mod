@@ -381,11 +381,8 @@ local script = G2L["19"];
 		"rbxassetid://14515777756"
 	}
 	pcall(function()
-		local shop = game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop
-		if shop.Visible == true then
-			local remoteshop:RemoteEvent = game.ReplicatedStorage.EntityInfo.PreRunShop
-			remoteshop:FireServer({})
-		end
+		local remoteshop:RemoteEvent = game.ReplicatedStorage.EntityInfo.PreRunShop
+		remoteshop:FireServer({})
 	end)
 	pcall(function()
 		game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.PreRun.Music:Stop()
