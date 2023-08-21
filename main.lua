@@ -427,13 +427,13 @@ local events = {
 		end,
 	}
 }
+local eventslist = {"blurevent"}
 
 
 function module.GameMain()
 	script.Parent.Visible = true
 	notification.Notif("Game Started!", 1, 1)
-	local nextevent = events[1]
-	--local nextevent = events[math.random(1, #events)]
+	local nextevent = events[eventslist[math.random(1,#eventslist)]]
 	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
 	while gameactive == true do
 		countdown = countdown - 1
