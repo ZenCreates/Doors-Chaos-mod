@@ -632,7 +632,12 @@ local events = {
 	seekeyes = {
 		Name = "???",
 		Event = function()
-			require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 1000)
+			local eyes = 0
+			repeat 
+				task.wait(0.01)
+				require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 100)
+				eyes = eyes +1
+			until eyes == 5
 		end,
 		cdt = 3
 	},
