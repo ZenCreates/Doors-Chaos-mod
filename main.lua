@@ -577,14 +577,15 @@ local events = {
 	spook1 = {
 		Name = "???",
 		Event = function()
-			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = true
-			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
-			humroot.Anchored = true
-			task.delay(3, function()
-				humroot.Anchored = false
-				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = false
-				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
-			end)
+			--game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = true
+			--game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
+			--humroot.Anchored = true
+			--task.delay(3, function()
+			--	humroot.Anchored = false
+			--	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = false
+			--	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
+			--		end)
+			print("Skipped spook1")
 		end,
 		cdt = 5,
 	},
@@ -613,7 +614,7 @@ local events = {
 	timothy = {
 		Name = "Timothy",
 		Event = function()
-			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms["0"].Assets.Dresser.DrawerContainer, 0.2)
+			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")].Assets.Dresser.DrawerContainer, 0.2)
 		end,
 		cdt = 5
 	},
