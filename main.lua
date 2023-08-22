@@ -416,6 +416,27 @@ local nextevent = nil
 local player = game.Players.LocalPlayer
 local hum:Humanoid = player.Character:WaitForChild("Humanoid")
 local collision:Part = player.Character:FindFirstChild("Collision")
+local rs = game:GetService("RunService")
+
+
+
+
+--event vars
+local killoncrouch = true
+
+
+rs.RenderStepped:Connect(function()
+	if killoncrouch == true and collision.CollisionGroupId == 10 then
+		hum.Health = 0
+	end
+end)
+
+
+
+
+
+
+
 local events = {
 	blurevent = {
 		Name = "Blur",
@@ -452,19 +473,10 @@ local events = {
 		Name = "Death on Crouch",
 		Event = function()
 			local hascrouched = false
-			local killoncrouch = true
+			killoncrouch = true
 			task.delay(10, function()
 				killoncrouch = false
 			end)
-			while killoncrouch == true and hum.Health ~= 0 do
-				collision.Changed:Connect(function(property)
-					if property == "CollisionGroupId" then
-						if collision.CollisionGroupId == 10 then
-							hum.Health = 0
-						end
-					end
-				end)
-			end
 		end,
 	}
 }
