@@ -238,7 +238,7 @@ G2L["1a"]["Name"] = [[Logo]];
 G2L["1a"]["BackgroundTransparency"] = 1;
 G2L["1a"]["Position"] = UDim2.new(0.015343562699854374, 0, 0.02244389057159424, 0);
 
--- StarterGui.ChaosMod.MainMenu.EventsSurvived
+-- StarterGui.ChaosMod.MainMenu.FocusText
 G2L["1b"] = Instance.new("TextLabel", G2L["7"]);
 G2L["1b"]["TextWrapped"] = true;
 G2L["1b"]["BorderSizePixel"] = 0;
@@ -247,19 +247,19 @@ G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["1b"]["TextSize"] = 14;
 G2L["1b"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["1b"]["Size"] = UDim2.new(0, 273, 0, 38);
+G2L["1b"]["Size"] = UDim2.new(0, 312, 0, 67);
 G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b"]["Text"] = [[Events Survived: Unknown]];
-G2L["1b"]["Name"] = [[EventsSurvived]];
+G2L["1b"]["Text"] = [[Why are you tabbed out?]];
+G2L["1b"]["Name"] = [[FocusText]];
 G2L["1b"]["Visible"] = false;
 G2L["1b"]["BackgroundTransparency"] = 1;
-G2L["1b"]["Position"] = UDim2.new(0.38868972659111023, 0, 0.03620689734816551, 0);
+G2L["1b"]["Position"] = UDim2.new(0.39031943678855896, 0, 0.7258620858192444, 0);
 
--- StarterGui.ChaosMod.MainMenu.EventsSurvived.UIStroke
+-- StarterGui.ChaosMod.MainMenu.FocusText.UIStroke
 G2L["1c"] = Instance.new("UIStroke", G2L["1b"]);
 
 
--- StarterGui.ChaosMod.MainMenu.FocusText
+-- StarterGui.ChaosMod.MainMenu.EventsSurvived
 G2L["1d"] = Instance.new("TextLabel", G2L["7"]);
 G2L["1d"]["TextWrapped"] = true;
 G2L["1d"]["BorderSizePixel"] = 0;
@@ -268,15 +268,15 @@ G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["1d"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["1d"]["TextSize"] = 14;
 G2L["1d"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["1d"]["Size"] = UDim2.new(0, 312, 0, 67);
+G2L["1d"]["Size"] = UDim2.new(0.33548682928085327, 0, 0.08728179335594177, 0);
 G2L["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1d"]["Text"] = [[Why are you tabbed out?]];
-G2L["1d"]["Name"] = [[FocusText]];
+G2L["1d"]["Text"] = [[Events Survived: Unknown]];
+G2L["1d"]["Name"] = [[EventsSurvived]];
 G2L["1d"]["Visible"] = false;
 G2L["1d"]["BackgroundTransparency"] = 1;
-G2L["1d"]["Position"] = UDim2.new(0.39031943678855896, 0, 0.7258620858192444, 0);
+G2L["1d"]["Position"] = UDim2.new(0.3320203423500061, 0, 0.02124430611729622, 0);
 
--- StarterGui.ChaosMod.MainMenu.FocusText.UIStroke
+-- StarterGui.ChaosMod.MainMenu.EventsSurvived.UIStroke
 G2L["1e"] = Instance.new("UIStroke", G2L["1d"]);
 
 
