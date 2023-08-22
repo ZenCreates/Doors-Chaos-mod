@@ -591,7 +591,20 @@ local events = {
 	timothy = {
 		Name = "Timothy",
 		Event = function()
-			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]:FindFirstChild("DrawerContainer",true), 0.2)
+			local drawer = nil
+			local RoomDescendants = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")].Assets:GetDescendants()
+			for _, desc in pairs(RoomDescendants) do
+				if desc.Name == "Dresser" then
+					local drawer = desc.DrawerContainer
+				elseif desc.Name == "Table" and desc:FindFirstChild("DrawerContainer") then
+					local drawer = desc.DrawerContainer
+				end
+			end
+			if drawer ~= nil then
+				require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], 0.2)
+			else
+				print("Timothy unable to spawn (no drawers in current room)")
+			end
 		end,
 		cdt = 5
 	},
