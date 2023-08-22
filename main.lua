@@ -537,6 +537,7 @@ local script = G2L["19"];
 	pcall(function()
 		local remoteshop:RemoteEvent = game.ReplicatedStorage.EntityInfo.PreRunShop
 		remoteshop:FireServer({})
+		game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Visible = false
 	end)
 	pcall(function()
 		game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.PreRun.Music:Stop()
