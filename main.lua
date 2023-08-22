@@ -633,11 +633,16 @@ local events = {
 		cdt = 3
 	},
 	timothy = {
-		Name = "Timothy",
+		Name = "???",
 		Event = function()
+			local tims = 0
 			local timdresser = game:GetService("ReplicatedStorage").FurnitureTemplate.Dresser:Clone()
 			timdresser.Parent = currentroomobj.Assets
-			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), timdresser.DrawerContainer, 0.2)
+			repeat 
+				task.wait(0.1)
+				require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), timdresser.DrawerContainer, 0)
+				tims = tims +1
+			until tims == 100
 			timdresser:Destroy()
 		end,
 		cdt = 5
