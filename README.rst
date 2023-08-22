@@ -4,7 +4,7 @@ A mod for Doors that makes the game much harder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :Script version:    Alpha Testing
-:Script loader:     ``https://raw.githubusercontent.com/ZenCreates/Doors-Chaos-mod/main/execution.lua``
+:Script loader:     ``loadstring(game:HttpGet("https://raw.githubusercontent.com/ZenCreates/Doors-Chaos-mod/main/main.lua"))()``
 :Authors:           Zen, M4X4
 :Special Thanks:    UniquaDev for Gui to Lua (https://github.com/uniquadev/GuiToLuaConverter)
 :Tutorial / Wiki:   https://github.com/ZenCreates/Doors-Chaos-mod/wiki/
