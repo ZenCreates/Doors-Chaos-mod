@@ -531,11 +531,11 @@ local events = {
 	spook1 = {
 		Name = "???",
 		Event = function()
-			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare = true
+			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = true
 			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
 			humroot.Anchored = true
 			task.delay(3, function()
-				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare = false
+				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = false
 				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
 			end)
 		end,
@@ -568,8 +568,7 @@ function module.GameMain()
 		if countdown == 0 then
 			spawn(nextevent.Event)
 			nextevent = events[eventslist[math.random(1,#eventslist)]]
-			countdowntime = nextevent.cdt
-			countdown = countdowntime
+			countdown = nextevent.cdt
 			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			settextcolor()
 			script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
