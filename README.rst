@@ -13,10 +13,20 @@ A mod for Doors that makes the game much harder
 :Special Thanks:    UniquaDev for Gui to Lua (https://github.com/uniquadev/GuiToLuaConverter)
 :Wiki:   https://github.com/ZenCreates/Doors-Chaos-mod/wiki/
 
-UPDATES
-^^^^^^^
+EVENTS
+^^^^^^
 
-None
+- Blur screen (10s)
+- Glitch Jumpscare
+- Timothy Jumpscare
+- 10 Screeches
+- Death on Crouch (10s)
+- Death on Hide (10s)
+- Settings popup (anchors character until closed)
+- Fools Jumpscare (2s)
+- Explosion
+- Seek Eyes (100, in current room)
+With more to come!
 
 NEWS
 ^^^^
