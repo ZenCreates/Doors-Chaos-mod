@@ -632,8 +632,8 @@ local events = {
 		cdt = 10
 	}
 }
---local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1", "explode", "seekeyes", "timothy", "screechx10"}
-local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy"}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1", "explode", "seekeyes", "timothy", "screechx10"}
+local testeventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy"}
 -- spook1 and screechx10 are disabled because they're annoying for testing
 
 function settextcolor()
