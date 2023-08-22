@@ -488,7 +488,7 @@ local eventslist = {"blurevent", "glitchevent", "deathoncrouch"}
 
 function settextcolor()
 	if countdown <= 3 then
-		script.Parent.TimetoNext.TextColor3 = Color3.new(1, 0.760784, 0.682353)
+		script.Parent.TimetoNext.TextColor3 = Color3.new(1, 0.505882, 0.439216)
 	else
 		script.Parent.TimetoNext.TextColor3 = Color3.new(0.960784, 0.87451, 0.678431)
 	end
