@@ -532,12 +532,12 @@ local events = {
 		Name = "???",
 		Event = function()
 			countdowntime = 5
-			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare:Play()
-			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"].Visible = true
+			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare = true
+			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
 			humroot.Anchored = true
 			task.delay(3, function()
-				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare:Stop()
-				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"].Visible = false
+				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare = false
+				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
 			end)
 		end,
 	}
