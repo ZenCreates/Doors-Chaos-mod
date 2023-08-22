@@ -426,12 +426,18 @@ local ts = game:GetService("TweenService")
 
 --event vars
 local killoncrouch = false
+local killonhide = false
 
 
 rs.RenderStepped:Connect(function()
+	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.LobbyFrame.Intro.Text = "Hell :D"
 	if killoncrouch == true and collision.CollisionGroupId == 10 then
+		notification.Notif("Death to Crouch", 1, 0.5)
 		hum.Health = 0
-		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.LobbyFrame.Intro.Text = "Hell :D"
+	end
+	if killonhide == true and collision.CanCollide == false then
+		notification.Notif("Death to Hide", 1, 0.5)
+		hum.Health = 0
 	end
 end)
 
@@ -476,15 +482,23 @@ local events = {
 	deathoncrouch = {
 		Name = "Death on Crouch",
 		Event = function()
-			local hascrouched = false
 			killoncrouch = true
+			task.delay(10, function()
+				killoncrouch = false
+			end)
+		end,
+	},
+	deathonhide = {
+		Name = "Death on Hide",
+		Event = function()
+			killonhide = true
 			task.delay(10, function()
 				killoncrouch = false
 			end)
 		end,
 	}
 }
-local eventslist = {"blurevent", "glitchevent", "deathoncrouch"}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide"}
 
 function settextcolor()
 	if countdown <= 3 then
@@ -517,6 +531,8 @@ function module.GameMain()
 		end
 		task.wait(1)
 	end
+	script.Parent.TimetoNext.TextColor3 = Color3.new(1, 0.505882, 0.439216)
+	script.Parent.TimetoNext.Text = "dead 💀"
 	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(1,0,0,0)}):Play()
 end
 
