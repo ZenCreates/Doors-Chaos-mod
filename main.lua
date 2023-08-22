@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 41 | Scripts: 2 | Modules: 3
+-- Instances: 43 | Scripts: 2 | Modules: 3
 local G2L = {};
 
 -- StarterGui.ChaosMod
@@ -357,6 +357,27 @@ G2L["28"]["Position"] = UDim2.new(0.39031943678855896, 0, 0.7258620858192444, 0)
 G2L["29"] = Instance.new("UIStroke", G2L["28"]);
 
 
+-- StarterGui.ChaosMod.GameUI.EventsSurvived
+G2L["2a"] = Instance.new("TextLabel", G2L["1f"]);
+G2L["2a"]["TextWrapped"] = true;
+G2L["2a"]["BorderSizePixel"] = 0;
+G2L["2a"]["TextScaled"] = true;
+G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2a"]["TextSize"] = 14;
+G2L["2a"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
+G2L["2a"]["Size"] = UDim2.new(0, 273, 0, 38);
+G2L["2a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2a"]["Text"] = [[Events Survived: Unknown]];
+G2L["2a"]["Name"] = [[EventsSurvived]];
+G2L["2a"]["Visible"] = false;
+G2L["2a"]["BackgroundTransparency"] = 1;
+G2L["2a"]["Position"] = UDim2.new(0.38868972659111023, 0, 0.03620689734816551, 0);
+
+-- StarterGui.ChaosMod.GameUI.EventsSurvived.UIStroke
+G2L["2b"] = Instance.new("UIStroke", G2L["2a"]);
+
+
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
 local G2L_MODULES = {};
@@ -456,6 +477,7 @@ local gameactive = false
 local notification = require(script.Parent.Parent.AlwaysOn.Notification)
 local countdown = 10
 local nextevent = nil
+local numevents = 0
 local player = game.Players.LocalPlayer
 local hum:Humanoid = player.Character:WaitForChild("Humanoid")
 local humroot:Part = player.Character:WaitForChild("HumanoidRootPart")
@@ -645,6 +667,7 @@ function module.GameMain()
 		settextcolor()
 		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 		if countdown == 0 then
+			numevents += 1
 			countdown = nextevent.cdt
 			spawn(nextevent.Event)
 			nextevent = events[eventslist[math.random(1,#eventslist)]]
@@ -657,6 +680,8 @@ function module.GameMain()
 	script.Parent.TimetoNext.TextColor3 = Color3.new(1, 0.505882, 0.439216)
 	script.Parent.TimetoNext.Text = "dead 💀"
 	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(1,0,0,0)}):Play()
+	script.Parent.EventsSurvived.Visible = true
+	script.Parent.EventsSurvived.Text = "Events Survived: "..numevents
 end
 
 function module.PauseGame()
@@ -714,7 +739,7 @@ local script = G2L["19"];
 	end)
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.4")
+	print("V0.5")
 	local sound = Instance.new("Sound", script.Parent.Parent)
 	sound.Name = "Music"
 	sound.SoundId = "rbxassetid://9039982062"
