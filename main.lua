@@ -639,7 +639,7 @@ local events = {
 			local timdresser = game:GetService("ReplicatedStorage").FurnitureTemplate.Dresser:Clone()
 			timdresser.Parent = currentroomobj.Assets
 			repeat 
-				task.wait(0.1)
+				task.wait(0.01)
 				require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), timdresser.DrawerContainer, 0)
 				tims = tims +1
 			until tims == 100
