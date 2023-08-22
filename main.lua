@@ -430,17 +430,24 @@ local killonhide = false
 local dead = false
 
 
+local function removestuff()
+	task.delay(2, function()
+		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI:FindFirstChild("HodlerRevive").Visible = false
+	end)
+end
+
 rs.RenderStepped:Connect(function()
 	pcall(function()
-		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI:FindFirstChild("HodlerRevive"):Destroy()
-		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.LobbyFrame:FindFirstChild("LiveIntro").Text = "Hell :D"
+		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI:FindFirstChild("LiveIntro").Text = "Hell :D"
 	end)
 	if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
+		removestuff()
 		dead = true
 		notification.Notif("Death to Crouch", 1, 0.5)
 		hum.Health = 0
 	end
 	if killonhide == true and dead == false and collision.CanCollide == false then
+		removestuff()
 		dead = true
 		notification.Notif("Death to Hide", 1, 0.5)
 		hum.Health = 0
