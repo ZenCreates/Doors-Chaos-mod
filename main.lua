@@ -498,6 +498,7 @@ function module.GameMain()
 	notification.Notif("Game Started!", 1, 1)
 	local nextevent = events[eventslist[math.random(1,#eventslist)]]
 	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
+	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.MainFrame.Intro.Text = "Hell :D"
 	while gameactive == true and hum.Health ~= 0 do
 		countdown = countdown - 1
 		--print(countdown)
