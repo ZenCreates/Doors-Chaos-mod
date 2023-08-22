@@ -560,7 +560,7 @@ local events = {
 		Event = function()
 			killonhide = true
 			task.delay(10, function()
-				killoncrouch = false
+				killonhide = false
 			end)
 		end,
 		cdt = 10,
