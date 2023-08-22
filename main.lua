@@ -516,28 +516,6 @@ local events = {
 		end,
 		cdt = 10,
 	},
-	glitcheventOLD = {
-		Name = "Glitch",
-		Event = function()
-			local glitch = MainUI.MainFrame.GlitchScreen
-			local effect = MainUI.MainFrame.GlitchEffect
-			local sound = game:GetService("ReplicatedStorage").ClientModules.EntityModules.Glitch.Sound
-			local amb = game:GetService("Lighting")["Ambience_Glitch"]
-			glitch.Visible = true
-			effect.Visible = true
-			sound.Looped = true
-			sound:Play()
-			humroot.Anchored = true
-			task.delay(8, function()
-				humroot.Anchored = false
-				glitch.Visible = false
-				effect.Visible = false
-				sound:Stop()
-				sound.Looped = false
-			end)
-		end,
-		cdt = 10,
-	},
 	glitchevent = {
 		Name = "Glitch",
 		Event = function()
@@ -577,15 +555,14 @@ local events = {
 	spook1 = {
 		Name = "???",
 		Event = function()
-			--game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = true
-			--game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
-			--humroot.Anchored = true
-			--task.delay(3, function()
-			--	humroot.Anchored = false
-			--	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = false
-			--	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
-			--		end)
-			print("Skipped spook1")
+			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = true
+			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
+			humroot.Anchored = true
+			task.delay(3, function()
+				humroot.Anchored = false
+				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = false
+				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
+					end)
 		end,
 		cdt = 5,
 	},
@@ -614,7 +591,7 @@ local events = {
 	timothy = {
 		Name = "Timothy",
 		Event = function()
-			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")].Assets.Dresser.DrawerContainer, 0.2)
+			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]:FindFirstDescendant("DrawerContainer"), 0.2)
 		end,
 		cdt = 5
 	},
@@ -630,7 +607,9 @@ local events = {
 		cdt = 10
 	}
 }
-local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1", "explode", "seekeyes", "timothy", "screechx10"}
+--local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1", "explode", "seekeyes", "timothy", "screechx10"}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy"}
+-- spook1 and screechx10 are disabled because they're annoying for testing
 
 function settextcolor()
 	if countdown <= 3 then
@@ -639,6 +618,8 @@ function settextcolor()
 		script.Parent.TimetoNext.TextColor3 = Color3.new(0.960784, 0.87451, 0.678431)
 	end
 end
+
+
 
 function module.GameMain()
 	gameactive = true
@@ -729,7 +710,7 @@ local script = G2L["19"];
 	end)
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.4 | Entity Tester 1")
+	print("V0.4")
 	local sound = Instance.new("Sound", script.Parent.Parent)
 	sound.Name = "Music"
 	sound.SoundId = "rbxassetid://9039982062"
