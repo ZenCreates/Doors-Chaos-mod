@@ -568,7 +568,7 @@ local events = {
 				task.wait(0.01)
 				require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(MainUI.Initiator.Main_Game))
 				gliches = gliches +1
-			until gliches == 100
+			until gliches == 10
 		end,
 		cdt = 5,
 	},
