@@ -519,6 +519,7 @@ local events = {
 				killoncrouch = false
 			end)
 		end,
+		cdt = 10,
 	},
 	settingspopup = {
 		Name = "???",
@@ -536,6 +537,7 @@ local events = {
 			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
 			humroot.Anchored = true
 			task.delay(3, function()
+				humroot.Anchored = false
 				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = false
 				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
 			end)
