@@ -31,11 +31,12 @@ G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["3"]["BackgroundTransparency"] = 1;
 G2L["3"]["Size"] = UDim2.new(0.5984455943107605, 0, 0.866583526134491, 0);
 G2L["3"]["Selectable"] = true;
-G2L["3"]["Position"] = UDim2.new(0.23639896512031555, 0, 0.043640896677970886, 0);
+G2L["3"]["Position"] = UDim2.new(0.22839362919330597, 0, 0.08728179335594177, 0);
 G2L["3"]["Name"] = [[Notifications]];
 
 -- StarterGui.ChaosMod.AlwaysOn.Notifications.UIListLayout
 G2L["4"] = Instance.new("UIListLayout", G2L["3"]);
+G2L["4"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
 G2L["4"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 -- StarterGui.ChaosMod.AlwaysOn.Notifications.WarningBase
@@ -276,7 +277,7 @@ G2L["20"]["BorderSizePixel"] = 0;
 G2L["20"]["TextScaled"] = true;
 G2L["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["20"]["TextXAlignment"] = Enum.TextXAlignment.Right;
-G2L["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic);
 G2L["20"]["TextSize"] = 14;
 G2L["20"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
 G2L["20"]["Size"] = UDim2.new(0.24016010761260986, 0, 0.06109725683927536, 0);
@@ -284,7 +285,7 @@ G2L["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["20"]["Text"] = [[Next Event: Unknown]];
 G2L["20"]["Name"] = [[NextEvent]];
 G2L["20"]["BackgroundTransparency"] = 1;
-G2L["20"]["Position"] = UDim2.new(0.7444963455200195, 0, 0.9201995134353638, 0);
+G2L["20"]["Position"] = UDim2.new(0.7551701068878174, 0, 0.9201995134353638, 0);
 
 -- StarterGui.ChaosMod.GameUI.NextEvent.UIStroke
 G2L["21"] = Instance.new("UIStroke", G2L["20"]);
@@ -296,15 +297,16 @@ G2L["22"]["TextWrapped"] = true;
 G2L["22"]["BorderSizePixel"] = 0;
 G2L["22"]["TextScaled"] = true;
 G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["22"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["22"]["TextSize"] = 14;
 G2L["22"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["22"]["Size"] = UDim2.new(0.24016010761260986, 0, 0.0972568541765213, 0);
+G2L["22"]["Size"] = UDim2.new(0.2448299080133438, 0, 0.07730673998594284, 0);
 G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["22"]["Text"] = [[10 Seconds]];
 G2L["22"]["Name"] = [[TimetoNext]];
 G2L["22"]["BackgroundTransparency"] = 1;
-G2L["22"]["Position"] = UDim2.new(0.379586398601532, 0, 0.027431420981884003, 0);
+G2L["22"]["Position"] = UDim2.new(0.7551701068878174, 0, 0.8428927659988403, 0);
 
 -- StarterGui.ChaosMod.GameUI.TimetoNext.UIStroke
 G2L["23"] = Instance.new("UIStroke", G2L["22"]);
@@ -482,6 +484,14 @@ local events = {
 }
 local eventslist = {"blurevent", "glitchevent", "deathoncrouch"}
 
+function settextcolor()
+	if countdown <= 3 then
+		script.Parent.TimetoNext.TextColor3 = Color3.new(1, 0.760784, 0.682353)
+	else
+		script.Parent.TimetoNext.TextColor3 = Color3.new(0.960784, 0.87451, 0.678431)
+	end
+end
+
 function module.GameMain()
 	gameactive = true
 	script.Parent.Visible = true
@@ -491,12 +501,14 @@ function module.GameMain()
 	while gameactive == true and hum.Health ~= 0 do
 		countdown = countdown - 1
 		--print(countdown)
+		settextcolor()
 		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 		if countdown == 0 then
 			countdown = 10
 			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			spawn(nextevent.Event)
 			nextevent = events[eventslist[math.random(1,#eventslist)]]
+			settextcolor()
 			script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
 		end
 		task.wait(1)
