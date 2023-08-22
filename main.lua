@@ -511,6 +511,9 @@ rs.RenderStepped:Connect(function()
 	end)
 	currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
 	currentroomobj = game.Workspace.CurrentRooms[currentroom]
+	if hum.Health == 0 then
+		dead = true
+	end
 	if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
 		removestuff()
 		dead = true
