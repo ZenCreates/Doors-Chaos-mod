@@ -417,9 +417,11 @@ local countdown = 10
 local nextevent = nil
 local player = game.Players.LocalPlayer
 local hum:Humanoid = player.Character:WaitForChild("Humanoid")
+local humroot:Part = player.Character:WaitForChild("HumanoidRootPart")
 local collision:Part = player.Character:FindFirstChild("Collision")
 local rs = game:GetService("RunService")
 local ts = game:GetService("TweenService")
+local countdowntime = 10
 
 
 
@@ -427,6 +429,7 @@ local ts = game:GetService("TweenService")
 --event vars
 local killoncrouch = false
 local killonhide = false
+local settingsmenu = false
 local dead = false
 
 
@@ -437,9 +440,6 @@ local function removestuff()
 end
 
 rs.RenderStepped:Connect(function()
-	pcall(function()
-		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI:FindFirstChild("LiveIntro").Text = "Hell :D"
-	end)
 	if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
 		removestuff()
 		dead = true
@@ -451,6 +451,12 @@ rs.RenderStepped:Connect(function()
 		dead = true
 		notification.Notif("Death to Hide", 1, 0.5)
 		hum.Health = 0
+	end
+	if settingsmenu == true and dead == false then
+		if game.Players.LocalPlayer.PlayerGui.MainUI.Settings.Visible == false then
+			settingsmenu = false
+			humroot.Anchored = false
+		end
 	end
 end)
 
@@ -464,6 +470,7 @@ local events = {
 	blurevent = {
 		Name = "Blur",
 		Event = function()
+			countdowntime = 10
 			local blur = Instance.new("BlurEffect", game.Lighting)
 			blur.Name = "EventBlur"
 			blur.Enabled = true
@@ -485,6 +492,7 @@ local events = {
 			sound.Looped = true
 			sound:Play()
 			task.delay(8, function()
+				countdowntime = 10
 				glitch.Visible = false
 				effect.Visible = false
 				sound:Stop()
@@ -504,14 +512,37 @@ local events = {
 	deathonhide = {
 		Name = "Death on Hide",
 		Event = function()
+			countdowntime = 10
 			killonhide = true
 			task.delay(10, function()
 				killoncrouch = false
 			end)
 		end,
+	},
+	settingspopup = {
+		Name = "???",
+		Event = function()
+			countdowntime = 5
+			game.Players.LocalPlayer.PlayerGui.MainUI.Settings.Visible = true
+			settingsmenu = true
+			humroot.Anchored = true
+		end,
+	},
+	spook1 = {
+		Name = "???",
+		Event = function()
+			countdowntime = 5
+			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare:Play()
+			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"].Visible = true
+			humroot.Anchored = true
+			task.delay(3, function()
+				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare:Stop()
+				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"].Visible = false
+			end)
+		end,
 	}
 }
-local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide"}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1"}
 
 function settextcolor()
 	if countdown <= 3 then
@@ -535,7 +566,7 @@ function module.GameMain()
 		settextcolor()
 		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 		if countdown == 0 then
-			countdown = 10
+			countdown = countdowntime
 			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			spawn(nextevent.Event)
 			nextevent = events[eventslist[math.random(1,#eventslist)]]
