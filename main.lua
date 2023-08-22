@@ -564,7 +564,7 @@ local script = G2L["19"];
 		"rbxassetid://14515777756"
 	}
 	pcall(function()
-		local remoteshop:RemoteEvent = game.ReplicatedStorage.EntityInfo.PreRunShop
+		local remoteshop:RemoteEvent = ((game:GetService("ReplicatedStorage")):WaitForChild("EntityInfo")):WaitForChild("PreRunShop")
 		remoteshop:FireServer({})
 		game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Visible = false
 		local freemouse = require(game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"])
