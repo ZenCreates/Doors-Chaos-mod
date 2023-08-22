@@ -564,7 +564,12 @@ local events = {
 	glitchevent = {
 		Name = "Glitch",
 		Event = function()
-			require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(MainUI.Initiator.Main_Game))
+			local gliches = 0
+			repeat 
+				task.wait(0.01)
+				require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(MainUI.Initiator.Main_Game))
+				gliches = gliches +1
+			until gliches == 100
 		end,
 		cdt = 5,
 	},
