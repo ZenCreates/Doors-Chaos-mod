@@ -591,7 +591,7 @@ local events = {
 	timothy = {
 		Name = "Timothy",
 		Event = function()
-			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]:FindFirstDescendant("DrawerContainer"), 0.2)
+			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]:FindFirstChild("DrawerContainer",true), 0.2)
 		end,
 		cdt = 5
 	},
