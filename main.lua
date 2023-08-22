@@ -419,6 +419,7 @@ local player = game.Players.LocalPlayer
 local hum:Humanoid = player.Character:WaitForChild("Humanoid")
 local collision:Part = player.Character:FindFirstChild("Collision")
 local rs = game:GetService("RunService")
+local ts = game:GetService("TweenService")
 
 
 
@@ -430,6 +431,7 @@ local killoncrouch = false
 rs.RenderStepped:Connect(function()
 	if killoncrouch == true and collision.CollisionGroupId == 10 then
 		hum.Health = 0
+		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.MainFrame.Intro.Text = "Hell :D"
 	end
 end)
 
@@ -498,7 +500,8 @@ function module.GameMain()
 	notification.Notif("Game Started!", 1, 1)
 	local nextevent = events[eventslist[math.random(1,#eventslist)]]
 	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
-	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.MainFrame.Intro.Text = "Hell :D"
+	script.Parent.Position = UDim2.new(1,0,0,0)
+	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,0,0)}):Play()
 	while gameactive == true and hum.Health ~= 0 do
 		countdown = countdown - 1
 		--print(countdown)
@@ -514,6 +517,7 @@ function module.GameMain()
 		end
 		task.wait(1)
 	end
+	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(1,0,0,0)}):Play()
 end
 
 function module.PauseGame()
