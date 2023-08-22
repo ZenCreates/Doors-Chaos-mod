@@ -657,6 +657,7 @@ local events = {
 	halt10 = {
 		Name = "The Homies",
 		Event = function()
+			thehomies = true
 			require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(MainUI.Initiator.Main_Game),currentroomobj)
 			local halts = 0
 			repeat 
@@ -665,11 +666,13 @@ local events = {
 				halts = halts +1
 			until halts == 10
 			task.delay(7, function()
+				thehomies = false
 				local number = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
 				game.Players.LocalPlayer:SetAttribute("CurrentRoom", number +1)
 				task.delay(0.7, function()
 					game.Players.LocalPlayer:SetAttribute("CurrentRoom", number)
 				end)
+				
 			end)
 		end,
 		cdt = 5
