@@ -506,6 +506,8 @@ local function removestuff()
 end
 
 rs.RenderStepped:Connect(function()
+	currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
+	currentroomobj = game.Workspace.CurrentRooms[currentroom]
 	if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
 		removestuff()
 		dead = true
@@ -620,7 +622,7 @@ local events = {
 	seekeyes = {
 		Name = "Seek Eyes",
 		Event = function()
-			require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 100)
+			require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 1000)
 		end,
 		cdt = 5
 	},
