@@ -492,13 +492,13 @@ local events = {
 			sound.Looped = true
 			sound:Play()
 			task.delay(8, function()
-				countdowntime = 10
 				glitch.Visible = false
 				effect.Visible = false
 				sound:Stop()
 				sound.Looped = false
 			end)
 		end,
+		cdt = 10,
 	},
 	deathoncrouch = {
 		Name = "Death on Crouch",
@@ -508,11 +508,11 @@ local events = {
 				killoncrouch = false
 			end)
 		end,
+		cdt = 10,
 	},
 	deathonhide = {
 		Name = "Death on Hide",
 		Event = function()
-			countdowntime = 10
 			killonhide = true
 			task.delay(10, function()
 				killoncrouch = false
@@ -522,16 +522,15 @@ local events = {
 	settingspopup = {
 		Name = "???",
 		Event = function()
-			countdowntime = 5
 			game.Players.LocalPlayer.PlayerGui.MainUI.Settings.Visible = true
 			settingsmenu = true
 			humroot.Anchored = true
 		end,
+		cdt = 5,
 	},
 	spook1 = {
 		Name = "???",
 		Event = function()
-			countdowntime = 5
 			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare = true
 			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
 			humroot.Anchored = true
@@ -540,6 +539,7 @@ local events = {
 				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
 			end)
 		end,
+		cdt = 5,
 	}
 }
 local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1"}
@@ -566,10 +566,11 @@ function module.GameMain()
 		settextcolor()
 		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 		if countdown == 0 then
-			countdown = countdowntime
-			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			spawn(nextevent.Event)
 			nextevent = events[eventslist[math.random(1,#eventslist)]]
+			countdowntime = nextevent.cdt
+			countdown = countdowntime
+			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			settextcolor()
 			script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
 		end
