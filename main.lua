@@ -238,145 +238,145 @@ G2L["1a"]["Name"] = [[Logo]];
 G2L["1a"]["BackgroundTransparency"] = 1;
 G2L["1a"]["Position"] = UDim2.new(0.015343562699854374, 0, 0.02244389057159424, 0);
 
--- StarterGui.ChaosMod.Cursor
-G2L["1b"] = Instance.new("Frame", G2L["1"]);
+-- StarterGui.ChaosMod.MainMenu.EventsSurvived
+G2L["1b"] = Instance.new("TextLabel", G2L["7"]);
+G2L["1b"]["TextWrapped"] = true;
 G2L["1b"]["BorderSizePixel"] = 0;
+G2L["1b"]["TextScaled"] = true;
 G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1b"]["Size"] = UDim2.new(0.0040160175412893295, 0, 0.00750624667853117, 0);
+G2L["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1b"]["TextSize"] = 14;
+G2L["1b"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
+G2L["1b"]["Size"] = UDim2.new(0, 273, 0, 38);
 G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b"]["Position"] = UDim2.new(0.7224816679954529, 0, 0.6795511245727539, 0);
+G2L["1b"]["Text"] = [[Events Survived: Unknown]];
+G2L["1b"]["Name"] = [[EventsSurvived]];
 G2L["1b"]["Visible"] = false;
-G2L["1b"]["Name"] = [[Cursor]];
+G2L["1b"]["BackgroundTransparency"] = 1;
+G2L["1b"]["Position"] = UDim2.new(0.38868972659111023, 0, 0.03620689734816551, 0);
 
--- StarterGui.ChaosMod.Cursor.UIAspectRatioConstraint
-G2L["1c"] = Instance.new("UIAspectRatioConstraint", G2L["1b"]);
+-- StarterGui.ChaosMod.MainMenu.EventsSurvived.UIStroke
+G2L["1c"] = Instance.new("UIStroke", G2L["1b"]);
 
 
--- StarterGui.ChaosMod.Cursor.UICorner
-G2L["1d"] = Instance.new("UICorner", G2L["1b"]);
-G2L["1d"]["CornerRadius"] = UDim.new(1, 0);
+-- StarterGui.ChaosMod.MainMenu.FocusText
+G2L["1d"] = Instance.new("TextLabel", G2L["7"]);
+G2L["1d"]["TextWrapped"] = true;
+G2L["1d"]["BorderSizePixel"] = 0;
+G2L["1d"]["TextScaled"] = true;
+G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1d"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1d"]["TextSize"] = 14;
+G2L["1d"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
+G2L["1d"]["Size"] = UDim2.new(0, 312, 0, 67);
+G2L["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1d"]["Text"] = [[Why are you tabbed out?]];
+G2L["1d"]["Name"] = [[FocusText]];
+G2L["1d"]["Visible"] = false;
+G2L["1d"]["BackgroundTransparency"] = 1;
+G2L["1d"]["Position"] = UDim2.new(0.39031943678855896, 0, 0.7258620858192444, 0);
 
--- StarterGui.ChaosMod.CursorHandeler
-G2L["1e"] = Instance.new("ModuleScript", G2L["1"]);
-G2L["1e"]["Name"] = [[CursorHandeler]];
+-- StarterGui.ChaosMod.MainMenu.FocusText.UIStroke
+G2L["1e"] = Instance.new("UIStroke", G2L["1d"]);
 
--- StarterGui.ChaosMod.GameUI
+
+-- StarterGui.ChaosMod.Cursor
 G2L["1f"] = Instance.new("Frame", G2L["1"]);
 G2L["1f"]["BorderSizePixel"] = 0;
 G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1f"]["BackgroundTransparency"] = 1;
-G2L["1f"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["1f"]["Size"] = UDim2.new(0.0040160175412893295, 0, 0.00750624667853117, 0);
 G2L["1f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1f"]["Position"] = UDim2.new(0.7224816679954529, 0, 0.6795511245727539, 0);
 G2L["1f"]["Visible"] = false;
-G2L["1f"]["Name"] = [[GameUI]];
+G2L["1f"]["Name"] = [[Cursor]];
+
+-- StarterGui.ChaosMod.Cursor.UIAspectRatioConstraint
+G2L["20"] = Instance.new("UIAspectRatioConstraint", G2L["1f"]);
+
+
+-- StarterGui.ChaosMod.Cursor.UICorner
+G2L["21"] = Instance.new("UICorner", G2L["1f"]);
+G2L["21"]["CornerRadius"] = UDim.new(1, 0);
+
+-- StarterGui.ChaosMod.CursorHandeler
+G2L["22"] = Instance.new("ModuleScript", G2L["1"]);
+G2L["22"]["Name"] = [[CursorHandeler]];
+
+-- StarterGui.ChaosMod.GameUI
+G2L["23"] = Instance.new("Frame", G2L["1"]);
+G2L["23"]["BorderSizePixel"] = 0;
+G2L["23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["23"]["BackgroundTransparency"] = 1;
+G2L["23"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["23"]["Visible"] = false;
+G2L["23"]["Name"] = [[GameUI]];
 
 -- StarterGui.ChaosMod.GameUI.NextEvent
-G2L["20"] = Instance.new("TextLabel", G2L["1f"]);
-G2L["20"]["TextWrapped"] = true;
-G2L["20"]["BorderSizePixel"] = 0;
-G2L["20"]["TextScaled"] = true;
-G2L["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["20"]["TextXAlignment"] = Enum.TextXAlignment.Right;
-G2L["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic);
-G2L["20"]["TextSize"] = 14;
-G2L["20"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["20"]["Size"] = UDim2.new(0.24016010761260986, 0, 0.06109725683927536, 0);
-G2L["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["20"]["Text"] = [[Next Event: Unknown]];
-G2L["20"]["Name"] = [[NextEvent]];
-G2L["20"]["BackgroundTransparency"] = 1;
-G2L["20"]["Position"] = UDim2.new(0.7551701068878174, 0, 0.9201995134353638, 0);
+G2L["24"] = Instance.new("TextLabel", G2L["23"]);
+G2L["24"]["TextWrapped"] = true;
+G2L["24"]["BorderSizePixel"] = 0;
+G2L["24"]["TextScaled"] = true;
+G2L["24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["24"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+G2L["24"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic);
+G2L["24"]["TextSize"] = 14;
+G2L["24"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
+G2L["24"]["Size"] = UDim2.new(0.24016010761260986, 0, 0.06109725683927536, 0);
+G2L["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["24"]["Text"] = [[Next Event: Unknown]];
+G2L["24"]["Name"] = [[NextEvent]];
+G2L["24"]["BackgroundTransparency"] = 1;
+G2L["24"]["Position"] = UDim2.new(0.7551701068878174, 0, 0.9201995134353638, 0);
 
 -- StarterGui.ChaosMod.GameUI.NextEvent.UIStroke
-G2L["21"] = Instance.new("UIStroke", G2L["20"]);
+G2L["25"] = Instance.new("UIStroke", G2L["24"]);
 
 
 -- StarterGui.ChaosMod.GameUI.TimetoNext
-G2L["22"] = Instance.new("TextLabel", G2L["1f"]);
-G2L["22"]["TextWrapped"] = true;
-G2L["22"]["BorderSizePixel"] = 0;
-G2L["22"]["TextScaled"] = true;
-G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["22"]["TextXAlignment"] = Enum.TextXAlignment.Right;
-G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["22"]["TextSize"] = 14;
-G2L["22"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["22"]["Size"] = UDim2.new(0.2448299080133438, 0, 0.07730673998594284, 0);
-G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["22"]["Text"] = [[10 Seconds]];
-G2L["22"]["Name"] = [[TimetoNext]];
-G2L["22"]["BackgroundTransparency"] = 1;
-G2L["22"]["Position"] = UDim2.new(0.7551701068878174, 0, 0.8428927659988403, 0);
+G2L["26"] = Instance.new("TextLabel", G2L["23"]);
+G2L["26"]["TextWrapped"] = true;
+G2L["26"]["BorderSizePixel"] = 0;
+G2L["26"]["TextScaled"] = true;
+G2L["26"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["26"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+G2L["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["26"]["TextSize"] = 14;
+G2L["26"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
+G2L["26"]["Size"] = UDim2.new(0.2448299080133438, 0, 0.07730673998594284, 0);
+G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["26"]["Text"] = [[10 Seconds]];
+G2L["26"]["Name"] = [[TimetoNext]];
+G2L["26"]["BackgroundTransparency"] = 1;
+G2L["26"]["Position"] = UDim2.new(0.7551701068878174, 0, 0.8428927659988403, 0);
 
 -- StarterGui.ChaosMod.GameUI.TimetoNext.UIStroke
-G2L["23"] = Instance.new("UIStroke", G2L["22"]);
+G2L["27"] = Instance.new("UIStroke", G2L["26"]);
 
 
 -- StarterGui.ChaosMod.GameUI.ModuleScript
-G2L["24"] = Instance.new("ModuleScript", G2L["1f"]);
+G2L["28"] = Instance.new("ModuleScript", G2L["23"]);
 
 
 -- StarterGui.ChaosMod.GameUI.ModuleScript.Sounds
-G2L["25"] = Instance.new("Folder", G2L["24"]);
-G2L["25"]["Name"] = [[Sounds]];
+G2L["29"] = Instance.new("Folder", G2L["28"]);
+G2L["29"]["Name"] = [[Sounds]];
 
 -- StarterGui.ChaosMod.GameUI.ModuleScript.Sounds.Explode
-G2L["26"] = Instance.new("Sound", G2L["25"]);
-G2L["26"]["Name"] = [[Explode]];
-G2L["26"]["SoundId"] = [[rbxassetid://5706776276]];
+G2L["2a"] = Instance.new("Sound", G2L["29"]);
+G2L["2a"]["Name"] = [[Explode]];
+G2L["2a"]["SoundId"] = [[rbxassetid://5706776276]];
 
 -- StarterGui.ChaosMod.GameUI.ModuleScript.Sounds.Explode.ParticleEmitter
-G2L["27"] = Instance.new("ParticleEmitter", G2L["26"]);
-G2L["27"]["LightInfluence"] = 1;
-G2L["27"]["FlipbookLayout"] = Enum.ParticleFlipbookLayout.Grid8x8;
-G2L["27"]["Texture"] = [[rbxassetid://9135699136]];
-G2L["27"]["LockedToPart"] = true;
-G2L["27"]["Size"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 30),NumberSequenceKeypoint.new(1.000, 30)};
-G2L["27"]["Enabled"] = false;
-G2L["27"]["Rate"] = 40;
-G2L["27"]["FlipbookMode"] = Enum.ParticleFlipbookMode.OneShot;
-
--- StarterGui.ChaosMod.GameUI.FocusText
-G2L["28"] = Instance.new("TextLabel", G2L["1f"]);
-G2L["28"]["TextWrapped"] = true;
-G2L["28"]["BorderSizePixel"] = 0;
-G2L["28"]["TextScaled"] = true;
-G2L["28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["28"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["28"]["TextSize"] = 14;
-G2L["28"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["28"]["Size"] = UDim2.new(0, 312, 0, 67);
-G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["28"]["Text"] = [[Why are you tabbed out?]];
-G2L["28"]["Name"] = [[FocusText]];
-G2L["28"]["Visible"] = false;
-G2L["28"]["BackgroundTransparency"] = 1;
-G2L["28"]["Position"] = UDim2.new(0.39031943678855896, 0, 0.7258620858192444, 0);
-
--- StarterGui.ChaosMod.GameUI.FocusText.UIStroke
-G2L["29"] = Instance.new("UIStroke", G2L["28"]);
-
-
--- StarterGui.ChaosMod.GameUI.EventsSurvived
-G2L["2a"] = Instance.new("TextLabel", G2L["1f"]);
-G2L["2a"]["TextWrapped"] = true;
-G2L["2a"]["BorderSizePixel"] = 0;
-G2L["2a"]["TextScaled"] = true;
-G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["2a"]["TextSize"] = 14;
-G2L["2a"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["2a"]["Size"] = UDim2.new(0, 273, 0, 38);
-G2L["2a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2a"]["Text"] = [[Events Survived: Unknown]];
-G2L["2a"]["Name"] = [[EventsSurvived]];
-G2L["2a"]["Visible"] = false;
-G2L["2a"]["BackgroundTransparency"] = 1;
-G2L["2a"]["Position"] = UDim2.new(0.38868972659111023, 0, 0.03620689734816551, 0);
-
--- StarterGui.ChaosMod.GameUI.EventsSurvived.UIStroke
-G2L["2b"] = Instance.new("UIStroke", G2L["2a"]);
-
+G2L["2b"] = Instance.new("ParticleEmitter", G2L["2a"]);
+G2L["2b"]["LightInfluence"] = 1;
+G2L["2b"]["FlipbookLayout"] = Enum.ParticleFlipbookLayout.Grid8x8;
+G2L["2b"]["Texture"] = [[rbxassetid://9135699136]];
+G2L["2b"]["LockedToPart"] = true;
+G2L["2b"]["Size"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 30),NumberSequenceKeypoint.new(1.000, 30)};
+G2L["2b"]["Enabled"] = false;
+G2L["2b"]["Rate"] = 40;
+G2L["2b"]["FlipbookMode"] = Enum.ParticleFlipbookMode.OneShot;
 
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
@@ -434,9 +434,9 @@ return module
 
 end;
 };
-G2L_MODULES[G2L["1e"]] = {
+G2L_MODULES[G2L["22"]] = {
 Closure = function()
-    local script = G2L["1e"];
+    local script = G2L["22"];
 local module = {}
 
 local mouse = game.Players.LocalPlayer:GetMouse()
@@ -468,9 +468,9 @@ return module
 
 end;
 };
-G2L_MODULES[G2L["24"]] = {
+G2L_MODULES[G2L["28"]] = {
 Closure = function()
-    local script = G2L["24"];
+    local script = G2L["28"];
 local module = {}
 
 local gameactive = false
@@ -657,10 +657,10 @@ function module.GameMain()
 	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,0,0)}):Play()
 	while gameactive == true and hum.Health ~= 0 do
 		uis.WindowFocusReleased:Connect(function()
-			script.Parent.FocusText.Visible = true
+			script.Parent.Parent.MainMenu.FocusText.Visible = true
 		end)
 		uis.WindowFocused:Connect(function()
-			script.Parent.FocusText.Visible = false
+			script.Parent.Parent.MainMenu.FocusText.Visible = false
 		end)
 		countdown = countdown - 1
 		--print(countdown)
@@ -680,7 +680,7 @@ function module.GameMain()
 	script.Parent.TimetoNext.TextColor3 = Color3.new(1, 0.505882, 0.439216)
 	script.Parent.TimetoNext.Text = "dead 💀"
 	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(1,0,0,0)}):Play()
-	script.Parent.EventsSurvived.Visible = true
+	script.Parent.Parent.MainMenu.EventsSurvived.Visible = true
 	script.Parent.EventsSurvived.Text = "Events Survived: "..numevents
 end
 
