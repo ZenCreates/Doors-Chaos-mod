@@ -424,7 +424,7 @@ local rs = game:GetService("RunService")
 
 
 --event vars
-local killoncrouch = true
+local killoncrouch = false
 
 
 rs.RenderStepped:Connect(function()
