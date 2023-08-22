@@ -464,6 +464,7 @@ local rs = game:GetService("RunService")
 local ts = game:GetService("TweenService")
 local uis = game:GetService("UserInputService")
 local countdowntime = 10
+local MainUI = game.Players.LocalPlayer.PlayerGui.MainUI
 
 --event vars
 local killoncrouch = false
@@ -474,7 +475,7 @@ local dead = false
 
 local function removestuff()
 	task.delay(2, function()
-		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI:FindFirstChild("HodlerRevive").Visible = false
+		MainUI:FindFirstChild("HodlerRevive").Visible = false
 	end)
 end
 
@@ -492,7 +493,7 @@ rs.RenderStepped:Connect(function()
 		hum.Health = 0
 	end
 	if settingsmenu == true and dead == false then
-		if game.Players.LocalPlayer.PlayerGui.MainUI.Settings.Visible == false then
+		if MainUI.Settings.Visible == false then
 			settingsmenu = false
 			humroot.Anchored = false
 		end
@@ -518,8 +519,8 @@ local events = {
 	glitcheventOLD = {
 		Name = "Glitch",
 		Event = function()
-			local glitch = game.Players.LocalPlayer.PlayerGui.MainUI.MainFrame.GlitchScreen
-			local effect = game.Players.LocalPlayer.PlayerGui.MainUI.MainFrame.GlitchEffect
+			local glitch = MainUI.MainFrame.GlitchScreen
+			local effect = MainUI.MainFrame.GlitchEffect
 			local sound = game:GetService("ReplicatedStorage").ClientModules.EntityModules.Glitch.Sound
 			local amb = game:GetService("Lighting")["Ambience_Glitch"]
 			glitch.Visible = true
@@ -540,7 +541,7 @@ local events = {
 	glitchevent = {
 		Name = "Glitch",
 		Event = function()
-			require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game))
+			require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(MainUI.Initiator.Main_Game))
 		end,
 		cdt = 5,
 	},
@@ -567,7 +568,7 @@ local events = {
 	settingspopup = {
 		Name = "???",
 		Event = function()
-			game.Players.LocalPlayer.PlayerGui.MainUI.Settings.Visible = true
+			MainUI.Settings.Visible = true
 			settingsmenu = true
 			humroot.Anchored = true
 		end,
@@ -601,11 +602,34 @@ local events = {
 			
 		end,
 		cdt = 5,
+	},
+	seekeyes = {
+		Name = "Seek Eyes",
+		Event = function()
+			require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], 100)
+		end,
+		cdt = 5
+	},
+	timothy = {
+		Name = "Timothy",
+		Event = function()
+			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms["0"].Assets.Dresser.DrawerContainer, 0.2)
+		end,
+		cdt = 5
+	},
+	screechx10 = {
+		Name = "10 Screeches",
+		Event = function()
+			local i = 1
+			while i <= 10 do
+				require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
+				i += 1
+			end
+		end,
+		cdt = 10
 	}
 }
-local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1", "explode"
-	
-}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1", "explode", "seekeyes", "timothy", "screechx10"}
 
 function settextcolor()
 	if countdown <= 3 then
@@ -704,7 +728,7 @@ local script = G2L["19"];
 	end)
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.4 | New Glitch 1")
+	print("V0.4 | Entity Tester 1")
 	local sound = Instance.new("Sound", script.Parent.Parent)
 	sound.Name = "Music"
 	sound.SoundId = "rbxassetid://9039982062"
