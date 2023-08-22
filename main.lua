@@ -506,6 +506,9 @@ local function removestuff()
 end
 
 rs.RenderStepped:Connect(function()
+	pcall(function()
+		MainUI:FindFirstChild("HodlerRevive").Visible = false
+	end)
 	currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
 	currentroomobj = game.Workspace.CurrentRooms[currentroom]
 	if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
