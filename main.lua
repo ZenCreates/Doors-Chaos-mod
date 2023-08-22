@@ -518,14 +518,12 @@ rs.RenderStepped:Connect(function()
 	if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
 		removestuff()
 		dead = true
-		notification.Notif("Death to Crouch", 1, 0.5)
 		deathcause.Value = "Crouching"
 		hum.Health = 0
 	end
 	if killonhide == true and dead == false and collision.CanCollide == false then
 		removestuff()
 		dead = true
-		notification.Notif("Death to Hide", 1, 0.5)
 		deathcause.Value = "Hiding"
 		hum.Health = 0
 	end
@@ -706,7 +704,6 @@ function module.GameMain()
 	countdown = 10
 	gameactive = true
 	script.Parent.Visible = true
-	notification.Notif("Game Started!", 1, 1)
 	local nextevent = events[eventslist[math.random(1,#eventslist)]]
 	script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
 	script.Parent.Position = UDim2.new(1,0,0,0)
