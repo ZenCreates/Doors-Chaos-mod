@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 40 | Scripts: 2 | Modules: 3
+-- Instances: 41 | Scripts: 2 | Modules: 3
 local G2L = {};
 
 -- StarterGui.ChaosMod
@@ -353,6 +353,10 @@ G2L["28"]["Visible"] = false;
 G2L["28"]["BackgroundTransparency"] = 1;
 G2L["28"]["Position"] = UDim2.new(0.39031943678855896, 0, 0.7258620858192444, 0);
 
+-- StarterGui.ChaosMod.GameUI.FocusText.UIStroke
+G2L["29"] = Instance.new("UIStroke", G2L["28"]);
+
+
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
 local G2L_MODULES = {};
@@ -496,11 +500,6 @@ rs.RenderStepped:Connect(function()
 end)
 
 
-
-
-
-
-
 local events = {
 	blurevent = {
 		Name = "Blur",
@@ -516,7 +515,7 @@ local events = {
 		end,
 		cdt = 10,
 	},
-	glitchevent = {
+	glitcheventOLD = {
 		Name = "Glitch",
 		Event = function()
 			local glitch = game.Players.LocalPlayer.PlayerGui.MainUI.MainFrame.GlitchScreen
@@ -537,6 +536,13 @@ local events = {
 			end)
 		end,
 		cdt = 10,
+	},
+	glitchevent = {
+		Name = "Glitch",
+		Event = function()
+			require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game))
+		end,
+		cdt = 5,
 	},
 	deathoncrouch = {
 		Name = "Death on Crouch",
@@ -698,7 +704,7 @@ local script = G2L["19"];
 	end)
 	local ts = game:GetService("TweenService")
 	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.31 | Crouch 1")
+	print("V0.4 | New Glitch 1")
 	local sound = Instance.new("Sound", script.Parent.Parent)
 	sound.Name = "Music"
 	sound.SoundId = "rbxassetid://9039982062"
