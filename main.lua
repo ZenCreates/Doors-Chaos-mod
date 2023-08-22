@@ -431,14 +431,14 @@ local dead = false
 
 
 rs.RenderStepped:Connect(function()
-	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.HolderRevive.Visible = false
+	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.HolderRevive:Destroy()
 	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.LobbyFrame.Intro.Text = "Hell :D"
-	if killoncrouch == true and collision.CollisionGroupId == 10 and dead == false then
+	if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
 		dead = true
 		notification.Notif("Death to Crouch", 1, 0.5)
 		hum.Health = 0
 	end
-	if killonhide == true and collision.CanCollide == false and dead == false then
+	if killonhide == true and dead == false and collision.CanCollide == false then
 		dead = true
 		notification.Notif("Death to Hide", 1, 0.5)
 		hum.Health = 0
