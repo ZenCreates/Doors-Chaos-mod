@@ -1,6 +1,6 @@
 .. image:: Resources/Logo.png
   :width: 300
-  :alt: Let us cook first.
+  :alt: DOORS Chaos Mod.
 
 DOORS Chaos Mod
 ^^^^^^^^^^^^^^^
