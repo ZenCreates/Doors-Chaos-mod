@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 36 | Scripts: 2 | Modules: 3
+-- Instances: 39 | Scripts: 2 | Modules: 3
 local G2L = {};
 
 -- StarterGui.ChaosMod
@@ -316,6 +316,26 @@ G2L["23"] = Instance.new("UIStroke", G2L["22"]);
 G2L["24"] = Instance.new("ModuleScript", G2L["1f"]);
 
 
+-- StarterGui.ChaosMod.GameUI.ModuleScript.Sounds
+G2L["25"] = Instance.new("Folder", G2L["24"]);
+G2L["25"]["Name"] = [[Sounds]];
+
+-- StarterGui.ChaosMod.GameUI.ModuleScript.Sounds.Explode
+G2L["26"] = Instance.new("Sound", G2L["25"]);
+G2L["26"]["Name"] = [[Explode]];
+G2L["26"]["SoundId"] = [[rbxassetid://5706776276]];
+
+-- StarterGui.ChaosMod.GameUI.ModuleScript.Sounds.Explode.ParticleEmitter
+G2L["27"] = Instance.new("ParticleEmitter", G2L["26"]);
+G2L["27"]["LightInfluence"] = 1;
+G2L["27"]["FlipbookLayout"] = Enum.ParticleFlipbookLayout.Grid8x8;
+G2L["27"]["Texture"] = [[rbxassetid://9135699136]];
+G2L["27"]["LockedToPart"] = true;
+G2L["27"]["Size"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 30),NumberSequenceKeypoint.new(1.000, 30)};
+G2L["27"]["Enabled"] = false;
+G2L["27"]["Rate"] = 40;
+G2L["27"]["FlipbookMode"] = Enum.ParticleFlipbookMode.OneShot;
+
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
 local G2L_MODULES = {};
@@ -492,7 +512,9 @@ local events = {
 			effect.Visible = true
 			sound.Looped = true
 			sound:Play()
+			humroot.Anchored = true
 			task.delay(8, function()
+				humroot.Anchored = false
 				glitch.Visible = false
 				effect.Visible = false
 				sound:Stop()
@@ -543,9 +565,24 @@ local events = {
 			end)
 		end,
 		cdt = 5,
+	},
+	explode = {
+		Name = "???",
+		Event = function()
+			local explode = script.Sounds.Explode.ParticleEmitter:Clone()
+			explode.Parent = humroot
+			script.Sounds.Explode:Play()
+			task.delay(3, function()
+				explode:Destroy()
+			end)
+			
+		end,
+		cdt = 5,
 	}
 }
-local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1"}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1", "explode"
+	
+}
 
 function settextcolor()
 	if countdown <= 3 then
