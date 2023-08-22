@@ -571,6 +571,8 @@ local events = {
 		Event = function()
 			local explode = script.Sounds.Explode.ParticleEmitter:Clone()
 			explode.Parent = humroot
+			explode.Enabled = true
+			
 			script.Sounds.Explode:Play()
 			task.delay(3, function()
 				explode:Destroy()
