@@ -591,21 +591,10 @@ local events = {
 	timothy = {
 		Name = "Timothy",
 		Event = function()
-			--local drawer = nil
-			--local RoomDescendants = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")].Assets:GetDescendants()
-			--for _, desc in pairs(RoomDescendants) do
-			--	if desc.Name == "Dresser" then
-			--		local drawer = desc.DrawerContainer
-			--	elseif desc.Name == "Table" and desc:FindFirstChild("DrawerContainer") then
-			--		local drawer = desc.DrawerContainer
-			--	end
-			--end
-			--if drawer ~= nil then
-			--	require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], 0.2)
-			--else
-			--	print("Timothy unable to spawn (no drawers in current room)")
-			--end
-			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]:FindFirstChild("DrawerContainer",true), 0.2)
+			local timdresser = game:GetService("ReplicatedStorage").FurnitureTemplate.Dresser:Clone()
+			timdresser.Parent = game.Workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")].Assets
+			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), timdresser.DrawerContainer, 0.2)
+			timdresser:Destroy()
 		end,
 		cdt = 5
 	},
@@ -636,6 +625,7 @@ end
 
 
 function module.GameMain()
+	countdown = 10
 	gameactive = true
 	script.Parent.Visible = true
 	notification.Notif("Game Started!", 1, 1)
@@ -655,9 +645,9 @@ function module.GameMain()
 		settextcolor()
 		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 		if countdown == 0 then
+			countdown = nextevent.cdt
 			spawn(nextevent.Event)
 			nextevent = events[eventslist[math.random(1,#eventslist)]]
-			countdown = nextevent.cdt
 			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			settextcolor()
 			script.Parent.NextEvent.Text = "Next Event: "..nextevent.Name
