@@ -431,8 +431,10 @@ local dead = false
 
 
 rs.RenderStepped:Connect(function()
-	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.HodlerRevive:Destroy()
-	game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.LobbyFrame.Intro.Text = "Hell :D"
+	pcall(function()
+		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.HodlerRevive:Destroy()
+		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.LobbyFrame.Intro.Text = "Hell :D"
+	end)
 	if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
 		dead = true
 		notification.Notif("Death to Crouch", 1, 0.5)
