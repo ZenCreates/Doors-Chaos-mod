@@ -376,6 +376,7 @@ G2L["2b"]["LockedToPart"] = true;
 G2L["2b"]["Size"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 30),NumberSequenceKeypoint.new(1.000, 30)};
 G2L["2b"]["Enabled"] = false;
 G2L["2b"]["Rate"] = 40;
+G2L["2b"]["EmissionDirection"] = Enum.NormalId.Front;
 G2L["2b"]["FlipbookMode"] = Enum.ParticleFlipbookMode.OneShot;
 
 -- Require G2L wrapper
