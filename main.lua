@@ -486,6 +486,9 @@ local rs = game:GetService("RunService")
 local ts = game:GetService("TweenService")
 local uis = game:GetService("UserInputService")
 local countdowntime = 10
+local currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
+local currentroomobj = game.Workspace.CurrentRooms[currentroom]
+local deathcause = game:GetService("ReplicatedStorage").GameStats["Player_"..player.Name]:FindFirstChild("DeathCause", true)
 local MainUI = game.Players.LocalPlayer.PlayerGui.MainUI
 
 --event vars
@@ -493,6 +496,7 @@ local killoncrouch = false
 local killonhide = false
 local settingsmenu = false
 local dead = false
+local thehomies = false
 
 
 local function removestuff()
@@ -506,12 +510,14 @@ rs.RenderStepped:Connect(function()
 		removestuff()
 		dead = true
 		notification.Notif("Death to Crouch", 1, 0.5)
+		deathcause.Value = "Crouching"
 		hum.Health = 0
 	end
 	if killonhide == true and dead == false and collision.CanCollide == false then
 		removestuff()
 		dead = true
 		notification.Notif("Death to Hide", 1, 0.5)
+		deathcause.Value = "Hiding"
 		hum.Health = 0
 	end
 	if settingsmenu == true and dead == false then
@@ -520,14 +526,23 @@ rs.RenderStepped:Connect(function()
 			humroot.Anchored = false
 		end
 	end
+	if thehomies == true and dead == false and collision.CanCollide == true then
+		removestuff()
+		dead = true
+		deathcause.Value = "The Homies"
+		hum.Health = 0
+	end
 end)
+
+local function spawnscreech()
+	require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
+end
 
 
 local events = {
 	blurevent = {
 		Name = "Blur",
 		Event = function()
-			countdowntime = 10
 			local blur = Instance.new("BlurEffect", game.Lighting)
 			blur.Name = "EventBlur"
 			blur.Enabled = true
@@ -577,13 +592,13 @@ local events = {
 	spook1 = {
 		Name = "???",
 		Event = function()
-			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = true
-			game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
+			MainUI.FoolJumpscare.Visible = true
+			MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
 			humroot.Anchored = true
 			task.delay(3, function()
 				humroot.Anchored = false
-				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.FoolJumpscare.Visible = false
-				game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
+				MainUI.FoolJumpscare.Visible = false
+				MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
 					end)
 		end,
 		cdt = 5,
@@ -594,7 +609,6 @@ local events = {
 			local explode = script.Sounds.Explode.ParticleEmitter:Clone()
 			explode.Parent = humroot
 			explode.Enabled = true
-			
 			script.Sounds.Explode:Play()
 			task.delay(3, function()
 				explode:Destroy()
@@ -606,7 +620,7 @@ local events = {
 	seekeyes = {
 		Name = "Seek Eyes",
 		Event = function()
-			require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], 100)
+			require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 100)
 		end,
 		cdt = 5
 	},
@@ -614,26 +628,52 @@ local events = {
 		Name = "Timothy",
 		Event = function()
 			local timdresser = game:GetService("ReplicatedStorage").FurnitureTemplate.Dresser:Clone()
-			timdresser.Parent = game.Workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")].Assets
+			timdresser.Parent = currentroomobj.Assets
 			require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), timdresser.DrawerContainer, 0.2)
 			timdresser:Destroy()
 		end,
 		cdt = 5
 	},
 	screechx10 = {
-		Name = "10 Screeches",
+		Name = "ScreecheS",
 		Event = function()
 			local i = 1
 			while i <= 10 do
-				require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
+				spawn(spawnscreech())
 				i += 1
+				task.wait(0.3)
 			end
 		end,
 		cdt = 10
+	},
+	halt10 = {
+		Name = "The Homies",
+		Event = function()
+			require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(MainUI.Initiator.Main_Game),currentroomobj)
+			local halts = 0
+			repeat 
+				task.wait(0.1)
+				require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(MainUI.Initiator.Main_Game),currentroomobj)
+				halts = halts +1
+			until halts == 10
+			task.delay(7, function()
+				local number = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
+				game.Players.LocalPlayer:SetAttribute("CurrentRoom", number +1)
+				task.delay(0.7, function()
+					game.Players.LocalPlayer:SetAttribute("CurrentRoom", number)
+				end)
+			end)
+		end,
+		cdt = 5
 	}
 }
-local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "spook1", "explode", "seekeyes", "timothy", "screechx10"}
-local testeventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy"}
+local blacklist = {"spook1"}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy", "halt10"}
+for i,v in blacklist do
+	pcall(function()
+		table.remove(eventslist, table.find(events, blacklist[i]))
+	end)
+end
 -- spook1 and screechx10 are disabled because they're annoying for testing
 
 function settextcolor()
@@ -689,7 +729,6 @@ function module.PauseGame()
 end
 
 return module
-
 end;
 };
 -- StarterGui.ChaosMod.MainMenu.Holder.Play.LocalScript
