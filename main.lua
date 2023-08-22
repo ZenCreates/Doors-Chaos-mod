@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 39 | Scripts: 2 | Modules: 3
+-- Instances: 40 | Scripts: 2 | Modules: 3
 local G2L = {};
 
 -- StarterGui.ChaosMod
@@ -336,6 +336,23 @@ G2L["27"]["Enabled"] = false;
 G2L["27"]["Rate"] = 40;
 G2L["27"]["FlipbookMode"] = Enum.ParticleFlipbookMode.OneShot;
 
+-- StarterGui.ChaosMod.GameUI.FocusText
+G2L["28"] = Instance.new("TextLabel", G2L["1f"]);
+G2L["28"]["TextWrapped"] = true;
+G2L["28"]["BorderSizePixel"] = 0;
+G2L["28"]["TextScaled"] = true;
+G2L["28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["28"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["28"]["TextSize"] = 14;
+G2L["28"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
+G2L["28"]["Size"] = UDim2.new(0, 312, 0, 67);
+G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["28"]["Text"] = [[Why are you tabbed out?]];
+G2L["28"]["Name"] = [[FocusText]];
+G2L["28"]["Visible"] = false;
+G2L["28"]["BackgroundTransparency"] = 1;
+G2L["28"]["Position"] = UDim2.new(0.39031943678855896, 0, 0.7258620858192444, 0);
+
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
 local G2L_MODULES = {};
@@ -441,10 +458,8 @@ local humroot:Part = player.Character:WaitForChild("HumanoidRootPart")
 local collision:Part = player.Character:FindFirstChild("Collision")
 local rs = game:GetService("RunService")
 local ts = game:GetService("TweenService")
+local uis = game:GetService("UserInputService")
 local countdowntime = 10
-
-
-
 
 --event vars
 local killoncrouch = false
@@ -603,6 +618,12 @@ function module.GameMain()
 	script.Parent.Position = UDim2.new(1,0,0,0)
 	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,0,0)}):Play()
 	while gameactive == true and hum.Health ~= 0 do
+		uis.WindowFocusReleased:Connect(function()
+			script.Parent.FocusText.Visible = true
+		end)
+		uis.WindowFocused:Connect(function()
+			script.Parent.FocusText.Visible = false
+		end)
 		countdown = countdown - 1
 		--print(countdown)
 		settextcolor()
