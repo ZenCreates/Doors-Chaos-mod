@@ -479,6 +479,7 @@ local events = {
 				blur:Destroy()
 			end)
 		end,
+		cdt = 10,
 	},
 	glitchevent = {
 		Name = "Glitch",
