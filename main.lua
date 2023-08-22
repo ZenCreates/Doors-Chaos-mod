@@ -626,11 +626,11 @@ local events = {
 		cdt = 5,
 	},
 	seekeyes = {
-		Name = "Seek Eyes",
+		Name = "???",
 		Event = function()
 			require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 1000)
 		end,
-		cdt = 5
+		cdt = 3
 	},
 	timothy = {
 		Name = "Timothy",
