@@ -681,7 +681,7 @@ function module.GameMain()
 	script.Parent.TimetoNext.Text = "dead 💀"
 	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(1,0,0,0)}):Play()
 	script.Parent.Parent.MainMenu.EventsSurvived.Visible = true
-	script.Parent.EventsSurvived.Text = "Events Survived: "..numevents
+	script.Parent.Parent.MainMenu.EventsSurvived.Text = "Events Survived: "..numevents
 end
 
 function module.PauseGame()
