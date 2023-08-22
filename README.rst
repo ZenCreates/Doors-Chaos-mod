@@ -1,3 +1,7 @@
+.. image:: Resources/Logo.png
+  :width: 300
+  :alt: Let us cook first.
+
 DOORS Chaos Mod
 ^^^^^^^^^^^^^^^
 A mod for Doors that makes the game much harder
