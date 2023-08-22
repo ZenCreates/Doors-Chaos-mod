@@ -648,7 +648,7 @@ local events = {
 				task.wait(0.01)
 				require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), timdresser.DrawerContainer, 0)
 				tims = tims +1
-			until tims == 100
+			until tims == 50
 			timdresser:Destroy()
 		end,
 		cdt = 5
@@ -689,13 +689,7 @@ local events = {
 		cdt = 5
 	}
 }
-local blacklist = {"spook1"}
 local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy", "halt10"}
-for i,v in blacklist do
-	pcall(function()
-		table.remove(eventslist, table.find(events, blacklist[i]))
-	end)
-end
 -- spook1 and screechx10 are disabled because they're annoying for testing
 
 function settextcolor()
