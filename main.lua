@@ -431,7 +431,7 @@ local killoncrouch = false
 rs.RenderStepped:Connect(function()
 	if killoncrouch == true and collision.CollisionGroupId == 10 then
 		hum.Health = 0
-		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.MainFrame.Intro.Text = "Hell :D"
+		game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.LobbyFrame.Intro.Text = "Hell :D"
 	end
 end)
 
