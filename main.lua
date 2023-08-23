@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 115 | Scripts: 4 | Modules: 3
+-- Instances: 115 | Scripts: 3 | Modules: 4
 local G2L = {};
 
 -- StarterGui.ChaosMod
@@ -501,27 +501,27 @@ G2L["3a"] = Instance.new("UIGradient", G2L["38"]);
 G2L["3a"]["Rotation"] = -90;
 G2L["3a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(148, 255, 129))};
 
--- StarterGui.ChaosMod.DevMenu
+-- StarterGui.ChaosMod.DevMenuWIP
 G2L["3b"] = Instance.new("Frame", G2L["1"]);
 G2L["3b"]["BorderSizePixel"] = 0;
 G2L["3b"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3b"]["Size"] = UDim2.new(0, 771, 0, 580);
 G2L["3b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3b"]["Visible"] = false;
-G2L["3b"]["Name"] = [[DevMenu]];
+G2L["3b"]["Name"] = [[DevMenuWIP]];
 
--- StarterGui.ChaosMod.DevMenu.UIGradient
+-- StarterGui.ChaosMod.DevMenuWIP.UIGradient
 G2L["3c"] = Instance.new("UIGradient", G2L["3b"]);
 G2L["3c"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.38251370191574097),NumberSequenceKeypoint.new(0.457, 0.4863387942314148),NumberSequenceKeypoint.new(1.000, 1)};
 G2L["3c"]["Rotation"] = 90;
 
--- StarterGui.ChaosMod.DevMenu.UIListLayout
+-- StarterGui.ChaosMod.DevMenuWIP.UIListLayout
 G2L["3d"] = Instance.new("UIListLayout", G2L["3b"]);
 G2L["3d"]["FillDirection"] = Enum.FillDirection.Horizontal;
 G2L["3d"]["Padding"] = UDim.new(0, 19);
 G2L["3d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
--- StarterGui.ChaosMod.DevMenu.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Spacer
 G2L["3e"] = Instance.new("Frame", G2L["3b"]);
 G2L["3e"]["BorderSizePixel"] = 0;
 G2L["3e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -530,7 +530,7 @@ G2L["3e"]["LayoutOrder"] = -1;
 G2L["3e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3e"]["Name"] = [[Spacer]];
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage
 G2L["3f"] = Instance.new("ScrollingFrame", G2L["3b"]);
 G2L["3f"]["Active"] = true;
 G2L["3f"]["BorderSizePixel"] = 0;
@@ -542,12 +542,12 @@ G2L["3f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3f"]["Position"] = UDim2.new(0.028831563889980316, 0, 0, 0);
 G2L["3f"]["Name"] = [[Lethal_Damage]];
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.UIListLayout
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.UIListLayout
 G2L["40"] = Instance.new("UIListLayout", G2L["3f"]);
 G2L["40"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 G2L["40"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.RLGL
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.RLGL
 G2L["41"] = Instance.new("TextButton", G2L["3f"]);
 G2L["41"]["TextWrapped"] = true;
 G2L["41"]["BorderSizePixel"] = 0;
@@ -563,7 +563,7 @@ G2L["41"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["41"]["Text"] = [[Red Light Green Light]];
 G2L["41"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.Homies
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Homies
 G2L["42"] = Instance.new("TextButton", G2L["3f"]);
 G2L["42"]["TextWrapped"] = true;
 G2L["42"]["BorderSizePixel"] = 0;
@@ -579,7 +579,7 @@ G2L["42"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["42"]["Text"] = [[The Homies]];
 G2L["42"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.StandDeath
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.StandDeath
 G2L["43"] = Instance.new("TextButton", G2L["3f"]);
 G2L["43"]["TextWrapped"] = true;
 G2L["43"]["BorderSizePixel"] = 0;
@@ -595,7 +595,7 @@ G2L["43"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["43"]["Text"] = [[Crouch or Die]];
 G2L["43"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.HideDeath
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.HideDeath
 G2L["44"] = Instance.new("TextButton", G2L["3f"]);
 G2L["44"]["TextWrapped"] = true;
 G2L["44"]["BorderSizePixel"] = 0;
@@ -611,7 +611,7 @@ G2L["44"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["44"]["Text"] = [[Death on Hide]];
 G2L["44"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.CrouchDeath
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.CrouchDeath
 G2L["45"] = Instance.new("TextButton", G2L["3f"]);
 G2L["45"]["TextWrapped"] = true;
 G2L["45"]["BorderSizePixel"] = 0;
@@ -626,7 +626,7 @@ G2L["45"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["45"]["Text"] = [[Death on Crouch]];
 G2L["45"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.CrouchDeathTime
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.CrouchDeathTime
 G2L["46"] = Instance.new("TextBox", G2L["3f"]);
 G2L["46"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["46"]["BorderSizePixel"] = 0;
@@ -644,7 +644,7 @@ G2L["46"]["Text"] = [[10]];
 G2L["46"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["46"]["Name"] = [[CrouchDeathTime]];
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.HideDeathTime
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.HideDeathTime
 G2L["47"] = Instance.new("TextBox", G2L["3f"]);
 G2L["47"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["47"]["BorderSizePixel"] = 0;
@@ -662,7 +662,7 @@ G2L["47"]["Text"] = [[10]];
 G2L["47"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["47"]["Name"] = [[HideDeathTime]];
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.StandDeathTime
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.StandDeathTime
 G2L["48"] = Instance.new("TextBox", G2L["3f"]);
 G2L["48"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["48"]["BorderSizePixel"] = 0;
@@ -680,9 +680,8 @@ G2L["48"]["Text"] = [[10]];
 G2L["48"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["48"]["Name"] = [[StandDeathTime]];
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.HomiesTime
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.HomiesTime
 G2L["49"] = Instance.new("TextBox", G2L["3f"]);
-G2L["49"]["CursorPosition"] = -1;
 G2L["49"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["49"]["BorderSizePixel"] = 0;
 G2L["49"]["TextSize"] = 14;
@@ -699,9 +698,8 @@ G2L["49"]["Text"] = [[7]];
 G2L["49"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["49"]["Name"] = [[HomiesTime]];
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.RLGLCount
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.RLGLCount
 G2L["4a"] = Instance.new("TextBox", G2L["3f"]);
-G2L["4a"]["CursorPosition"] = -1;
 G2L["4a"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["4a"]["BorderSizePixel"] = 0;
 G2L["4a"]["TextSize"] = 14;
@@ -718,7 +716,7 @@ G2L["4a"]["Text"] = [[6]];
 G2L["4a"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["4a"]["Name"] = [[RLGLCount]];
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.Label
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Label
 G2L["4b"] = Instance.new("TextLabel", G2L["3f"]);
 G2L["4b"]["TextWrapped"] = true;
 G2L["4b"]["BorderSizePixel"] = 0;
@@ -734,7 +732,7 @@ G2L["4b"]["Text"] = [[Lethal / Damage]];
 G2L["4b"]["Name"] = [[Label]];
 G2L["4b"]["BackgroundTransparency"] = 1;
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Spacer
 G2L["4c"] = Instance.new("TextLabel", G2L["3f"]);
 G2L["4c"]["BorderSizePixel"] = 0;
 G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -749,7 +747,7 @@ G2L["4c"]["Name"] = [[Spacer]];
 G2L["4c"]["BackgroundTransparency"] = 1;
 G2L["4c"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Spacer
 G2L["4d"] = Instance.new("TextLabel", G2L["3f"]);
 G2L["4d"]["BorderSizePixel"] = 0;
 G2L["4d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -764,7 +762,7 @@ G2L["4d"]["Name"] = [[Spacer]];
 G2L["4d"]["BackgroundTransparency"] = 1;
 G2L["4d"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Spacer
 G2L["4e"] = Instance.new("TextLabel", G2L["3f"]);
 G2L["4e"]["BorderSizePixel"] = 0;
 G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -779,7 +777,7 @@ G2L["4e"]["Name"] = [[Spacer]];
 G2L["4e"]["BackgroundTransparency"] = 1;
 G2L["4e"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Spacer
 G2L["4f"] = Instance.new("TextLabel", G2L["3f"]);
 G2L["4f"]["BorderSizePixel"] = 0;
 G2L["4f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -794,7 +792,7 @@ G2L["4f"]["Name"] = [[Spacer]];
 G2L["4f"]["BackgroundTransparency"] = 1;
 G2L["4f"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Spacer
 G2L["50"] = Instance.new("TextLabel", G2L["3f"]);
 G2L["50"]["BorderSizePixel"] = 0;
 G2L["50"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -809,7 +807,7 @@ G2L["50"]["Name"] = [[Spacer]];
 G2L["50"]["BackgroundTransparency"] = 1;
 G2L["50"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.Explosion
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Explosion
 G2L["51"] = Instance.new("TextButton", G2L["3f"]);
 G2L["51"]["TextWrapped"] = true;
 G2L["51"]["BorderSizePixel"] = 0;
@@ -825,7 +823,7 @@ G2L["51"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["51"]["Text"] = [[Explosion]];
 G2L["51"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.ExplosionTime
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.ExplosionTime
 G2L["52"] = Instance.new("TextBox", G2L["3f"]);
 G2L["52"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["52"]["BorderSizePixel"] = 0;
@@ -843,7 +841,7 @@ G2L["52"]["Text"] = [[3]];
 G2L["52"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["52"]["Name"] = [[ExplosionTime]];
 
--- StarterGui.ChaosMod.DevMenu.Lethal_Damage.ExplosionDamage
+-- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.ExplosionDamage
 G2L["53"] = Instance.new("TextBox", G2L["3f"]);
 G2L["53"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["53"]["BorderSizePixel"] = 0;
@@ -861,7 +859,7 @@ G2L["53"]["Text"] = [[10]];
 G2L["53"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["53"]["Name"] = [[ExplosionDamage]];
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares
 G2L["54"] = Instance.new("ScrollingFrame", G2L["3b"]);
 G2L["54"]["Active"] = true;
 G2L["54"]["BorderSizePixel"] = 0;
@@ -873,12 +871,12 @@ G2L["54"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["54"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["54"]["Name"] = [[Entities_Scares]];
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.UIListLayout
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.UIListLayout
 G2L["55"] = Instance.new("UIListLayout", G2L["54"]);
 G2L["55"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 G2L["55"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.GlitchAmount
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.GlitchAmount
 G2L["56"] = Instance.new("TextBox", G2L["54"]);
 G2L["56"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["56"]["BorderSizePixel"] = 0;
@@ -896,7 +894,7 @@ G2L["56"]["Text"] = [[10]];
 G2L["56"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["56"]["Name"] = [[GlitchAmount]];
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.GlitchJS
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.GlitchJS
 G2L["57"] = Instance.new("TextButton", G2L["54"]);
 G2L["57"]["TextWrapped"] = true;
 G2L["57"]["BorderSizePixel"] = 0;
@@ -911,7 +909,7 @@ G2L["57"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["57"]["Text"] = [[Glitch Scare]];
 G2L["57"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.ScreechAmount
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.ScreechAmount
 G2L["58"] = Instance.new("TextBox", G2L["54"]);
 G2L["58"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["58"]["BorderSizePixel"] = 0;
@@ -929,7 +927,7 @@ G2L["58"]["Text"] = [[10]];
 G2L["58"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["58"]["Name"] = [[ScreechAmount]];
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.ScreechJS
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.ScreechJS
 G2L["59"] = Instance.new("TextButton", G2L["54"]);
 G2L["59"]["TextWrapped"] = true;
 G2L["59"]["BorderSizePixel"] = 0;
@@ -945,7 +943,7 @@ G2L["59"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["59"]["Text"] = [[Screech Scare]];
 G2L["59"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.TimothyAmount
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.TimothyAmount
 G2L["5a"] = Instance.new("TextBox", G2L["54"]);
 G2L["5a"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["5a"]["BorderSizePixel"] = 0;
@@ -963,7 +961,7 @@ G2L["5a"]["Text"] = [[50]];
 G2L["5a"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["5a"]["Name"] = [[TimothyAmount]];
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.FoolsTime
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.FoolsTime
 G2L["5b"] = Instance.new("TextBox", G2L["54"]);
 G2L["5b"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["5b"]["BorderSizePixel"] = 0;
@@ -981,7 +979,7 @@ G2L["5b"]["Text"] = [[3]];
 G2L["5b"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["5b"]["Name"] = [[FoolsTime]];
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.TimothyJS
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.TimothyJS
 G2L["5c"] = Instance.new("TextButton", G2L["54"]);
 G2L["5c"]["TextWrapped"] = true;
 G2L["5c"]["BorderSizePixel"] = 0;
@@ -997,7 +995,7 @@ G2L["5c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["5c"]["Text"] = [[Timothy Scare]];
 G2L["5c"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.FoolsJS
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.FoolsJS
 G2L["5d"] = Instance.new("TextButton", G2L["54"]);
 G2L["5d"]["TextWrapped"] = true;
 G2L["5d"]["BorderSizePixel"] = 0;
@@ -1013,7 +1011,7 @@ G2L["5d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["5d"]["Text"] = [[Fools Scare]];
 G2L["5d"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.Label
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.Label
 G2L["5e"] = Instance.new("TextLabel", G2L["54"]);
 G2L["5e"]["TextWrapped"] = true;
 G2L["5e"]["BorderSizePixel"] = 0;
@@ -1029,7 +1027,7 @@ G2L["5e"]["Text"] = [[Entities / Scares]];
 G2L["5e"]["Name"] = [[Label]];
 G2L["5e"]["BackgroundTransparency"] = 1;
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.Spacer
 G2L["5f"] = Instance.new("TextLabel", G2L["54"]);
 G2L["5f"]["BorderSizePixel"] = 0;
 G2L["5f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1044,7 +1042,7 @@ G2L["5f"]["Name"] = [[Spacer]];
 G2L["5f"]["BackgroundTransparency"] = 1;
 G2L["5f"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.Spacer
 G2L["60"] = Instance.new("TextLabel", G2L["54"]);
 G2L["60"]["BorderSizePixel"] = 0;
 G2L["60"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1059,7 +1057,7 @@ G2L["60"]["Name"] = [[Spacer]];
 G2L["60"]["BackgroundTransparency"] = 1;
 G2L["60"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.Entities_Scares.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.Spacer
 G2L["61"] = Instance.new("TextLabel", G2L["54"]);
 G2L["61"]["BorderSizePixel"] = 0;
 G2L["61"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1074,7 +1072,7 @@ G2L["61"]["Name"] = [[Spacer]];
 G2L["61"]["BackgroundTransparency"] = 1;
 G2L["61"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.Visuals
+-- StarterGui.ChaosMod.DevMenuWIP.Visuals
 G2L["62"] = Instance.new("ScrollingFrame", G2L["3b"]);
 G2L["62"]["Active"] = true;
 G2L["62"]["BorderSizePixel"] = 0;
@@ -1087,7 +1085,7 @@ G2L["62"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["62"]["Position"] = UDim2.new(0.5071336030960083, 0, 0, 0);
 G2L["62"]["Name"] = [[Visuals]];
 
--- StarterGui.ChaosMod.DevMenu.Visuals.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Visuals.Spacer
 G2L["63"] = Instance.new("TextLabel", G2L["62"]);
 G2L["63"]["BorderSizePixel"] = 0;
 G2L["63"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1102,7 +1100,7 @@ G2L["63"]["Name"] = [[Spacer]];
 G2L["63"]["BackgroundTransparency"] = 1;
 G2L["63"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.Visuals.SeekEyes
+-- StarterGui.ChaosMod.DevMenuWIP.Visuals.SeekEyes
 G2L["64"] = Instance.new("TextButton", G2L["62"]);
 G2L["64"]["TextWrapped"] = true;
 G2L["64"]["BorderSizePixel"] = 0;
@@ -1118,7 +1116,7 @@ G2L["64"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["64"]["Text"] = [[Seek Eyes]];
 G2L["64"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Visuals.BlurEffect
+-- StarterGui.ChaosMod.DevMenuWIP.Visuals.BlurEffect
 G2L["65"] = Instance.new("TextButton", G2L["62"]);
 G2L["65"]["TextWrapped"] = true;
 G2L["65"]["BorderSizePixel"] = 0;
@@ -1133,7 +1131,7 @@ G2L["65"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["65"]["Text"] = [[Blur Effect]];
 G2L["65"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Visuals.BlurTime
+-- StarterGui.ChaosMod.DevMenuWIP.Visuals.BlurTime
 G2L["66"] = Instance.new("TextBox", G2L["62"]);
 G2L["66"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["66"]["BorderSizePixel"] = 0;
@@ -1151,7 +1149,7 @@ G2L["66"]["Text"] = [[10]];
 G2L["66"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["66"]["Name"] = [[BlurTime]];
 
--- StarterGui.ChaosMod.DevMenu.Visuals.EyesAmount
+-- StarterGui.ChaosMod.DevMenuWIP.Visuals.EyesAmount
 G2L["67"] = Instance.new("TextBox", G2L["62"]);
 G2L["67"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["67"]["BorderSizePixel"] = 0;
@@ -1169,7 +1167,7 @@ G2L["67"]["Text"] = [[1000]];
 G2L["67"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["67"]["Name"] = [[EyesAmount]];
 
--- StarterGui.ChaosMod.DevMenu.Visuals.EyesLoopAmount
+-- StarterGui.ChaosMod.DevMenuWIP.Visuals.EyesLoopAmount
 G2L["68"] = Instance.new("TextBox", G2L["62"]);
 G2L["68"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["68"]["BorderSizePixel"] = 0;
@@ -1187,7 +1185,7 @@ G2L["68"]["Text"] = [[5]];
 G2L["68"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["68"]["Name"] = [[EyesLoopAmount]];
 
--- StarterGui.ChaosMod.DevMenu.Visuals.Label
+-- StarterGui.ChaosMod.DevMenuWIP.Visuals.Label
 G2L["69"] = Instance.new("TextLabel", G2L["62"]);
 G2L["69"]["TextWrapped"] = true;
 G2L["69"]["BorderSizePixel"] = 0;
@@ -1203,7 +1201,7 @@ G2L["69"]["Text"] = [[Visuals]];
 G2L["69"]["Name"] = [[Label]];
 G2L["69"]["BackgroundTransparency"] = 1;
 
--- StarterGui.ChaosMod.DevMenu.Visuals.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Visuals.Spacer
 G2L["6a"] = Instance.new("TextLabel", G2L["62"]);
 G2L["6a"]["BorderSizePixel"] = 0;
 G2L["6a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1218,12 +1216,12 @@ G2L["6a"]["Name"] = [[Spacer]];
 G2L["6a"]["BackgroundTransparency"] = 1;
 G2L["6a"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.Visuals.UIListLayout
+-- StarterGui.ChaosMod.DevMenuWIP.Visuals.UIListLayout
 G2L["6b"] = Instance.new("UIListLayout", G2L["62"]);
 G2L["6b"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 G2L["6b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
--- StarterGui.ChaosMod.DevMenu.Annoyances
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances
 G2L["6c"] = Instance.new("ScrollingFrame", G2L["3b"]);
 G2L["6c"]["Active"] = true;
 G2L["6c"]["BorderSizePixel"] = 0;
@@ -1235,12 +1233,12 @@ G2L["6c"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["6c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["6c"]["Name"] = [[Annoyances]];
 
--- StarterGui.ChaosMod.DevMenu.Annoyances.UIListLayout
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances.UIListLayout
 G2L["6d"] = Instance.new("UIListLayout", G2L["6c"]);
 G2L["6d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
 G2L["6d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
--- StarterGui.ChaosMod.DevMenu.Annoyances.SlimedTime
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances.SlimedTime
 G2L["6e"] = Instance.new("TextBox", G2L["6c"]);
 G2L["6e"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
 G2L["6e"]["BorderSizePixel"] = 0;
@@ -1258,7 +1256,7 @@ G2L["6e"]["Text"] = [[20]];
 G2L["6e"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
 G2L["6e"]["Name"] = [[SlimedTime]];
 
--- StarterGui.ChaosMod.DevMenu.Annoyances.SettingsPopup
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances.SettingsPopup
 G2L["6f"] = Instance.new("TextButton", G2L["6c"]);
 G2L["6f"]["TextWrapped"] = true;
 G2L["6f"]["BorderSizePixel"] = 0;
@@ -1274,7 +1272,7 @@ G2L["6f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["6f"]["Text"] = [[Settings Popup]];
 G2L["6f"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Annoyances.Slimed
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Slimed
 G2L["70"] = Instance.new("TextButton", G2L["6c"]);
 G2L["70"]["TextWrapped"] = true;
 G2L["70"]["BorderSizePixel"] = 0;
@@ -1289,7 +1287,7 @@ G2L["70"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["70"]["Text"] = [[Get Slimed]];
 G2L["70"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenu.Annoyances.Label
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Label
 G2L["71"] = Instance.new("TextLabel", G2L["6c"]);
 G2L["71"]["TextWrapped"] = true;
 G2L["71"]["BorderSizePixel"] = 0;
@@ -1305,7 +1303,7 @@ G2L["71"]["Text"] = [[Annoyances]];
 G2L["71"]["Name"] = [[Label]];
 G2L["71"]["BackgroundTransparency"] = 1;
 
--- StarterGui.ChaosMod.DevMenu.Annoyances.Spacer
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Spacer
 G2L["72"] = Instance.new("TextLabel", G2L["6c"]);
 G2L["72"]["BorderSizePixel"] = 0;
 G2L["72"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1320,9 +1318,9 @@ G2L["72"]["Name"] = [[Spacer]];
 G2L["72"]["BackgroundTransparency"] = 1;
 G2L["72"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
--- StarterGui.ChaosMod.DevMenu.DevMenuScript
-G2L["73"] = Instance.new("LocalScript", G2L["3b"]);
-G2L["73"]["Name"] = [[DevMenuScript]];
+-- StarterGui.ChaosMod.DevMenuWIP.DevModule
+G2L["73"] = Instance.new("ModuleScript", G2L["3b"]);
+G2L["73"]["Name"] = [[DevModule]];
 
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
@@ -1776,6 +1774,421 @@ end
 return module
 end;
 };
+G2L_MODULES[G2L["73"]] = {
+Closure = function()
+    local script = G2L["73"];
+local MainFrame = script.Parent
+local LDFrame = MainFrame.Lethal_Damage
+local ESFrame = MainFrame.Entities_Scares
+local ViFrame = MainFrame.Visuals
+local AnFrame = MainFrame.Annoyances
+
+-- --Open/Close
+
+local uis = game:GetService("UserInputService")
+local cmoudule = require(script.Parent.Parent.CursorHandeler)
+local active = true
+while wait() do
+	uis.InputBegan:Connect(function(input)
+		if input.KeyCode == Enum.KeyCode.F then
+			if active then
+				active = false
+				MainFrame.Visible = false
+				cmoudule.Hide()
+			else
+				active = true
+				MainFrame.Visible = true
+				cmoudule.Show()
+			end
+		end
+	end)
+end
+
+-- --Event Functions
+
+local killoncrouch = false
+local crouchorkill = false
+local killonhide = false
+local settingsmenu = false
+local dead = false
+local thehomies = false
+local slowed = false
+local redlight = false
+local MainUI = game.Players.LocalPlayer.PlayerGui.MainUI
+local player = game.Players.LocalPlayer
+local hum:Humanoid = player.Character:WaitForChild("Humanoid")
+local humroot:Part = player.Character:WaitForChild("HumanoidRootPart")
+local collision:Part = player.Character:FindFirstChild("Collision")
+local currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
+local currentroomobj = game.Workspace.CurrentRooms[currentroom]
+local deathcause = game:GetService("ReplicatedStorage").GameStats["Player_"..player.Name]:FindFirstChild("DeathCause", true)
+local gameactive = true
+local normalwalk = hum.WalkSpeed
+local rs = game:GetService("RunService")
+
+local EventTime = 0
+local EventAmount = 0
+local EventLoop = 0
+
+
+local function removestuff()
+	task.delay(2, function()
+		MainUI:FindFirstChild("HodlerRevive").Visible = false
+	end)
+end
+
+rs.RenderStepped:Connect(function()
+	pcall(function()
+		MainUI:FindFirstChild("HodlerRevive").Visible = false
+	end)
+	currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
+	currentroomobj = game.Workspace.CurrentRooms[currentroom]
+	if hum.Health == 0 then
+		dead = true
+	end
+	if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
+		removestuff()
+		dead = true
+		deathcause.Value = "Crouching"
+		hum.Health = 0
+	end
+	if crouchorkill == true and dead == false and collision.CollisionGroupId == 2 then
+		removestuff()
+		dead = true
+		deathcause.Value = "Standing"
+		hum.Health = 0
+	end
+	if killonhide == true and dead == false and collision.CanCollide == false then
+		removestuff()
+		dead = true
+		deathcause.Value = "Hiding"
+		hum.Health = 0
+	end
+	if settingsmenu == true and dead == false then
+		if MainUI.Settings.Visible == false then
+			settingsmenu = false
+			humroot.Anchored = false
+		end
+	end
+	if thehomies == true and dead == false and collision.CanCollide == true then
+		removestuff()
+		dead = true
+		deathcause.Value = "The Homies"
+		hum.Health = 0
+	end
+	if slowed == true and dead == false then
+		hum.WalkSpeed = 4
+	end
+	if redlight == true and dead == false then
+		if hum.MoveDirection.Magnitude > 0 then
+			deathcause.Value = "빨간불"
+			hum.Health = 0
+		end
+	end
+end)
+
+local screechevent:RemoteEvent = game:GetService("ReplicatedStorage").EntityInfo.Screech
+screechevent.OnClientEvent:Connect(function(what)
+	if what == 0 then
+		hum.Health = 0
+	end
+end)
+
+local function spawnscreech()
+	require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
+end
+
+local function spawnseekeyes()
+	require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, EventAmount)
+end
+
+local events = {
+	blurevent = {
+		Name = "Blur",
+		Event = function()
+			local blur = Instance.new("BlurEffect", game.Lighting)
+			blur.Name = "EventBlur"
+			blur.Enabled = true
+			blur.Size = 38
+			task.delay(EventTime, function()
+				blur:Destroy()
+			end)
+		end,
+		cdt = 10,
+	},
+	glitchevent = {
+		Name = "Glitch",
+		Event = function()
+			local gliches = 0
+			repeat 
+				task.wait(0.01)
+				require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(MainUI.Initiator.Main_Game))
+				gliches = gliches +1
+			until gliches == EventAmount
+		end,
+		cdt = 5,
+	},
+	deathoncrouch = {
+		Name = "Death on Crouch",
+		Event = function()
+			killoncrouch = true
+			task.delay(EventTime, function()
+				killoncrouch = false
+			end)
+		end,
+		cdt = 10,
+	},
+	deathonhide = {
+		Name = "Death on Hide",
+		Event = function()
+			killonhide = true
+			task.delay(EventTime, function()
+				killonhide = false
+			end)
+		end,
+		cdt = 10,
+	},
+	settingspopup = {
+		Name = "???",
+		Event = function()
+			MainUI.Settings.Visible = true
+			settingsmenu = true
+			humroot.Anchored = true
+		end,
+		cdt = 5,
+	},
+	spook1 = {
+		Name = "???",
+		Event = function()
+			MainUI.FoolJumpscare.Visible = true
+			MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
+			humroot.Anchored = true
+			task.delay(EventTime, function()
+				humroot.Anchored = false
+				MainUI.FoolJumpscare.Visible = false
+				MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
+			end)
+		end,
+		cdt = 5,
+	},
+	explode = {
+		Name = "???",
+		Event = function()
+			local explode = script.Sounds.Explode.ParticleEmitter:Clone()
+			explode.Parent = humroot
+			explode.Enabled = true
+			script.Sounds.Explode:Play()
+			hum.Health = hum.Health - EventAmount
+			task.delay(EventTime, function()
+				explode:Destroy()
+			end)
+
+		end,
+		cdt = 5,
+	},
+	seekeyes = {
+		Name = "???",
+		Event = function()
+			local eyes = 0
+			repeat 
+				task.wait(0.3)
+				spawn(spawnseekeyes())
+				eyes = eyes +1
+			until eyes == EventLoop
+		end,
+		cdt = 3
+	},
+	timothy = {
+		Name = "???",
+		Event = function()
+			local tims = 0
+			local timdresser = game:GetService("ReplicatedStorage").FurnitureTemplate.Dresser:Clone()
+			timdresser.Parent = currentroomobj.Assets
+			repeat 
+				task.wait(0.01)
+				require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), timdresser.DrawerContainer, 0)
+				tims = tims +1
+			until tims == EventAmount
+			timdresser:Destroy()
+		end,
+		cdt = 5
+	},
+	screechx10 = {
+		Name = "ScreecheS",
+		Event = function()
+			local i = 1
+			while i <= EventAmount do
+				require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
+				i += 1
+				task.wait(0.3)
+			end
+		end,
+		cdt = 10
+	},
+	halt10 = {
+		Name = "The Homies",
+		Event = function()
+			thehomies = true
+			require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(MainUI.Initiator.Main_Game),currentroomobj)
+			local halts = 0
+			repeat 
+				task.wait(0.1)
+				require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(MainUI.Initiator.Main_Game),currentroomobj)
+				halts = halts +1
+			until halts == 10
+			task.delay(EventTime, function()
+				thehomies = false
+				local number = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
+				game.Players.LocalPlayer:SetAttribute("CurrentRoom", number +1)
+				task.delay(0.7, function()
+					game.Players.LocalPlayer:SetAttribute("CurrentRoom", number)
+				end)
+
+			end)
+		end,
+		cdt = 5
+	},
+	slow = {
+		Name = "get slimed 🔥🔥🔥",
+		Event = function()
+			slowed = true
+			task.delay(EventTime, function()
+				slowed = false
+				hum.WalkSpeed = normalwalk
+			end)
+		end,
+		cdt = 5
+	},
+	redlightgreenlight = {
+		Name = "빨간불 초록불",
+		Event = function()
+			local sounds = script.Sounds
+			local ui = script.Parent.redlightgreenlight
+			ui.Visible = true
+			ui.GreenLight.Visible = true
+			local count = EventAmount
+			while count ~= 0 and gameactive == true do
+				ui.Visible = true
+				sounds.green:Play()
+				task.wait(math.random(5,10))
+				sounds.stopmoving:Play()
+				ui.GreenLight.Visible = false
+				ui.RedLight.Visible = true
+				task.wait(0.5)
+				redlight = true
+				task.wait(math.random(4.5,9.5))
+				redlight = false
+				ui.RedLight.Visible = false
+				ui.GreenLight.Visible = true
+				count = count -1
+			end
+			ui.Visible = false
+		end,
+		cdt = 100
+	},
+	crouchordie = {
+		Name = "Crouch or Die",
+		Event = function()
+			crouchorkill = true
+			task.delay(EventTime, function()
+				crouchorkill = false
+			end)
+		end,
+		cdt = 10
+	}
+}
+
+-- --Event Spawns
+local DeathOnCrouchEvent = events["deathoncrouch"] --Time
+local DeathOnHideEvent = events["deathonhide"] --Time
+local CrouchOrDieEvent = events["crouchordie"] --Time
+local HomiesEvent = events["halt10"] --Time
+local RLGLEvent = events["redlightgreenlight"] --Amount
+local ExplosionEvent = events["explode"] --Time, Amount
+
+local GlitchEvent = events["glitchevent"] --Amount
+local TimothyEvent = events["timothy"] --Amount
+local ScreechEvent = events["screechx10"] --Amount
+local FoolsScareEvent = events["spook1"] --Time
+
+local BlurEvent = events["blurevent"] --Time
+local SeekEyesEvent = events["seekeyes"] --Amount, Loop
+
+local SlimedEvent = events["slow"] --Time
+local SettingsPopupEvent = events["settingspopup"] --None
+
+-- --Button Functions
+-- LD
+
+LDFrame.CrouchDeath.MouseButton1Click:Connect(function()
+	EventTime = LDFrame.CrouchDeathTime.Text
+	spawn(DeathOnCrouchEvent.event)
+end)
+LDFrame.HideDeath.MouseButton1Click:Connect(function()
+	EventTime = LDFrame.HideDeathTime.Text
+	spawn(DeathOnHideEvent.event)
+end)
+LDFrame.StandDeath.MouseButton1Click:Connect(function()
+	EventTime = LDFrame.StandDeathTime.Text
+	spawn(CrouchOrDieEvent.event)
+end)
+LDFrame.Homies.MouseButton1Click:Connect(function()
+	EventTime = LDFrame.HomiesTime.Text
+	spawn(HomiesEvent.event)
+end)
+LDFrame.RLGL.MouseButton1Click:Connect(function()
+	EventAmount = LDFrame.RLGLCount.Text
+	spawn(RLGLEvent.event)
+end)
+LDFrame.Explosion.MouseButton1Click:Connect(function()
+	EventTime = LDFrame.ExplosionTime.Text
+	EventAmount = LDFrame.ExplosionDamage.Text
+	spawn(ExplosionEvent.event)
+	print("Explosion: "..tostring(EventTime).." | "..tostring(EventAmount))
+end)
+
+-- ES
+
+ESFrame.GlitchJS.MouseButton1Click:Connect(function()
+	EventAmount = ESFrame.GlitchAmount.Text
+	spawn(GlitchEvent.event)
+end)
+ESFrame.TimothyJS.MouseButton1Click:Connect(function()
+	EventAmount = ESFrame.TimothyAmount.Text
+	spawn(TimothyEvent.event)
+end)
+ESFrame.ScreechJS.MouseButton1Click:Connect(function()
+	EventAmount = ESFrame.ScreechAmount.Text
+	spawn(ScreechEvent.event)
+end)
+ESFrame.FoolsJS.MouseButton1Click:Connect(function()
+	EventTime = ESFrame.FoolsTime.Text
+	spawn(FoolsScareEvent.event)
+end)
+
+-- Vi
+
+ViFrame.BlurEffect.MouseButton1Click:Connect(function()
+	EventTime = ViFrame.BlurTime.Text
+	spawn(BlurEvent.Event)
+end)
+ViFrame.SeekEyes.MouseButton1Click:Connect(function()
+	EventAmount = ViFrame.EyesAmount.Text
+	EventLoop = ViFrame.EyesLoopAmount.Text
+	spawn(SeekEyesEvent.Event)
+end)
+
+-- An
+
+AnFrame.Slimed.MouseButton1Click:Connect(function()
+	EventTime = AnFrame.SlimedTime.Text
+	spawn(SlimedEvent.Event)
+end)
+AnFrame.SettingsPopup.MouseButton1Click:Connect(function()
+	spawn(SettingsPopupEvent.Event)
+end)
+end;
+};
 -- StarterGui.ChaosMod.MainMenu.Holder.Play.LocalScript
 local function C_10()
 local script = G2L["10"];
@@ -1880,419 +2293,5 @@ local script = G2L["1c"];
 	end)
 end;
 task.spawn(C_1c);
--- StarterGui.ChaosMod.DevMenu.DevMenuScript
-local function C_73()
-local script = G2L["73"];
-	local MainFrame = script.Parent
-	local LDFrame = MainFrame.Lethal_Damage
-	local ESFrame = MainFrame.Entities_Scares
-	local ViFrame = MainFrame.Visuals
-	local AnFrame = MainFrame.Annoyances
-	
-	-- --Open/Close
-	
-	local uis = game:GetService("UserInputService")
-	local cmoudule = require(script.Parent.Parent.CursorHandeler)
-	local active = true
-	while wait() do
-		uis.InputBegan:Connect(function(input)
-			if input.KeyCode == Enum.KeyCode.F then
-				if active then
-					active = false
-					MainFrame.Visible = false
-					cmoudule.Hide()
-				else
-					active = true
-					MainFrame.Visible = true
-					cmoudule.Show()
-				end
-			end
-		end)
-	end
-	
-	-- --Event Functions
-	
-	local killoncrouch = false
-	local crouchorkill = false
-	local killonhide = false
-	local settingsmenu = false
-	local dead = false
-	local thehomies = false
-	local slowed = false
-	local redlight = false
-	local MainUI = game.Players.LocalPlayer.PlayerGui.MainUI
-	local player = game.Players.LocalPlayer
-	local hum:Humanoid = player.Character:WaitForChild("Humanoid")
-	local humroot:Part = player.Character:WaitForChild("HumanoidRootPart")
-	local collision:Part = player.Character:FindFirstChild("Collision")
-	local currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
-	local currentroomobj = game.Workspace.CurrentRooms[currentroom]
-	local deathcause = game:GetService("ReplicatedStorage").GameStats["Player_"..player.Name]:FindFirstChild("DeathCause", true)
-	local gameactive = true
-	local normalwalk = hum.WalkSpeed
-	local rs = game:GetService("RunService")
-	
-	local EventTime = 0
-	local EventAmount = 0
-	local EventLoop = 0
-	
-	
-	local function removestuff()
-		task.delay(2, function()
-			MainUI:FindFirstChild("HodlerRevive").Visible = false
-		end)
-	end
-	
-	rs.RenderStepped:Connect(function()
-		pcall(function()
-			MainUI:FindFirstChild("HodlerRevive").Visible = false
-		end)
-		currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
-		currentroomobj = game.Workspace.CurrentRooms[currentroom]
-		if hum.Health == 0 then
-			dead = true
-		end
-		if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
-			removestuff()
-			dead = true
-			deathcause.Value = "Crouching"
-			hum.Health = 0
-		end
-		if crouchorkill == true and dead == false and collision.CollisionGroupId == 2 then
-			removestuff()
-			dead = true
-			deathcause.Value = "Standing"
-			hum.Health = 0
-		end
-		if killonhide == true and dead == false and collision.CanCollide == false then
-			removestuff()
-			dead = true
-			deathcause.Value = "Hiding"
-			hum.Health = 0
-		end
-		if settingsmenu == true and dead == false then
-			if MainUI.Settings.Visible == false then
-				settingsmenu = false
-				humroot.Anchored = false
-			end
-		end
-		if thehomies == true and dead == false and collision.CanCollide == true then
-			removestuff()
-			dead = true
-			deathcause.Value = "The Homies"
-			hum.Health = 0
-		end
-		if slowed == true and dead == false then
-			hum.WalkSpeed = 4
-		end
-		if redlight == true and dead == false then
-			if hum.MoveDirection.Magnitude > 0 then
-				deathcause.Value = "빨간불"
-				hum.Health = 0
-			end
-		end
-	end)
-	
-	local screechevent:RemoteEvent = game:GetService("ReplicatedStorage").EntityInfo.Screech
-	screechevent.OnClientEvent:Connect(function(what)
-		if what == 0 then
-			hum.Health = 0
-		end
-	end)
-	
-	local function spawnscreech()
-		require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
-	end
-	
-	local function spawnseekeyes()
-		require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, EventAmount)
-	end
-	
-	local events = {
-		blurevent = {
-			Name = "Blur",
-			Event = function()
-				local blur = Instance.new("BlurEffect", game.Lighting)
-				blur.Name = "EventBlur"
-				blur.Enabled = true
-				blur.Size = 38
-				task.delay(EventTime, function()
-					blur:Destroy()
-				end)
-			end,
-			cdt = 10,
-		},
-		glitchevent = {
-			Name = "Glitch",
-			Event = function()
-				local gliches = 0
-				repeat 
-					task.wait(0.01)
-					require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(MainUI.Initiator.Main_Game))
-					gliches = gliches +1
-				until gliches == EventAmount
-			end,
-			cdt = 5,
-		},
-		deathoncrouch = {
-			Name = "Death on Crouch",
-			Event = function()
-				killoncrouch = true
-				task.delay(EventTime, function()
-					killoncrouch = false
-				end)
-			end,
-			cdt = 10,
-		},
-		deathonhide = {
-			Name = "Death on Hide",
-			Event = function()
-				killonhide = true
-				task.delay(EventTime, function()
-					killonhide = false
-				end)
-			end,
-			cdt = 10,
-		},
-		settingspopup = {
-			Name = "???",
-			Event = function()
-				MainUI.Settings.Visible = true
-				settingsmenu = true
-				humroot.Anchored = true
-			end,
-			cdt = 5,
-		},
-		spook1 = {
-			Name = "???",
-			Event = function()
-				MainUI.FoolJumpscare.Visible = true
-				MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Play()
-				humroot.Anchored = true
-				task.delay(EventTime, function()
-					humroot.Anchored = false
-					MainUI.FoolJumpscare.Visible = false
-					MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
-				end)
-			end,
-			cdt = 5,
-		},
-		explode = {
-			Name = "???",
-			Event = function()
-				local explode = script.Sounds.Explode.ParticleEmitter:Clone()
-				explode.Parent = humroot
-				explode.Enabled = true
-				script.Sounds.Explode:Play()
-				hum.Health = hum.Health - EventAmount
-				task.delay(EventTime, function()
-					explode:Destroy()
-				end)
-	
-			end,
-			cdt = 5,
-		},
-		seekeyes = {
-			Name = "???",
-			Event = function()
-				local eyes = 0
-				repeat 
-					task.wait(0.3)
-					spawn(spawnseekeyes())
-					eyes = eyes +1
-				until eyes == EventLoop
-			end,
-			cdt = 3
-		},
-		timothy = {
-			Name = "???",
-			Event = function()
-				local tims = 0
-				local timdresser = game:GetService("ReplicatedStorage").FurnitureTemplate.Dresser:Clone()
-				timdresser.Parent = currentroomobj.Assets
-				repeat 
-					task.wait(0.01)
-					require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), timdresser.DrawerContainer, 0)
-					tims = tims +1
-				until tims == EventAmount
-				timdresser:Destroy()
-			end,
-			cdt = 5
-		},
-		screechx10 = {
-			Name = "ScreecheS",
-			Event = function()
-				local i = 1
-				while i <= EventAmount do
-					require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
-					i += 1
-					task.wait(0.3)
-				end
-			end,
-			cdt = 10
-		},
-		halt10 = {
-			Name = "The Homies",
-			Event = function()
-				thehomies = true
-				require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(MainUI.Initiator.Main_Game),currentroomobj)
-				local halts = 0
-				repeat 
-					task.wait(0.1)
-					require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(MainUI.Initiator.Main_Game),currentroomobj)
-					halts = halts +1
-				until halts == 10
-				task.delay(EventTime, function()
-					thehomies = false
-					local number = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
-					game.Players.LocalPlayer:SetAttribute("CurrentRoom", number +1)
-					task.delay(0.7, function()
-						game.Players.LocalPlayer:SetAttribute("CurrentRoom", number)
-					end)
-	
-				end)
-			end,
-			cdt = 5
-		},
-		slow = {
-			Name = "get slimed 🔥🔥🔥",
-			Event = function()
-				slowed = true
-				task.delay(EventTime, function()
-					slowed = false
-					hum.WalkSpeed = normalwalk
-				end)
-			end,
-			cdt = 5
-		},
-		redlightgreenlight = {
-			Name = "빨간불 초록불",
-			Event = function()
-				local sounds = script.Sounds
-				local ui = script.Parent.redlightgreenlight
-				ui.Visible = true
-				ui.GreenLight.Visible = true
-				local count = EventAmount
-				while count ~= 0 and gameactive == true do
-					ui.Visible = true
-					sounds.green:Play()
-					task.wait(math.random(5,10))
-					sounds.stopmoving:Play()
-					ui.GreenLight.Visible = false
-					ui.RedLight.Visible = true
-					task.wait(0.5)
-					redlight = true
-					task.wait(math.random(4.5,9.5))
-					redlight = false
-					ui.RedLight.Visible = false
-					ui.GreenLight.Visible = true
-					count = count -1
-				end
-				ui.Visible = false
-			end,
-			cdt = 100
-		},
-		crouchordie = {
-			Name = "Crouch or Die",
-			Event = function()
-				crouchorkill = true
-				task.delay(EventTime, function()
-					crouchorkill = false
-				end)
-			end,
-			cdt = 10
-		}
-	}
-	
-	-- --Event Spawns
-	local DeathOnCrouchEvent = events["deathoncrouch"] --Time
-	local DeathOnHideEvent = events["deathonhide"] --Time
-	local CrouchOrDieEvent = events["crouchordie"] --Time
-	local HomiesEvent = events["halt10"] --Time
-	local RLGLEvent = events["redlightgreenlight"] --Amount
-	local ExplosionEvent = events["explode"] --Time, Amount
-	
-	local GlitchEvent = events["glitchevent"] --Amount
-	local TimothyEvent = events["timothy"] --Amount
-	local ScreechEvent = events["screechx10"] --Amount
-	local FoolsScareEvent = events["spook1"] --Time
-	
-	local BlurEvent = events["blurevent"] --Time
-	local SeekEyesEvent = events["seekeyes"] --Amount, Loop
-	
-	local SlimedEvent = events["slow"] --Time
-	local SettingsPopupEvent = events["settingspopup"] --None
-	
-	-- --Button Functions
-	-- LD
-	
-	LDFrame.CrouchDeath.MouseButton1Click:Connect(function()
-		EventTime = LDFrame.CrouchDeathTime.Text
-		spawn(DeathOnCrouchEvent.event)
-	end)
-	LDFrame.HideDeath.MouseButton1Click:Connect(function()
-		EventTime = LDFrame.HideDeathTime.Text
-		spawn(DeathOnHideEvent.event)
-	end)
-	LDFrame.StandDeath.MouseButton1Click:Connect(function()
-		EventTime = LDFrame.StandDeathTime.Text
-		spawn(CrouchOrDieEvent.event)
-	end)
-	LDFrame.Homies.MouseButton1Click:Connect(function()
-		EventTime = LDFrame.HomiesTime.Text
-		spawn(HomiesEvent.event)
-	end)
-	LDFrame.RLGL.MouseButton1Click:Connect(function()
-		EventAmount = LDFrame.RLGLCount.Text
-		spawn(RLGLEvent.event)
-	end)
-	LDFrame.Explosion.MouseButton1Click:Connect(function()
-		EventTime = LDFrame.ExplosionTime.Text
-		EventAmount = LDFrame.ExplosionDamage.Text
-		spawn(ExplosionEvent.event)
-	end)
-	
-	-- ES
-	
-	ESFrame.GlitchJS.MouseButton1Click:Connect(function()
-		EventAmount = ESFrame.GlitchAmount.Text
-		spawn(GlitchEvent.event)
-	end)
-	ESFrame.TimothyJS.MouseButton1Click:Connect(function()
-		EventAmount = ESFrame.TimothyAmount.Text
-		spawn(TimothyEvent.event)
-	end)
-	ESFrame.ScreechJS.MouseButton1Click:Connect(function()
-		EventAmount = ESFrame.ScreechAmount.Text
-		spawn(ScreechEvent.event)
-	end)
-	ESFrame.FoolsJS.MouseButton1Click:Connect(function()
-		EventTime = ESFrame.FoolsTime.Text
-		spawn(FoolsScareEvent.event)
-	end)
-	
-	-- Vi
-	
-	ViFrame.BlurEffect.MouseButton1Click:Connect(function()
-		EventTime = ViFrame.BlurTime.Text
-		spawn(BlurEvent.Event)
-	end)
-	ViFrame.SeekEyes.MouseButton1Click:Connect(function()
-		EventAmount = ViFrame.EyesAmount.Text
-		EventLoop = ViFrame.EyesLoopAmount.Text
-		spawn(SeekEyesEvent.Event)
-	end)
-	
-	-- An
-	
-	AnFrame.Slimed.MouseButton1Click:Connect(function()
-		EventTime = AnFrame.SlimedTime.Text
-		spawn(SlimedEvent.Event)
-	end)
-	AnFrame.SettingsPopup.MouseButton1Click:Connect(function()
-		spawn(SettingsPopupEvent.Event)
-	end)
-end;
-task.spawn(C_73);
 
 return G2L["1"], require;
