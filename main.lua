@@ -838,6 +838,7 @@ local events = {
 			ui.GreenLight.Visible = true
 			local count = 6
 			while count ~= 0 and gameactive == true do
+				ui.Visible = true
 				sounds.green:Play()
 				task.wait(math.random(5,10))
 				sounds.stopmoving:Play()
