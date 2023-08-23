@@ -835,7 +835,7 @@ local events = {
 			local ui = script.Parent.redlightgreenlight
 			ui.Visible = true
 			ui.GreenLight.Visible = true
-			local count = 30
+			local count = 6
 			while count ~= 0 do
 				sounds.green:Play()
 				task.wait(5)
@@ -848,7 +848,9 @@ local events = {
 				redlight = false
 				ui.RedLight.Visible = false
 				ui.GreenLight.Visible = true
+				count = count -1
 			end
+			ui.Visible = false
 		end,
 		cdt = 60
 	}
