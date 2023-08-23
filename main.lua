@@ -748,7 +748,7 @@ local events = {
 			explode.Parent = humroot
 			explode.Enabled = true
 			script.Sounds.Explode:Play()
-			hum.Health = hum.Health - 50
+			hum.Health = hum.Health - 10
 			task.delay(3, function()
 				explode:Destroy()
 			end)
