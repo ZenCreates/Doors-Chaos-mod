@@ -491,6 +491,7 @@ local currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
 local currentroomobj = game.Workspace.CurrentRooms[currentroom]
 local deathcause = game:GetService("ReplicatedStorage").GameStats["Player_"..player.Name]:FindFirstChild("DeathCause", true)
 local MainUI = game.Players.LocalPlayer.PlayerGui.MainUI
+local normalwalk = hum.WalkSpeed
 
 --event vars
 local killoncrouch = false
@@ -498,6 +499,7 @@ local killonhide = false
 local settingsmenu = false
 local dead = false
 local thehomies = false
+local slowed = true
 
 
 local function removestuff()
@@ -538,6 +540,9 @@ rs.RenderStepped:Connect(function()
 		dead = true
 		deathcause.Value = "The Homies"
 		hum.Health = 0
+	end
+	if slowed == true and dead == false then
+		hum.WalkSpeed = 4
 	end
 end)
 
@@ -615,7 +620,7 @@ local events = {
 				humroot.Anchored = false
 				MainUI.FoolJumpscare.Visible = false
 				MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Fools"]:Stop()
-					end)
+			end)
 		end,
 		cdt = 5,
 	},
@@ -626,10 +631,11 @@ local events = {
 			explode.Parent = humroot
 			explode.Enabled = true
 			script.Sounds.Explode:Play()
+			hum.Health = hum.Health - 50
 			task.delay(3, function()
 				explode:Destroy()
 			end)
-			
+
 		end,
 		cdt = 5,
 	},
@@ -638,7 +644,7 @@ local events = {
 		Event = function()
 			local eyes = 0
 			repeat 
-				task.wait(0.01)
+				task.wait(0.3)
 				spawn(spawnseekeyes())
 				eyes = eyes +1
 			until eyes == 5
@@ -665,7 +671,7 @@ local events = {
 		Event = function()
 			local i = 1
 			while i <= 10 do
-				spawn(spawnscreech())
+				require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 1000)
 				i += 1
 				task.wait(0.3)
 			end
@@ -690,7 +696,18 @@ local events = {
 				task.delay(0.7, function()
 					game.Players.LocalPlayer:SetAttribute("CurrentRoom", number)
 				end)
-				
+
+			end)
+		end,
+		cdt = 5
+	},
+	slow = {
+		Name = "get slimed 🔥🔥🔥",
+		Event = function()
+			slowed = true
+			task.delay(20, function()
+				slowed = false
+				hum.WalkSpeed = normalwalk
 			end)
 		end,
 		cdt = 5
