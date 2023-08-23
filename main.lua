@@ -545,6 +545,10 @@ local function spawnscreech()
 	require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
 end
 
+local function spawnseekeyes()
+	require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 1000)
+end
+
 
 local events = {
 	blurevent = {
@@ -635,7 +639,7 @@ local events = {
 			local eyes = 0
 			repeat 
 				task.wait(0.01)
-				require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 100)
+				spawn(spawnseekeyes())
 				eyes = eyes +1
 			until eyes == 5
 		end,
@@ -692,7 +696,7 @@ local events = {
 		cdt = 5
 	}
 }
-local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy", "halt10"}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy", "halt10", "screechx10"}
 -- spook1 and screechx10 are disabled because they're annoying for testing
 
 function settextcolor()
