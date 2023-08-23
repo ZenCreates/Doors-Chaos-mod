@@ -2294,7 +2294,7 @@ local script = G2L["1c"];
 		ts:Create(script.Parent.Parent.Parent, TweenInfo.new(1), {BackgroundTransparency = 1}):Play()
 		
 		task.delay(5, function()
-			buttons.Parent.Parent.DevMenu.Visible = true
+			buttons.Parent.Parent.DevModule.Visible = true
 		end)
 	end)
 end;
