@@ -28,7 +28,7 @@ EVENTS
 - Seek Eyes (100, in current room)
 - Timothy Jumpscare (50, .01s delay)
 - Halt (Hide or die, 7s)
-- Slimed (slow character)
+- Slimed (slow character, 20s)
 - RLGL (100s)
 With more to come!
 
