@@ -309,6 +309,7 @@ G2L["23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["23"]["BackgroundTransparency"] = 1;
 G2L["23"]["Size"] = UDim2.new(1, 0, 1, 0);
 G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["23"]["Visible"] = false;
 G2L["23"]["Name"] = [[GameUI]];
 
 -- StarterGui.ChaosMod.GameUI.NextEvent
@@ -836,15 +837,15 @@ local events = {
 			ui.Visible = true
 			ui.GreenLight.Visible = true
 			local count = 6
-			while count ~= 0 do
+			while count ~= 0 and gameactive == true do
 				sounds.green:Play()
 				task.wait(5)
 				sounds.stopmoving:Play()
 				ui.GreenLight.Visible = false
 				ui.RedLight.Visible = true
-				task.wait(0.3)
+				task.wait(0.5)
 				redlight = true
-				task.wait(4.7)
+				task.wait(4.5)
 				redlight = false
 				ui.RedLight.Visible = false
 				ui.GreenLight.Visible = true
@@ -855,7 +856,9 @@ local events = {
 		cdt = 60
 	}
 }
-local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy", "halt10", "screechx10", "slow", "redlightgreenlight"}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", 
+	"explode", "seekeyes", "timothy", "halt10", "screechx10", "slow", "redlightgreenlight"
+}
 -- spook1 and screechx10 are disabled because they're annoying for testing
 
 function settextcolor()
