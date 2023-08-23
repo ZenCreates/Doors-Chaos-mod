@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 115 | Scripts: 3 | Modules: 4
+-- Instances: 116 | Scripts: 4 | Modules: 4
 local G2L = {};
 
 -- StarterGui.ChaosMod
@@ -1272,55 +1272,59 @@ G2L["6f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["6f"]["Text"] = [[Settings Popup]];
 G2L["6f"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
 
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Slimed
-G2L["70"] = Instance.new("TextButton", G2L["6c"]);
-G2L["70"]["TextWrapped"] = true;
-G2L["70"]["BorderSizePixel"] = 0;
-G2L["70"]["TextScaled"] = true;
-G2L["70"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["70"]["TextSize"] = 14;
-G2L["70"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["70"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["70"]["Size"] = UDim2.new(0, 141, 0, 38);
-G2L["70"]["Name"] = [[Slimed]];
-G2L["70"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["70"]["Text"] = [[Get Slimed]];
-G2L["70"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances.SettingsPopup.LocalScript
+G2L["70"] = Instance.new("LocalScript", G2L["6f"]);
 
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Label
-G2L["71"] = Instance.new("TextLabel", G2L["6c"]);
+
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Slimed
+G2L["71"] = Instance.new("TextButton", G2L["6c"]);
 G2L["71"]["TextWrapped"] = true;
 G2L["71"]["BorderSizePixel"] = 0;
 G2L["71"]["TextScaled"] = true;
-G2L["71"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["71"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["71"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
 G2L["71"]["TextSize"] = 14;
-G2L["71"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["71"]["LayoutOrder"] = -1;
-G2L["71"]["Size"] = UDim2.new(0, 141, 0, 30);
+G2L["71"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["71"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
+G2L["71"]["Size"] = UDim2.new(0, 141, 0, 38);
+G2L["71"]["Name"] = [[Slimed]];
 G2L["71"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["71"]["Text"] = [[Annoyances]];
-G2L["71"]["Name"] = [[Label]];
-G2L["71"]["BackgroundTransparency"] = 1;
+G2L["71"]["Text"] = [[Get Slimed]];
+G2L["71"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
+
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Label
+G2L["72"] = Instance.new("TextLabel", G2L["6c"]);
+G2L["72"]["TextWrapped"] = true;
+G2L["72"]["BorderSizePixel"] = 0;
+G2L["72"]["TextScaled"] = true;
+G2L["72"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["72"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["72"]["TextSize"] = 14;
+G2L["72"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
+G2L["72"]["LayoutOrder"] = -1;
+G2L["72"]["Size"] = UDim2.new(0, 141, 0, 30);
+G2L["72"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["72"]["Text"] = [[Annoyances]];
+G2L["72"]["Name"] = [[Label]];
+G2L["72"]["BackgroundTransparency"] = 1;
 
 -- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Spacer
-G2L["72"] = Instance.new("TextLabel", G2L["6c"]);
-G2L["72"]["BorderSizePixel"] = 0;
-G2L["72"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["72"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["72"]["TextSize"] = 14;
-G2L["72"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["72"]["LayoutOrder"] = 2;
-G2L["72"]["Size"] = UDim2.new(0, 141, 0, 13);
-G2L["72"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["72"]["Text"] = [[]];
-G2L["72"]["Name"] = [[Spacer]];
-G2L["72"]["BackgroundTransparency"] = 1;
-G2L["72"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
+G2L["73"] = Instance.new("TextLabel", G2L["6c"]);
+G2L["73"]["BorderSizePixel"] = 0;
+G2L["73"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["73"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["73"]["TextSize"] = 14;
+G2L["73"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["73"]["LayoutOrder"] = 2;
+G2L["73"]["Size"] = UDim2.new(0, 141, 0, 13);
+G2L["73"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["73"]["Text"] = [[]];
+G2L["73"]["Name"] = [[Spacer]];
+G2L["73"]["BackgroundTransparency"] = 1;
+G2L["73"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
 
 -- StarterGui.ChaosMod.DevMenuWIP.DevModule
-G2L["73"] = Instance.new("ModuleScript", G2L["3b"]);
-G2L["73"]["Name"] = [[DevModule]];
+G2L["74"] = Instance.new("ModuleScript", G2L["3b"]);
+G2L["74"]["Name"] = [[DevModule]];
 
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
@@ -1774,9 +1778,11 @@ end
 return module
 end;
 };
-G2L_MODULES[G2L["73"]] = {
+G2L_MODULES[G2L["74"]] = {
 Closure = function()
-    local script = G2L["73"];
+    local script = G2L["74"];
+local module = {}
+
 local MainFrame = script.Parent
 local LDFrame = MainFrame.Lethal_Damage
 local ESFrame = MainFrame.Entities_Scares
@@ -2120,73 +2126,73 @@ local SettingsPopupEvent = events["settingspopup"] --None
 -- --Button Functions
 -- LD
 
-LDFrame.CrouchDeath.MouseButton1Click:Connect(function()
+function module.DOCEvent(Time)
 	EventTime = LDFrame.CrouchDeathTime.Text
 	spawn(DeathOnCrouchEvent.event)
-end)
-LDFrame.HideDeath.MouseButton1Click:Connect(function()
+end
+function module.DOHEvent(Time)
 	EventTime = LDFrame.HideDeathTime.Text
 	spawn(DeathOnHideEvent.event)
-end)
-LDFrame.StandDeath.MouseButton1Click:Connect(function()
+end
+function module.CODEvent(Time)
 	EventTime = LDFrame.StandDeathTime.Text
 	spawn(CrouchOrDieEvent.event)
-end)
-LDFrame.Homies.MouseButton1Click:Connect(function()
+end
+function module.HomiesEvent(Time)
 	EventTime = LDFrame.HomiesTime.Text
 	spawn(HomiesEvent.event)
-end)
-LDFrame.RLGL.MouseButton1Click:Connect(function()
+end
+function module.RLGLEvent(Amount)
 	EventAmount = LDFrame.RLGLCount.Text
 	spawn(RLGLEvent.event)
-end)
-LDFrame.Explosion.MouseButton1Click:Connect(function()
+end
+function module.ExplosionEvent(Time, Amount)
 	EventTime = LDFrame.ExplosionTime.Text
 	EventAmount = LDFrame.ExplosionDamage.Text
 	spawn(ExplosionEvent.event)
 	print("Explosion: "..tostring(EventTime).." | "..tostring(EventAmount))
-end)
+end
 
 -- ES
 
-ESFrame.GlitchJS.MouseButton1Click:Connect(function()
+function module.GlitchEvent(Amount)
 	EventAmount = ESFrame.GlitchAmount.Text
 	spawn(GlitchEvent.event)
-end)
-ESFrame.TimothyJS.MouseButton1Click:Connect(function()
-	EventAmount = ESFrame.TimothyAmount.Text
+end
+function module.TimothyEvent(Amount)
+	EventAmount = Amount
 	spawn(TimothyEvent.event)
-end)
-ESFrame.ScreechJS.MouseButton1Click:Connect(function()
-	EventAmount = ESFrame.ScreechAmount.Text
+end
+function module.ScreechEvent(Amount)
+	EventAmount = Amount
 	spawn(ScreechEvent.event)
-end)
-ESFrame.FoolsJS.MouseButton1Click:Connect(function()
-	EventTime = ESFrame.FoolsTime.Text
+end
+function module.FoolsScareEvent(Time)
+	EventTime = Time
 	spawn(FoolsScareEvent.event)
-end)
+end
 
 -- Vi
 
-ViFrame.BlurEffect.MouseButton1Click:Connect(function()
-	EventTime = ViFrame.BlurTime.Text
+function module.BlurEvent(Time)
+	EventTime = Time
 	spawn(BlurEvent.Event)
-end)
-ViFrame.SeekEyes.MouseButton1Click:Connect(function()
-	EventAmount = ViFrame.EyesAmount.Text
-	EventLoop = ViFrame.EyesLoopAmount.Text
+end
+function module.SeekEyesEvent(Amount, LoopAmount)
+	EventAmount = Amount
+	EventLoop = LoopAmount
 	spawn(SeekEyesEvent.Event)
-end)
+end
 
 -- An
 
-AnFrame.Slimed.MouseButton1Click:Connect(function()
-	EventTime = AnFrame.SlimedTime.Text
+function module.SlimedEvent(Time)
+	EventTime = Time
 	spawn(SlimedEvent.Event)
-end)
-AnFrame.SettingsPopup.MouseButton1Click:Connect(function()
+end
+function module.SettingsPopupEvent()
 	spawn(SettingsPopupEvent.Event)
-end)
+end
 end;
 };
 -- StarterGui.ChaosMod.MainMenu.Holder.Play.LocalScript
@@ -2293,5 +2299,14 @@ local script = G2L["1c"];
 	end)
 end;
 task.spawn(C_1c);
+-- StarterGui.ChaosMod.DevMenuWIP.Annoyances.SettingsPopup.LocalScript
+local function C_70()
+local script = G2L["70"];
+	script.Parent.MouseButton1Click:Connect(function()
+		local DevMod = require(script.Parent.Parent.Parent.DevModule)
+		DevMod.SettingPopupEvent()
+	end)
+end;
+task.spawn(C_70);
 
 return G2L["1"], require;
