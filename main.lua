@@ -878,7 +878,7 @@ local events = {
 }
 local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", 
 	"explode", "seekeyes", "timothy", "halt10", "screechx10", "slow", "redlightgreenlight",
-	"crouchordie",
+	"crouchordie", "spook1",
 }
 -- spook1 and screechx10 are disabled because they're annoying for testing
 
