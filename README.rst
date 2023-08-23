@@ -5,7 +5,7 @@
 DOORS Chaos Mod
 ^^^^^^^^^^^^^^^
 A mod for Doors that makes the game much harder
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :Script version:    v0.5 i think
 :Script loader:     ``loadstring(game:HttpGet("https://raw.githubusercontent.com/ZenCreates/Doors-Chaos-mod/main/execution.lua"))()``
