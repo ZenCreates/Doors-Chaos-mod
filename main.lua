@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 43 | Scripts: 2 | Modules: 3
+-- Instances: 56 | Scripts: 2 | Modules: 3
 local G2L = {};
 
 -- StarterGui.ChaosMod
@@ -309,7 +309,6 @@ G2L["23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["23"]["BackgroundTransparency"] = 1;
 G2L["23"]["Size"] = UDim2.new(1, 0, 1, 0);
 G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["23"]["Visible"] = false;
 G2L["23"]["Name"] = [[GameUI]];
 
 -- StarterGui.ChaosMod.GameUI.NextEvent
@@ -378,6 +377,108 @@ G2L["2b"]["Enabled"] = false;
 G2L["2b"]["Rate"] = 40;
 G2L["2b"]["EmissionDirection"] = Enum.NormalId.Front;
 G2L["2b"]["FlipbookMode"] = Enum.ParticleFlipbookMode.OneShot;
+
+-- StarterGui.ChaosMod.GameUI.ModuleScript.Sounds.green
+G2L["2c"] = Instance.new("Sound", G2L["29"]);
+G2L["2c"]["Volume"] = 3;
+G2L["2c"]["Name"] = [[green]];
+G2L["2c"]["SoundId"] = [[rbxassetid://7738210779]];
+
+-- StarterGui.ChaosMod.GameUI.ModuleScript.Sounds.stopmoving
+G2L["2d"] = Instance.new("Sound", G2L["29"]);
+G2L["2d"]["Volume"] = 3;
+G2L["2d"]["Name"] = [[stopmoving]];
+G2L["2d"]["SoundId"] = [[rbxassetid://5630473776]];
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight
+G2L["2e"] = Instance.new("Frame", G2L["23"]);
+G2L["2e"]["BorderSizePixel"] = 0;
+G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2e"]["BackgroundTransparency"] = 1;
+G2L["2e"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["2e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2e"]["Visible"] = false;
+G2L["2e"]["Name"] = [[redlightgreenlight]];
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight.RedLight
+G2L["2f"] = Instance.new("Frame", G2L["2e"]);
+G2L["2f"]["BorderSizePixel"] = 0;
+G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 66, 66);
+G2L["2f"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Visible"] = false;
+G2L["2f"]["Name"] = [[RedLight]];
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight.RedLight.UIGradient
+G2L["30"] = Instance.new("UIGradient", G2L["2f"]);
+G2L["30"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.38251370191574097),NumberSequenceKeypoint.new(0.457, 0.4863387942314148),NumberSequenceKeypoint.new(1.000, 1)};
+G2L["30"]["Rotation"] = 90;
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight.RedLight.Text
+G2L["31"] = Instance.new("TextLabel", G2L["2f"]);
+G2L["31"]["TextWrapped"] = true;
+G2L["31"]["BorderSizePixel"] = 0;
+G2L["31"]["TextScaled"] = true;
+G2L["31"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["31"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["31"]["TextSize"] = 14;
+G2L["31"]["TextColor3"] = Color3.fromRGB(255, 108, 108);
+G2L["31"]["Size"] = UDim2.new(0.5577051639556885, 0, 0.12967577576637268, 0);
+G2L["31"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["31"]["Text"] = [[RED LIGHT!]];
+G2L["31"]["Name"] = [[Text]];
+G2L["31"]["BackgroundTransparency"] = 1;
+G2L["31"]["Position"] = UDim2.new(0.22081385552883148, 0, 0.03740648552775383, 0);
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight.RedLight.Text.UIStroke
+G2L["32"] = Instance.new("UIStroke", G2L["31"]);
+G2L["32"]["Color"] = Color3.fromRGB(255, 189, 189);
+G2L["32"]["Thickness"] = 5.199999809265137;
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight.RedLight.Text.UIGradient
+G2L["33"] = Instance.new("UIGradient", G2L["31"]);
+G2L["33"]["Rotation"] = -90;
+G2L["33"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(233, 97, 100))};
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight.GreenLight
+G2L["34"] = Instance.new("Frame", G2L["2e"]);
+G2L["34"]["BorderSizePixel"] = 0;
+G2L["34"]["BackgroundColor3"] = Color3.fromRGB(63, 255, 86);
+G2L["34"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["34"]["Visible"] = false;
+G2L["34"]["Name"] = [[GreenLight]];
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight.GreenLight.UIGradient
+G2L["35"] = Instance.new("UIGradient", G2L["34"]);
+G2L["35"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.38251370191574097),NumberSequenceKeypoint.new(0.457, 0.4863387942314148),NumberSequenceKeypoint.new(1.000, 1)};
+G2L["35"]["Rotation"] = 90;
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight.GreenLight.Text
+G2L["36"] = Instance.new("TextLabel", G2L["34"]);
+G2L["36"]["TextWrapped"] = true;
+G2L["36"]["BorderSizePixel"] = 0;
+G2L["36"]["TextScaled"] = true;
+G2L["36"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["36"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["36"]["TextSize"] = 14;
+G2L["36"]["TextColor3"] = Color3.fromRGB(155, 255, 132);
+G2L["36"]["Size"] = UDim2.new(0.5577051639556885, 0, 0.12967577576637268, 0);
+G2L["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["Text"] = [[GREEN LIGHT!]];
+G2L["36"]["Name"] = [[Text]];
+G2L["36"]["BackgroundTransparency"] = 1;
+G2L["36"]["Position"] = UDim2.new(0.22081385552883148, 0, 0.03740648552775383, 0);
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight.GreenLight.Text.UIStroke
+G2L["37"] = Instance.new("UIStroke", G2L["36"]);
+G2L["37"]["Color"] = Color3.fromRGB(115, 140, 105);
+G2L["37"]["Thickness"] = 5.199999809265137;
+
+-- StarterGui.ChaosMod.GameUI.redlightgreenlight.GreenLight.Text.UIGradient
+G2L["38"] = Instance.new("UIGradient", G2L["36"]);
+G2L["38"]["Rotation"] = -90;
+G2L["38"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(148, 255, 129))};
 
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
@@ -499,7 +600,8 @@ local killonhide = false
 local settingsmenu = false
 local dead = false
 local thehomies = false
-local slowed = true
+local slowed = false
+local redlight = false
 
 
 local function removestuff()
@@ -544,6 +646,19 @@ rs.RenderStepped:Connect(function()
 	if slowed == true and dead == false then
 		hum.WalkSpeed = 4
 	end
+	if redlight == true and dead == false then
+		if hum.MoveDirection.Magnitude > 0 then
+			deathcause.Value = "빨간불"
+			hum.Health = 0
+		end
+	end
+end)
+
+local screechevent:RemoteEvent = game:GetService("ReplicatedStorage").EntityInfo.Screech
+screechevent.OnClientEvent:Connect(function(what)
+	if what == 0 then
+		hum.Health = 0
+	end
 end)
 
 local function spawnscreech()
@@ -553,6 +668,7 @@ end
 local function spawnseekeyes()
 	require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 1000)
 end
+
 
 
 local events = {
@@ -711,9 +827,33 @@ local events = {
 			end)
 		end,
 		cdt = 5
+	},
+	redlightgreenlight = {
+		Name = "빨간불 초록불",
+		Event = function()
+			local sounds = script.Sounds
+			local ui = script.Parent.redlightgreenlight
+			ui.Visible = true
+			ui.GreenLight.Visible = true
+			local count = 30
+			while count ~= 0 do
+				sounds.green:Play()
+				task.wait(5)
+				sounds.stopmoving:Play()
+				ui.GreenLight.Visible = false
+				ui.RedLight.Visible = true
+				task.wait(0.3)
+				redlight = true
+				task.wait(4.7)
+				redlight = false
+				ui.RedLight.Visible = false
+				ui.GreenLight.Visible = true
+			end
+		end,
+		cdt = 60
 	}
 }
-local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy", "halt10", "screechx10"}
+local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", "explode", "seekeyes", "timothy", "halt10", "screechx10", "slow", "redlightgreenlight"}
 -- spook1 and screechx10 are disabled because they're annoying for testing
 
 function settextcolor()
