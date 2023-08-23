@@ -26,6 +26,10 @@ EVENTS
 - Fools Jumpscare (2s)
 - Explosion
 - Seek Eyes (100, in current room)
+- Timothy Jumpscare (50, .01s delay)
+- Halt (Hide or die, 7s)
+- Slimed (slow character)
+- RLGL (100s)
 With more to come!
 
 NEWS
