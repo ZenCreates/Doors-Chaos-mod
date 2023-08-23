@@ -597,6 +597,7 @@ local normalwalk = hum.WalkSpeed
 
 --event vars
 local killoncrouch = false
+local crouchorkill = false
 local killonhide = false
 local settingsmenu = false
 local dead = false
@@ -624,6 +625,12 @@ rs.RenderStepped:Connect(function()
 		removestuff()
 		dead = true
 		deathcause.Value = "Crouching"
+		hum.Health = 0
+	end
+	if crouchorkill == true and dead == false and collision.CollisionGroupId == 2 then
+		removestuff()
+		dead = true
+		deathcause.Value = "Standing"
 		hum.Health = 0
 	end
 	if killonhide == true and dead == false and collision.CanCollide == false then
@@ -855,10 +862,21 @@ local events = {
 			ui.Visible = false
 		end,
 		cdt = 100
+	},
+	crouchordie = {
+		Name = "Crouch or Die",
+		Event = function()
+			crouchorkill = true
+			task.delay(10, function()
+				crouchorkill = false
+			end)
+		end,
+		cdt = 10
 	}
 }
 local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", 
-	"explode", "seekeyes", "timothy", "halt10", "screechx10", "slow", "redlightgreenlight"
+	"explode", "seekeyes", "timothy", "halt10", "screechx10", "slow", "redlightgreenlight",
+	"crouchordie",
 }
 -- spook1 and screechx10 are disabled because they're annoying for testing
 
