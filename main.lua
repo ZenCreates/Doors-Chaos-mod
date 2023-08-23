@@ -788,7 +788,7 @@ local events = {
 		Event = function()
 			local i = 1
 			while i <= 10 do
-				require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 1000)
+				require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
 				i += 1
 				task.wait(0.3)
 			end
