@@ -839,13 +839,13 @@ local events = {
 			local count = 6
 			while count ~= 0 and gameactive == true do
 				sounds.green:Play()
-				task.wait(5)
+				task.wait(math.random(5,10))
 				sounds.stopmoving:Play()
 				ui.GreenLight.Visible = false
 				ui.RedLight.Visible = true
 				task.wait(0.5)
 				redlight = true
-				task.wait(4.5)
+				task.wait(math.random(4.5,9.5))
 				redlight = false
 				ui.RedLight.Visible = false
 				ui.GreenLight.Visible = true
