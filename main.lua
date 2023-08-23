@@ -854,7 +854,7 @@ local events = {
 			end
 			ui.Visible = false
 		end,
-		cdt = 60
+		cdt = 100
 	}
 }
 local eventslist = {"blurevent", "glitchevent", "deathoncrouch", "deathonhide", "settingspopup", 
