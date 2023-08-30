@@ -1590,19 +1590,11 @@ local deathcause = game:GetService("ReplicatedStorage").GameStats["Player_"..pla
 local gameactive = true
 local normalwalk = hum.WalkSpeed
 local rs = game:GetService("RunService")
-local uis = game:GetService("UserInputService")
 local camShakerModule = require((game:GetService("ReplicatedStorage")):WaitForChild("CameraShaker"))
 
 local EventTime = 0
 local EventAmount = 0
 local EventLoop = 0
-
-uis.InputBegan:Connect(function(Key)
-	if Key.KeyCode == Enum.KeyCode.Y then
-		--0.5, 1, 2, Vector3.new(0, 0, 0)
-		camShakerModule:StartShake(0.5, 1, 2, Vector3.new(0, 0, 0))
-	end
-end)
 
 
 local function removestuff()
@@ -1996,6 +1988,14 @@ local script = G2L["10"];
 			local g = require(script.Parent.Parent.Parent.Parent.GameUI.ModuleScript)
 			g.GameMain()
 		end)
+	end)
+	local uis = game:GetService("UserInputService")
+	local camShakerModule = require((game:GetService("ReplicatedStorage")):WaitForChild("CameraShaker"))
+	uis.InputBegan:Connect(function(Key)
+		if Key.KeyCode == Enum.KeyCode.Y then
+			--0.5, 1, 2, Vector3.new(0, 0, 0)
+			camShakerModule:StartShake(0.5, 1, 2, Vector3.new(0, 0, 0))
+		end
 	end)
 end;
 task.spawn(C_10);
