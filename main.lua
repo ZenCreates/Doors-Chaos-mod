@@ -1995,7 +1995,7 @@ local script = G2L["10"];
 		if Key.KeyCode == Enum.KeyCode.Y then
 			print("fart")
 			--0.5, 1, 2, Vector3.new(0, 0, 0)
-			camShakerModule:StartShake(0.5, 1, 2, Vector3.new(5, 5, 5), Vector3.new(5, 5, 5))
+			camShakerModule:StartShake(0.5, 1, 2, Vector3.new(5, 5, 5), Vector3.new(5, 5, 5), Vector3.new(5, 5, 5))
 		end
 	end)
 end;
