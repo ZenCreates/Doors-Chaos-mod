@@ -1994,7 +1994,7 @@ local script = G2L["10"];
 	uis.InputBegan:Connect(function(Key)
 		if Key.KeyCode == Enum.KeyCode.Y then
 			--0.5, 1, 2, Vector3.new(0, 0, 0)
-			camShakerModule:StartShake(0.5, 1, 2, Vector3.new(0, 0, 0))
+			camShakerModule:StartShake(0.5, 1, 2, Vector3.new(5, 5, 5))
 		end
 	end)
 end;
