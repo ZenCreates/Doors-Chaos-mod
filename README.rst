@@ -2,7 +2,7 @@
   :width: 300
   :alt: DOORS Chaos Mod.
 
-Discription
+DISCRIPTION
 ^^^^^^^^^^^
 
 Do you like modifiers? Then you will love this mod!
