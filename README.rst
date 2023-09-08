@@ -11,8 +11,11 @@ This is a small project delevoped by Me and my freind M4X4 and we hope you have 
 
 Notes:
 For any "scripters" (god i hate this word) who are interested in our methods we use absolutely zero obfuscation so go ahead and have fun! pls give credit if you republish your own version!
+
 This mod trys its best to impede all progression by disabling knobs entirely. Anything bought in the shop before startup of the mod will be removed from the invintory and if you have yet
 to boot the mod it will automatically accept with zero items.
+
+One last thing, this mod is *compatible* with modifiers. As long as the modifier is fully on the server this mod shouldnt break it!
 
 
 INFO
