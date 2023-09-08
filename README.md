@@ -1,6 +1,9 @@
-.. image:: Resources/Logo.png
-  :width: 300
-  :alt: DOORS Chaos Mod.
+
+
+<p align="center">
+    <img width="200" src="http://material-bread.org/logo-shadow.svg" alt="Material Bread logo">
+</p>
+
 
 DISCRIPTION
 ^^^^^^^^^^^
