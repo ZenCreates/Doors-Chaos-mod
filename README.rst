@@ -23,7 +23,7 @@ INFO
 ^^^^
 
 :Script version:    v0.5 i think
-:Byfron:     Yes
+:Byfron:     Yes (Use https://hydrogen.sh)
 :Script loader:     ``loadstring(game:HttpGet("https://raw.githubusercontent.com/ZenCreates/Doors-Chaos-mod/main/execution.lua"))()``
 :Authors:           Zen, M4X4
 :Special Thanks:    UniquaDev for Gui to Lua (https://github.com/uniquadev/GuiToLuaConverter)
