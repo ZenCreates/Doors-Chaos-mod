@@ -1546,7 +1546,7 @@ function module.GameMain()
 		if countdown == 0 then
 			numevents += 1
 			countdown = eventmod.GetCDT(nextevent)
-			--_G[nextevent]()
+			print("|"..eventmod.GetCDT(nextevent).." | ".."")
 			nextevent = eventslist[math.random(1,#eventslist)]
 			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			settextcolor()
