@@ -512,6 +512,7 @@ G2L["3c"]["BorderSizePixel"] = 0;
 G2L["3c"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3c"]["Size"] = UDim2.new(0.6844562888145447, 0, 1, 0);
 G2L["3c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3c"]["Visible"] = false;
 G2L["3c"]["Name"] = [[DevMenuWIP]];
 
 -- StarterGui.ChaosMod.DevMenuWIP.UIGradient
@@ -1545,7 +1546,7 @@ function module.GameMain()
 		if countdown == 0 then
 			numevents += 1
 			countdown = eventmod.GetCDT(nextevent)
-			_G[nextevent]()
+			--_G[nextevent]()
 			nextevent = eventslist[math.random(1,#eventslist)]
 			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			settextcolor()
