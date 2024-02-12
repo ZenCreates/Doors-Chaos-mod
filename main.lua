@@ -507,7 +507,6 @@ G2L["3b"]["SoundId"] = [[rbxassetid://5630473776]];
 
 -- StarterGui.ChaosMod.DevMenuWIP
 G2L["3c"] = Instance.new("Frame", G2L["1"]);
-G2L["3c"]["Active"] = true;
 G2L["3c"]["BorderSizePixel"] = 0;
 G2L["3c"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3c"]["Size"] = UDim2.new(0.6844562888145447, 0, 1, 0);
@@ -1508,8 +1507,7 @@ local numevents = 0
 local hum:Humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
 local ts = game:GetService("TweenService")
 local uis = game:GetService("UserInputService")
-local gui = game.Players.LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("ChaosMod")
-local eventmod = require(gui:WaitForChild("EventHandler"))
+local eventmod = script.Parent.Parent.EventHandler
 
 local eventslist = {"BlurEvent", "GlitchEvent", "DeathOnCrouchEvent", "DeathOnHideEvent", "SettingsPopupEvent", 
 	"ExplosionEvent", "SeekEyesEvent", "TimothyEvent", "HomiesEvent", "ScreechEvent", "SlimedEvent", "RLGLEvent",
@@ -1546,7 +1544,7 @@ function module.GameMain()
 		if countdown == 0 then
 			numevents += 1
 			countdown = eventmod.GetCDT(nextevent)
-			print("|"..eventmod.GetCDT(nextevent).." | ".."")
+			_G[nextevent]()
 			nextevent = eventslist[math.random(1,#eventslist)]
 			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
 			settextcolor()
