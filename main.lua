@@ -731,9 +731,9 @@ function module.Place()
 	Ceiling.TopSurface = Enum.SurfaceType.Smooth
 	Ceiling.Color = Color3.fromRGB(107, 90, 86)
 	Ceiling.Material = Enum.Material.WoodPlanks
-	Ceiling.Size = Vector3.new(45.849998474121094, 19.426921844482422, 1)
+	Ceiling.Size = Vector3.new(63.3531494140625, 19.426921844482422, 1)
 	Ceiling.CanTouch = false
-	Ceiling.CFrame = CFrame.new(151.3436279296875, 19.70290756225586, -363.7182312011719, -1, 0, -0, 0, 0, -1, 0, -1, -0)
+	Ceiling.CFrame = CFrame.new(142.59205627441406, 19.70290756225586, -363.7182312011719, -1, 0, -0, 0, 0, -1, 0, -1, -0)
 	Ceiling.Parent = Model1
 
 	local Ceiling_Detail = Instance.new("Part")
@@ -744,9 +744,9 @@ function module.Place()
 	Ceiling_Detail.TopSurface = Enum.SurfaceType.Smooth
 	Ceiling_Detail.Color = Color3.fromRGB(107, 90, 86)
 	Ceiling_Detail.Material = Enum.Material.Wood
-	Ceiling_Detail.Size = Vector3.new(43.07500076293945, 1.125, 1.75)
+	Ceiling_Detail.Size = Vector3.new(75.1269760131836, 1.125, 1.75)
 	Ceiling_Detail.CanTouch = false
-	Ceiling_Detail.CFrame = CFrame.new(148.8560791015625, 15.937509536743164, -373.68145751953125, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Ceiling_Detail.CFrame = CFrame.new(148.09349060058594, 15.937509536743164, -373.68145751953125, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 	Ceiling_Detail.Parent = DropCeiling
 
 	local Ceiling_Detail1 = Instance.new("Part")
@@ -757,9 +757,9 @@ function module.Place()
 	Ceiling_Detail1.TopSurface = Enum.SurfaceType.Smooth
 	Ceiling_Detail1.Color = Color3.fromRGB(107, 90, 86)
 	Ceiling_Detail1.Material = Enum.Material.WoodPlanks
-	Ceiling_Detail1.Size = Vector3.new(43.89999771118164, 1.125, 1)
+	Ceiling_Detail1.Size = Vector3.new(75.32698822021484, 1.125, 1)
 	Ceiling_Detail1.CanTouch = false
-	Ceiling_Detail1.CFrame = CFrame.new(149.19358825683594, 16.937515258789062, -372.93145751953125, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Ceiling_Detail1.CFrame = CFrame.new(147.9934844970703, 16.937515258789062, -372.93145751953125, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 	Ceiling_Detail1.Parent = DropCeiling
 
 	local Ceiling_Detail2 = Instance.new("Part")
@@ -770,9 +770,9 @@ function module.Place()
 	Ceiling_Detail2.TopSurface = Enum.SurfaceType.Smooth
 	Ceiling_Detail2.Color = Color3.fromRGB(107, 90, 86)
 	Ceiling_Detail2.Material = Enum.Material.Wood
-	Ceiling_Detail2.Size = Vector3.new(3, 43.099998474121094, 0.375)
+	Ceiling_Detail2.Size = Vector3.new(3, 75.42700958251953, 0.375)
 	Ceiling_Detail2.CanTouch = false
-	Ceiling_Detail2.CFrame = CFrame.new(149.7935791015625, 19.000015258789062, -372.74395751953125, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+	Ceiling_Detail2.CFrame = CFrame.new(147.9434814453125, 19.000015258789062, -372.74395751953125, 0, -1, -0, -1, 0, -0, 0, 0, -1)
 	Ceiling_Detail2.Parent = DropCeiling
 
 	local Start_DoorFrame = Instance.new("Model")
@@ -846,9 +846,9 @@ function module.Place()
 	Wall_Strip4.TopSurface = Enum.SurfaceType.Smooth
 	Wall_Strip4.Color = Color3.fromRGB(117, 98, 94)
 	Wall_Strip4.Material = Enum.Material.Wood
-	Wall_Strip4.Size = Vector3.new(17.725000381469727, 0.625, 0.75)
+	Wall_Strip4.Size = Vector3.new(33.82500076293945, 0.625, 0.75)
 	Wall_Strip4.CanTouch = false
-	Wall_Strip4.CFrame = CFrame.new(136.78109741210938, 2.3125152587890625, -374.68145751953125)
+	Wall_Strip4.CFrame = CFrame.new(129.03109741210938, 2.3125152587890625, -374.68145751953125)
 	Wall_Strip4.Parent = Parts
 
 	local Wall_Strip5 = Instance.new("Part")
@@ -859,9 +859,9 @@ function module.Place()
 	Wall_Strip5.TopSurface = Enum.SurfaceType.Smooth
 	Wall_Strip5.Color = Color3.fromRGB(117, 98, 94)
 	Wall_Strip5.Material = Enum.Material.Wood
-	Wall_Strip5.Size = Vector3.new(20.125, 0.625, 0.75)
+	Wall_Strip5.Size = Vector3.new(34.013458251953125, 0.625, 0.75)
 	Wall_Strip5.CanTouch = false
-	Wall_Strip5.CFrame = CFrame.new(161.70608520507812, 2.3125152587890625, -374.68145751953125)
+	Wall_Strip5.CFrame = CFrame.new(168.6503143310547, 2.3125152587890625, -374.68145751953125)
 	Wall_Strip5.Parent = Parts
 
 	local Wall_Strip6 = Instance.new("Part")
@@ -872,9 +872,9 @@ function module.Place()
 	Wall_Strip6.TopSurface = Enum.SurfaceType.Smooth
 	Wall_Strip6.Color = Color3.fromRGB(117, 98, 94)
 	Wall_Strip6.Material = Enum.Material.Wood
-	Wall_Strip6.Size = Vector3.new(20.125, 0.625, 0.75)
+	Wall_Strip6.Size = Vector3.new(34.013458251953125, 0.625, 0.75)
 	Wall_Strip6.CanTouch = false
-	Wall_Strip6.CFrame = CFrame.new(161.70608520507812, 4.9375081062316895, -374.68145751953125)
+	Wall_Strip6.CFrame = CFrame.new(168.6503143310547, 4.9375081062316895, -374.68145751953125)
 	Wall_Strip6.Parent = Parts
 
 	local Floor = Instance.new("Part")
@@ -884,8 +884,8 @@ function module.Place()
 	Floor.TopSurface = Enum.SurfaceType.Smooth
 	Floor.Color = Color3.fromRGB(95, 83, 81)
 	Floor.Material = Enum.Material.WoodPlanks
-	Floor.Size = Vector3.new(32, 1, 36.899993896484375)
-	Floor.CFrame = CFrame.new(148.74359130859375, 1.5000123977661133, -363.80645751953125)
+	Floor.Size = Vector3.new(71.22703552246094, 1, 36.899993896484375)
+	Floor.CFrame = CFrame.new(150.04351806640625, 1.5000123977661133, -363.80645751953125)
 	Floor.Parent = Parts
 
 	local Wall_Strip7 = Instance.new("Part")
@@ -896,9 +896,9 @@ function module.Place()
 	Wall_Strip7.TopSurface = Enum.SurfaceType.Smooth
 	Wall_Strip7.Color = Color3.fromRGB(117, 98, 94)
 	Wall_Strip7.Material = Enum.Material.WoodPlanks
-	Wall_Strip7.Size = Vector3.new(16.725000381469727, 2, 0.625)
+	Wall_Strip7.Size = Vector3.new(35.40205764770508, 2, 0.625)
 	Wall_Strip7.CanTouch = false
-	Wall_Strip7.CFrame = CFrame.new(137.28109741210938, 3.625011920928955, -374.74395751953125)
+	Wall_Strip7.CFrame = CFrame.new(128.33103942871094, 3.625011920928955, -374.74395751953125)
 	Wall_Strip7.Parent = Parts
 
 	local Wall_Strip8 = Instance.new("Part")
@@ -909,9 +909,9 @@ function module.Place()
 	Wall_Strip8.TopSurface = Enum.SurfaceType.Smooth
 	Wall_Strip8.Color = Color3.fromRGB(117, 98, 94)
 	Wall_Strip8.Material = Enum.Material.WoodPlanks
-	Wall_Strip8.Size = Vector3.new(20.125, 2, 0.625)
+	Wall_Strip8.Size = Vector3.new(34.013458251953125, 2, 0.625)
 	Wall_Strip8.CanTouch = false
-	Wall_Strip8.CFrame = CFrame.new(161.70608520507812, 3.625011920928955, -374.74395751953125)
+	Wall_Strip8.CFrame = CFrame.new(168.6503143310547, 3.625011920928955, -374.74395751953125)
 	Wall_Strip8.Parent = Parts
 
 	local Wall_Strip9 = Instance.new("Part")
@@ -922,9 +922,9 @@ function module.Place()
 	Wall_Strip9.TopSurface = Enum.SurfaceType.Smooth
 	Wall_Strip9.Color = Color3.fromRGB(117, 98, 94)
 	Wall_Strip9.Material = Enum.Material.WoodPlanks
-	Wall_Strip9.Size = Vector3.new(42.75, 1, 0.625)
+	Wall_Strip9.Size = Vector3.new(83.72702026367188, 1, 0.625)
 	Wall_Strip9.CanTouch = false
-	Wall_Strip9.CFrame = CFrame.new(150.14358520507812, 14.250001907348633, -374.74395751953125)
+	Wall_Strip9.CFrame = CFrame.new(152.7935028076172, 14.250001907348633, -374.74395751953125)
 	Wall_Strip9.Parent = Parts
 
 	local Wall_Strip10 = Instance.new("Part")
@@ -935,9 +935,9 @@ function module.Place()
 	Wall_Strip10.TopSurface = Enum.SurfaceType.Smooth
 	Wall_Strip10.Color = Color3.fromRGB(117, 98, 94)
 	Wall_Strip10.Material = Enum.Material.Wood
-	Wall_Strip10.Size = Vector3.new(42.849998474121094, 0.625, 0.75)
+	Wall_Strip10.Size = Vector3.new(83.72698211669922, 0.625, 0.75)
 	Wall_Strip10.CanTouch = false
-	Wall_Strip10.CFrame = CFrame.new(150.34359741210938, 15.062501907348633, -374.68145751953125)
+	Wall_Strip10.CFrame = CFrame.new(152.7935028076172, 15.062501907348633, -374.68145751953125)
 	Wall_Strip10.Parent = Parts
 
 	local Wall_Strip11 = Instance.new("Part")
@@ -948,9 +948,9 @@ function module.Place()
 	Wall_Strip11.TopSurface = Enum.SurfaceType.Smooth
 	Wall_Strip11.Color = Color3.fromRGB(117, 98, 94)
 	Wall_Strip11.Material = Enum.Material.Wood
-	Wall_Strip11.Size = Vector3.new(43.45000076293945, 0.625, 0.75)
+	Wall_Strip11.Size = Vector3.new(83.61161041259766, 0.625, 0.75)
 	Wall_Strip11.CanTouch = false
-	Wall_Strip11.CFrame = CFrame.new(150.04359436035156, 13.437501907348633, -374.68145751953125)
+	Wall_Strip11.CFrame = CFrame.new(152.53579711914062, 13.437501907348633, -374.68145751953125)
 	Wall_Strip11.Parent = Parts
 
 	local Wall_Strip12 = Instance.new("Part")
@@ -961,9 +961,9 @@ function module.Place()
 	Wall_Strip12.TopSurface = Enum.SurfaceType.Smooth
 	Wall_Strip12.Color = Color3.fromRGB(117, 98, 94)
 	Wall_Strip12.Material = Enum.Material.Wood
-	Wall_Strip12.Size = Vector3.new(16.625, 0.625, 0.75)
+	Wall_Strip12.Size = Vector3.new(35.49160385131836, 0.625, 0.75)
 	Wall_Strip12.CanTouch = false
-	Wall_Strip12.CFrame = CFrame.new(137.33108520507812, 4.9375081062316895, -374.68145751953125)
+	Wall_Strip12.CFrame = CFrame.new(127.96438598632812, 4.9375081062316895, -374.68145751953125)
 	Wall_Strip12.Parent = Parts
 
 	local Wall = Instance.new("Part")
@@ -973,8 +973,8 @@ function module.Place()
 	Wall.TopSurface = Enum.SurfaceType.Smooth
 	Wall.Color = Color3.fromRGB(109, 70, 70)
 	Wall.Material = Enum.Material.Wood
-	Wall.Size = Vector3.new(16, 19.333332061767578, 0.499969482421875)
-	Wall.CFrame = CFrame.new(161.07691955566406, 10.000001907348633, -374.8064270019531, 0, 0.9999999403953552, 0, 1, 0, 0, 0, 0, -1)
+	Wall.Size = Vector3.new(16, 34.24675369262695, 0.499969482421875)
+	Wall.CFrame = CFrame.new(168.53363037109375, 10.000001907348633, -374.8064270019531, 0, 0.9999999403953552, 0, 1, 0, 0, 0, 0, -1)
 	Wall.Parent = Parts
 
 	local Wall1 = Instance.new("Part")
@@ -995,8 +995,8 @@ function module.Place()
 	Wall2.TopSurface = Enum.SurfaceType.Smooth
 	Wall2.Color = Color3.fromRGB(109, 70, 70)
 	Wall2.Material = Enum.Material.Wood
-	Wall2.Size = Vector3.new(16, 16.96666717529297, 0.499969482421875)
-	Wall2.CFrame = CFrame.new(137.2269287109375, 10.000001907348633, -374.8064270019531, 0, 0.9999999403953552, 0, 1, 0, 0, 0, 0, -1)
+	Wall2.Size = Vector3.new(16, 34.68018341064453, 0.499969482421875)
+	Wall2.CFrame = CFrame.new(128.37010192871094, 10.000001907348633, -374.8064270019531, 0, 0.9999999403953552, 0, 1, 0, 0, 0, 0, -1)
 	Wall2.Parent = Parts
 
 	local Nodes = Instance.new("Folder")
@@ -1735,6 +1735,10 @@ local script = G2L["4"];
 	newcamera.Parent = workspace
 	workspace.CurrentCamera = newcamera
 	
+	local hum:Humanoid = player.Character:WaitForChild("Humanoid")
+	
+	player.CameraMode = Enum.CameraMode.Classic
+	
 	local camShake = cameraShaker.new(97, function(shakeCf)
 		newcamera.CFrame = newcamera.CFrame * shakeCf
 	end)
@@ -1827,7 +1831,10 @@ local script = G2L["4"];
 		ts:Create(newcamera, TweenInfo.new(0.8, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {CFrame = resultCamera}):Play()
 	end)
 	
-	
+	task.wait(10)
+	oldcamera.Parent = workspace
+	workspace.CurrentCamera = oldcamera
+	newcamera.Parent = script
 end;
 task.spawn(C_4);
 
