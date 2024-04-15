@@ -1730,6 +1730,9 @@ local script = G2L["4"];
 	local newcamera = Instance.new("Camera")
 	local oldcamera = workspace.CurrentCamera
 	local world = require(script.World)
+	local freemouse = require(game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"])
+	freemouse.freemouse = false
+	game:GetService("UserInputService").MouseIconEnabled = true
 	oldcamera.Parent = script
 	newcamera.Name = "ChaosCamera"
 	newcamera.Parent = workspace
@@ -1768,7 +1771,7 @@ local script = G2L["4"];
 	
 	local clonedModel = world.Place()
 	--clonedModel.Parent = workspace
-	clonedModel:PivotTo(player.Character:GetPivot() + Vector3.new(0,50,0))
+	clonedModel:PivotTo(player.Character:GetPivot() + Vector3.new(0,500,0))
 	
 	local lighting = game.Lighting
 	
@@ -1831,10 +1834,10 @@ local script = G2L["4"];
 		ts:Create(newcamera, TweenInfo.new(0.8, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {CFrame = resultCamera}):Play()
 	end)
 	
-	task.wait(10)
-	oldcamera.Parent = workspace
-	workspace.CurrentCamera = oldcamera
-	newcamera.Parent = script
+	--task.wait(10)
+	--oldcamera.Parent = workspace
+	--workspace.CurrentCamera = oldcamera
+	--newcamera.Parent = script
 end;
 task.spawn(C_4);
 
