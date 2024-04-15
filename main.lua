@@ -1766,6 +1766,14 @@ local script = G2L["4"];
 	--clonedModel.Parent = workspace
 	clonedModel:PivotTo(player.Character:GetPivot() + Vector3.new(0,50,0))
 	
+	local lighting = game.Lighting
+	
+	lighting.Ambient = Color3.new(0, 0, 0)
+	lighting.Brightness = 0
+	lighting.ExposureCompensation = 0
+	lighting.EnvironmentDiffuseScale = 0
+	lighting.EnvironmentSpecularScale = 0
+	
 	
 	newcamera.CameraType = Enum.CameraType.Scriptable
 	newcamera.FieldOfView = 40
