@@ -7,1408 +7,161 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 131 | Scripts: 18 | Modules: 4
+-- Instances: 19 | Scripts: 1 | Modules: 4
 local G2L = {};
 
--- StarterGui.ChaosMod
+-- StarterGui.MainMenu
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
-G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
-G2L["1"]["Name"] = [[ChaosMod]];
+G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.None;
+G2L["1"]["Name"] = [[MainMenu]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
--- StarterGui.ChaosMod.AlwaysOn
-G2L["2"] = Instance.new("Frame", G2L["1"]);
-G2L["2"]["ZIndex"] = 3;
-G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2"]["BackgroundTransparency"] = 1;
-G2L["2"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["2"]["Name"] = [[AlwaysOn]];
+-- StarterGui.MainMenu.CHAOSMODSONG
+G2L["2"] = Instance.new("Sound", G2L["1"]);
+G2L["2"]["PlaybackSpeed"] = 0.8080000281333923;
+G2L["2"]["Volume"] = 0.25;
+G2L["2"]["Looped"] = true;
+G2L["2"]["Name"] = [[CHAOSMODSONG]];
+G2L["2"]["SoundId"] = [[rbxassetid://1840154523]];
 
--- StarterGui.ChaosMod.AlwaysOn.Notifications
-G2L["3"] = Instance.new("Frame", G2L["2"]);
-G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3"]["BackgroundTransparency"] = 1;
-G2L["3"]["Size"] = UDim2.new(0.5984455943107605, 0, 0.866583526134491, 0);
-G2L["3"]["Selectable"] = true;
-G2L["3"]["Position"] = UDim2.new(0.22839362919330597, 0, 0.08728179335594177, 0);
-G2L["3"]["Name"] = [[Notifications]];
+-- StarterGui.MainMenu.CHAOSMODSONG.EqualizerSoundEffect
+G2L["3"] = Instance.new("EqualizerSoundEffect", G2L["2"]);
+G2L["3"]["HighGain"] = -10;
+G2L["3"]["LowGain"] = 10;
 
--- StarterGui.ChaosMod.AlwaysOn.Notifications.UIListLayout
-G2L["4"] = Instance.new("UIListLayout", G2L["3"]);
-G2L["4"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
-G2L["4"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+-- StarterGui.MainMenu.LocalScript
+G2L["4"] = Instance.new("LocalScript", G2L["1"]);
 
--- StarterGui.ChaosMod.AlwaysOn.Notifications.WarningBase
-G2L["5"] = Instance.new("TextLabel", G2L["3"]);
-G2L["5"]["TextWrapped"] = true;
-G2L["5"]["TextScaled"] = true;
-G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["5"]["TextSize"] = 14;
-G2L["5"]["TextColor3"] = Color3.fromRGB(255, 176, 63);
-G2L["5"]["Size"] = UDim2.new(0.9999999403953552, 0, 0.08536572009325027, 0);
-G2L["5"]["Text"] = [[Screech is active...]];
-G2L["5"]["Name"] = [[WarningBase]];
-G2L["5"]["Visible"] = false;
-G2L["5"]["BackgroundTransparency"] = 1;
-G2L["5"]["Position"] = UDim2.new(3.302768192270378e-08, 0, 0, 0);
 
--- StarterGui.ChaosMod.AlwaysOn.Notification
-G2L["6"] = Instance.new("ModuleScript", G2L["2"]);
-G2L["6"]["Name"] = [[Notification]];
+-- StarterGui.MainMenu.LocalScript.CameraShaker
+G2L["5"] = Instance.new("ModuleScript", G2L["4"]);
+G2L["5"]["Name"] = [[CameraShaker]];
 
--- StarterGui.ChaosMod.MainMenu
-G2L["7"] = Instance.new("Frame", G2L["1"]);
-G2L["7"]["BorderSizePixel"] = 0;
-G2L["7"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7"]["Visible"] = false;
-G2L["7"]["Name"] = [[MainMenu]];
+-- StarterGui.MainMenu.LocalScript.CameraShaker.CameraShakeInstance
+G2L["6"] = Instance.new("ModuleScript", G2L["5"]);
+G2L["6"]["Name"] = [[CameraShakeInstance]];
 
--- StarterGui.ChaosMod.MainMenu.Holder
-G2L["8"] = Instance.new("Frame", G2L["7"]);
-G2L["8"]["BorderSizePixel"] = 0;
-G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["8"]["BackgroundTransparency"] = 1;
-G2L["8"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["8"]["Name"] = [[Holder]];
+-- StarterGui.MainMenu.LocalScript.CameraShaker.CameraShakePresets
+G2L["7"] = Instance.new("ModuleScript", G2L["5"]);
+G2L["7"]["Name"] = [[CameraShakePresets]];
 
--- StarterGui.ChaosMod.MainMenu.Holder.Credits
-G2L["9"] = Instance.new("Frame", G2L["8"]);
+-- StarterGui.MainMenu.LocalScript.World
+G2L["8"] = Instance.new("ModuleScript", G2L["4"]);
+G2L["8"]["Name"] = [[World]];
+
+-- StarterGui.MainMenu.Main
+G2L["9"] = Instance.new("Frame", G2L["1"]);
 G2L["9"]["BorderSizePixel"] = 0;
 G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 G2L["9"]["BackgroundTransparency"] = 1;
-G2L["9"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["9"]["Size"] = UDim2.new(0.3714449405670166, 0, 0.9348198175430298, 0);
 G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9"]["Name"] = [[Credits]];
+G2L["9"]["Position"] = UDim2.new(0.5, 0, 0.5124734044075012, 0);
+G2L["9"]["Visible"] = false;
+G2L["9"]["Name"] = [[Main]];
 
--- StarterGui.ChaosMod.MainMenu.Holder.Credits.Max
-G2L["a"] = Instance.new("TextLabel", G2L["9"]);
+-- StarterGui.MainMenu.Main.PlayButton
+G2L["a"] = Instance.new("TextButton", G2L["9"]);
 G2L["a"]["TextWrapped"] = true;
 G2L["a"]["BorderSizePixel"] = 0;
 G2L["a"]["TextScaled"] = true;
-G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["a"]["TextXAlignment"] = Enum.TextXAlignment.Right;
-G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(26, 19, 13);
 G2L["a"]["TextSize"] = 14;
-G2L["a"]["TextColor3"] = Color3.fromRGB(255, 229, 186);
-G2L["a"]["Size"] = UDim2.new(0.28685787320137024, 0, 0.05173604562878609, 0);
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a"]["TextColor3"] = Color3.fromRGB(255, 241, 218);
+G2L["a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["a"]["Size"] = UDim2.new(0.6694080829620361, 0, 0.07084055244922638, 0);
+G2L["a"]["Name"] = [[PlayButton]];
 G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a"]["Text"] = [[Tested by M4X4]];
-G2L["a"]["Name"] = [[Max]];
-G2L["a"]["BackgroundTransparency"] = 1;
-G2L["a"]["Position"] = UDim2.new(0.7131420969963074, 0, 0.948263943195343, 0);
+G2L["a"]["Text"] = [[Play]];
+G2L["a"]["Position"] = UDim2.new(0.4953097701072693, 0, 0.9048232436180115, 0);
+G2L["a"]["BackgroundTransparency"] = 0.25;
 
--- StarterGui.ChaosMod.MainMenu.Holder.Credits.UIListLayout
-G2L["b"] = Instance.new("UIListLayout", G2L["9"]);
-G2L["b"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
-G2L["b"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
-G2L["b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+-- StarterGui.MainMenu.Main.PlayButton.UICorner
+G2L["b"] = Instance.new("UICorner", G2L["a"]);
+G2L["b"]["CornerRadius"] = UDim.new(0.15000000596046448, 0);
 
--- StarterGui.ChaosMod.MainMenu.Holder.Credits.Zen
-G2L["c"] = Instance.new("TextLabel", G2L["9"]);
-G2L["c"]["TextWrapped"] = true;
-G2L["c"]["BorderSizePixel"] = 0;
-G2L["c"]["TextScaled"] = true;
-G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c"]["TextXAlignment"] = Enum.TextXAlignment.Right;
-G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["c"]["TextSize"] = 14;
-G2L["c"]["TextColor3"] = Color3.fromRGB(255, 229, 186);
-G2L["c"]["Size"] = UDim2.new(0.28685787320137024, 0, 0.05674276500940323, 0);
-G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c"]["Text"] = [[Programmed by: ZennFake]];
-G2L["c"]["Name"] = [[Zen]];
-G2L["c"]["BackgroundTransparency"] = 1;
-G2L["c"]["Position"] = UDim2.new(0.7131420969963074, 0, 0.8915212154388428, 0);
-
--- StarterGui.ChaosMod.MainMenu.Holder.Play
-G2L["d"] = Instance.new("TextButton", G2L["8"]);
-G2L["d"]["TextWrapped"] = true;
-G2L["d"]["BorderSizePixel"] = 0;
-G2L["d"]["Modal"] = true;
-G2L["d"]["TextScaled"] = true;
-G2L["d"]["BackgroundColor3"] = Color3.fromRGB(255, 214, 172);
-G2L["d"]["TextSize"] = 14;
-G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["d"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d"]["Size"] = UDim2.new(0.18745830655097961, 0, 0.09200000017881393, 0);
-G2L["d"]["Name"] = [[Play]];
-G2L["d"]["BorderColor3"] = Color3.fromRGB(240, 246, 177);
-G2L["d"]["Text"] = [[Play]];
-G2L["d"]["Position"] = UDim2.new(0.07100000232458115, 0, 0.42899999022483826, 0);
-
--- StarterGui.ChaosMod.MainMenu.Holder.Play.UICorner
-G2L["e"] = Instance.new("UICorner", G2L["d"]);
-G2L["e"]["CornerRadius"] = UDim.new(0.5, 0);
-
--- StarterGui.ChaosMod.MainMenu.Holder.Play.UIGradient
-G2L["f"] = Instance.new("UIGradient", G2L["d"]);
-G2L["f"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0),NumberSequenceKeypoint.new(1.000, 0.12568306922912598)};
-G2L["f"]["Rotation"] = 35;
-G2L["f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(221, 221, 221))};
-
--- StarterGui.ChaosMod.MainMenu.Holder.Play.LocalScript
-G2L["10"] = Instance.new("LocalScript", G2L["d"]);
+-- StarterGui.MainMenu.Main.PlayButton.UIScale
+G2L["c"] = Instance.new("UIScale", G2L["a"]);
 
 
--- StarterGui.ChaosMod.MainMenu.Holder.Settings
-G2L["11"] = Instance.new("TextButton", G2L["8"]);
+-- StarterGui.MainMenu.Main.PlayButton.UIStroke
+G2L["d"] = Instance.new("UIStroke", G2L["a"]);
+G2L["d"]["Color"] = Color3.fromRGB(255, 241, 218);
+G2L["d"]["Thickness"] = 2;
+G2L["d"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+
+-- StarterGui.MainMenu.Main.Logo
+G2L["e"] = Instance.new("ImageLabel", G2L["9"]);
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["e"]["Image"] = [[rbxassetid://17151158295]];
+G2L["e"]["Size"] = UDim2.new(0.9999350309371948, 0, 0.2778729498386383, 0);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Name"] = [[Logo]];
+G2L["e"]["BackgroundTransparency"] = 1;
+G2L["e"]["Position"] = UDim2.new(0.4984365403652191, 0, 0.17115597426891327, 0);
+
+-- StarterGui.MainMenu.Wind
+G2L["f"] = Instance.new("Sound", G2L["1"]);
+G2L["f"]["PlaybackSpeed"] = 0.35899999737739563;
+G2L["f"]["Volume"] = 1;
+G2L["f"]["Looped"] = true;
+G2L["f"]["Name"] = [[Wind]];
+G2L["f"]["SoundId"] = [[rbxassetid://3308152153]];
+
+-- StarterGui.MainMenu.Loading
+G2L["10"] = Instance.new("CanvasGroup", G2L["1"]);
+G2L["10"]["GroupTransparency"] = 1;
+G2L["10"]["ZIndex"] = 2;
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["10"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["10"]["Visible"] = false;
+G2L["10"]["Name"] = [[Loading]];
+
+-- StarterGui.MainMenu.Loading.Loading
+G2L["11"] = Instance.new("TextLabel", G2L["10"]);
 G2L["11"]["TextWrapped"] = true;
+G2L["11"]["TextStrokeTransparency"] = 0.800000011920929;
 G2L["11"]["BorderSizePixel"] = 0;
 G2L["11"]["TextScaled"] = true;
-G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 214, 172);
-G2L["11"]["TextSize"] = 14;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["11"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["11"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["11"]["Size"] = UDim2.new(0.18745830655097961, 0, 0.09200000017881393, 0);
-G2L["11"]["Name"] = [[Settings]];
-G2L["11"]["BorderColor3"] = Color3.fromRGB(240, 246, 177);
-G2L["11"]["Text"] = [[Settings]];
-G2L["11"]["Position"] = UDim2.new(0.07071381062269211, 0, 0.5529999732971191, 0);
-
--- StarterGui.ChaosMod.MainMenu.Holder.Settings.UICorner
-G2L["12"] = Instance.new("UICorner", G2L["11"]);
-G2L["12"]["CornerRadius"] = UDim.new(0.5, 0);
-
--- StarterGui.ChaosMod.MainMenu.Holder.Settings.UIGradient
-G2L["13"] = Instance.new("UIGradient", G2L["11"]);
-G2L["13"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0),NumberSequenceKeypoint.new(1.000, 0.12568306922912598)};
-G2L["13"]["Rotation"] = 35;
-G2L["13"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(221, 221, 221))};
-
--- StarterGui.ChaosMod.MainMenu.Holder.List
-G2L["14"] = Instance.new("TextButton", G2L["8"]);
-G2L["14"]["TextWrapped"] = true;
-G2L["14"]["BorderSizePixel"] = 0;
-G2L["14"]["TextScaled"] = true;
-G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 214, 172);
-G2L["14"]["TextSize"] = 14;
-G2L["14"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["14"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["14"]["Size"] = UDim2.new(0.18700000643730164, 0, 0.09164588898420334, 0);
-G2L["14"]["Name"] = [[List]];
-G2L["14"]["BorderColor3"] = Color3.fromRGB(240, 246, 177);
-G2L["14"]["Text"] = [[List]];
-G2L["14"]["Position"] = UDim2.new(0.07071381062269211, 0, 0.671999990940094, 0);
-
--- StarterGui.ChaosMod.MainMenu.Holder.List.UICorner
-G2L["15"] = Instance.new("UICorner", G2L["14"]);
-G2L["15"]["CornerRadius"] = UDim.new(0.5, 0);
-
--- StarterGui.ChaosMod.MainMenu.Holder.List.UIGradient
-G2L["16"] = Instance.new("UIGradient", G2L["14"]);
-G2L["16"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0),NumberSequenceKeypoint.new(1.000, 0.12568306922912598)};
-G2L["16"]["Rotation"] = 35;
-G2L["16"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(221, 221, 221))};
-
--- StarterGui.ChaosMod.MainMenu.Holder.Background
-G2L["17"] = Instance.new("ImageLabel", G2L["8"]);
-G2L["17"]["ZIndex"] = 0;
-G2L["17"]["BorderSizePixel"] = 0;
-G2L["17"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["17"]["Image"] = [[rbxassetid://14515777756]];
-G2L["17"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["17"]["Name"] = [[Background]];
-
--- StarterGui.ChaosMod.MainMenu.Holder.Background.UIGradient
-G2L["18"] = Instance.new("UIGradient", G2L["17"]);
-G2L["18"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0),NumberSequenceKeypoint.new(1.000, 0.14754098653793335)};
-G2L["18"]["Rotation"] = 35;
-G2L["18"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(116, 116, 116)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 255, 255))};
-
--- StarterGui.ChaosMod.MainMenu.Holder.Background.LocalScript
-G2L["19"] = Instance.new("LocalScript", G2L["17"]);
-
-
--- StarterGui.ChaosMod.MainMenu.Holder.Logo
-G2L["1a"] = Instance.new("ImageLabel", G2L["8"]);
-G2L["1a"]["BorderSizePixel"] = 0;
-G2L["1a"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1a"]["Image"] = [[rbxassetid://14515639314]];
-G2L["1a"]["Size"] = UDim2.new(0.29819878935813904, 0, 0.3753117322921753, 0);
-G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1a"]["Name"] = [[Logo]];
-G2L["1a"]["BackgroundTransparency"] = 1;
-G2L["1a"]["Position"] = UDim2.new(0.015343562699854374, 0, 0.02244389057159424, 0);
-
--- StarterGui.ChaosMod.MainMenu.Holder.DevButton
-G2L["1b"] = Instance.new("TextButton", G2L["8"]);
-G2L["1b"]["BorderSizePixel"] = 0;
-G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1b"]["TextSize"] = 14;
-G2L["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b"]["Size"] = UDim2.new(0, 19, 0, 34);
-G2L["1b"]["Name"] = [[DevButton]];
-G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b"]["Text"] = [[]];
-G2L["1b"]["Rotation"] = 12;
-G2L["1b"]["Position"] = UDim2.new(0.20601262152194977, 0, 0.2347751408815384, 0);
-G2L["1b"]["BackgroundTransparency"] = 1;
-
--- StarterGui.ChaosMod.MainMenu.Holder.DevButton.LocalScript
-G2L["1c"] = Instance.new("LocalScript", G2L["1b"]);
-
-
--- StarterGui.ChaosMod.MainMenu.FocusText
-G2L["1d"] = Instance.new("TextLabel", G2L["7"]);
-G2L["1d"]["TextWrapped"] = true;
-G2L["1d"]["BorderSizePixel"] = 0;
-G2L["1d"]["TextScaled"] = true;
-G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1d"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1d"]["TextSize"] = 14;
-G2L["1d"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["1d"]["Size"] = UDim2.new(0, 312, 0, 67);
-G2L["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1d"]["Text"] = [[Why are you tabbed out?]];
-G2L["1d"]["Name"] = [[FocusText]];
-G2L["1d"]["Visible"] = false;
-G2L["1d"]["BackgroundTransparency"] = 1;
-G2L["1d"]["Position"] = UDim2.new(0.39031943678855896, 0, 0.7258620858192444, 0);
-
--- StarterGui.ChaosMod.MainMenu.FocusText.UIStroke
-G2L["1e"] = Instance.new("UIStroke", G2L["1d"]);
-
-
--- StarterGui.ChaosMod.MainMenu.EventsSurvived
-G2L["1f"] = Instance.new("TextLabel", G2L["7"]);
-G2L["1f"]["TextWrapped"] = true;
-G2L["1f"]["BorderSizePixel"] = 0;
-G2L["1f"]["TextScaled"] = true;
-G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1f"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1f"]["TextSize"] = 14;
-G2L["1f"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["1f"]["Size"] = UDim2.new(0.33548682928085327, 0, 0.08728179335594177, 0);
-G2L["1f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1f"]["Text"] = [[Events Survived: Unknown]];
-G2L["1f"]["Name"] = [[EventsSurvived]];
-G2L["1f"]["Visible"] = false;
-G2L["1f"]["BackgroundTransparency"] = 1;
-G2L["1f"]["Position"] = UDim2.new(0.3320203423500061, 0, 0.02124430611729622, 0);
-
--- StarterGui.ChaosMod.MainMenu.EventsSurvived.UIStroke
-G2L["20"] = Instance.new("UIStroke", G2L["1f"]);
-
-
--- StarterGui.ChaosMod.Cursor
-G2L["21"] = Instance.new("Frame", G2L["1"]);
-G2L["21"]["BorderSizePixel"] = 0;
-G2L["21"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["21"]["Size"] = UDim2.new(0.0040160175412893295, 0, 0.00750624667853117, 0);
-G2L["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["21"]["Position"] = UDim2.new(0.7224816679954529, 0, 0.6795511245727539, 0);
-G2L["21"]["Visible"] = false;
-G2L["21"]["Name"] = [[Cursor]];
-
--- StarterGui.ChaosMod.Cursor.UIAspectRatioConstraint
-G2L["22"] = Instance.new("UIAspectRatioConstraint", G2L["21"]);
-
-
--- StarterGui.ChaosMod.Cursor.UICorner
-G2L["23"] = Instance.new("UICorner", G2L["21"]);
-G2L["23"]["CornerRadius"] = UDim.new(1, 0);
-
--- StarterGui.ChaosMod.CursorHandeler
-G2L["24"] = Instance.new("ModuleScript", G2L["1"]);
-G2L["24"]["Name"] = [[CursorHandeler]];
-
--- StarterGui.ChaosMod.GameUI
-G2L["25"] = Instance.new("Frame", G2L["1"]);
-G2L["25"]["BorderSizePixel"] = 0;
-G2L["25"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["25"]["BackgroundTransparency"] = 1;
-G2L["25"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["25"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["25"]["Visible"] = false;
-G2L["25"]["Name"] = [[GameUI]];
-
--- StarterGui.ChaosMod.GameUI.NextEvent
-G2L["26"] = Instance.new("TextLabel", G2L["25"]);
-G2L["26"]["TextWrapped"] = true;
-G2L["26"]["BorderSizePixel"] = 0;
-G2L["26"]["TextScaled"] = true;
-G2L["26"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["26"]["TextXAlignment"] = Enum.TextXAlignment.Right;
-G2L["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic);
-G2L["26"]["TextSize"] = 14;
-G2L["26"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["26"]["Size"] = UDim2.new(0.24016010761260986, 0, 0.06109725683927536, 0);
-G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["26"]["Text"] = [[Next Event: Unknown]];
-G2L["26"]["Name"] = [[NextEvent]];
-G2L["26"]["BackgroundTransparency"] = 1;
-G2L["26"]["Position"] = UDim2.new(0.7551701068878174, 0, 0.9201995134353638, 0);
-
--- StarterGui.ChaosMod.GameUI.NextEvent.UIStroke
-G2L["27"] = Instance.new("UIStroke", G2L["26"]);
-
-
--- StarterGui.ChaosMod.GameUI.TimetoNext
-G2L["28"] = Instance.new("TextLabel", G2L["25"]);
-G2L["28"]["TextWrapped"] = true;
-G2L["28"]["BorderSizePixel"] = 0;
-G2L["28"]["TextScaled"] = true;
-G2L["28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["28"]["TextXAlignment"] = Enum.TextXAlignment.Right;
-G2L["28"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["28"]["TextSize"] = 14;
-G2L["28"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["28"]["Size"] = UDim2.new(0.2448299080133438, 0, 0.07730673998594284, 0);
-G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["28"]["Text"] = [[10 Seconds]];
-G2L["28"]["Name"] = [[TimetoNext]];
-G2L["28"]["BackgroundTransparency"] = 1;
-G2L["28"]["Position"] = UDim2.new(0.7551701068878174, 0, 0.8428927659988403, 0);
-
--- StarterGui.ChaosMod.GameUI.TimetoNext.UIStroke
-G2L["29"] = Instance.new("UIStroke", G2L["28"]);
-
-
--- StarterGui.ChaosMod.GameUI.ModuleScript
-G2L["2a"] = Instance.new("ModuleScript", G2L["25"]);
-
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight
-G2L["2b"] = Instance.new("Frame", G2L["25"]);
-G2L["2b"]["BorderSizePixel"] = 0;
-G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2b"]["BackgroundTransparency"] = 1;
-G2L["2b"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["2b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2b"]["Visible"] = false;
-G2L["2b"]["Name"] = [[redlightgreenlight]];
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight.RedLight
-G2L["2c"] = Instance.new("Frame", G2L["2b"]);
-G2L["2c"]["BorderSizePixel"] = 0;
-G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(255, 66, 66);
-G2L["2c"]["BackgroundTransparency"] = 0.5;
-G2L["2c"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2c"]["Visible"] = false;
-G2L["2c"]["Name"] = [[RedLight]];
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight.RedLight.UIGradient
-G2L["2d"] = Instance.new("UIGradient", G2L["2c"]);
-G2L["2d"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.38251370191574097),NumberSequenceKeypoint.new(0.457, 0.4863387942314148),NumberSequenceKeypoint.new(1.000, 1)};
-G2L["2d"]["Rotation"] = 90;
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight.RedLight.Text
-G2L["2e"] = Instance.new("TextLabel", G2L["2c"]);
-G2L["2e"]["TextWrapped"] = true;
-G2L["2e"]["BorderSizePixel"] = 0;
-G2L["2e"]["TextScaled"] = true;
-G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2e"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["2e"]["TextSize"] = 14;
-G2L["2e"]["TextColor3"] = Color3.fromRGB(255, 108, 108);
-G2L["2e"]["Size"] = UDim2.new(0.5577051639556885, 0, 0.12967577576637268, 0);
-G2L["2e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2e"]["Text"] = [[RED LIGHT!]];
-G2L["2e"]["Name"] = [[Text]];
-G2L["2e"]["BackgroundTransparency"] = 1;
-G2L["2e"]["Position"] = UDim2.new(0.22081385552883148, 0, 0.03740648552775383, 0);
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight.RedLight.Text.UIStroke
-G2L["2f"] = Instance.new("UIStroke", G2L["2e"]);
-G2L["2f"]["Color"] = Color3.fromRGB(255, 189, 189);
-G2L["2f"]["Thickness"] = 5.199999809265137;
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight.RedLight.Text.UIGradient
-G2L["30"] = Instance.new("UIGradient", G2L["2e"]);
-G2L["30"]["Rotation"] = -90;
-G2L["30"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(233, 97, 100))};
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight.GreenLight
-G2L["31"] = Instance.new("Frame", G2L["2b"]);
-G2L["31"]["BorderSizePixel"] = 0;
-G2L["31"]["BackgroundColor3"] = Color3.fromRGB(63, 255, 86);
-G2L["31"]["BackgroundTransparency"] = 0.5;
-G2L["31"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["31"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["31"]["Name"] = [[GreenLight]];
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight.GreenLight.UIGradient
-G2L["32"] = Instance.new("UIGradient", G2L["31"]);
-G2L["32"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.38251370191574097),NumberSequenceKeypoint.new(0.457, 0.4863387942314148),NumberSequenceKeypoint.new(1.000, 1)};
-G2L["32"]["Rotation"] = 90;
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight.GreenLight.Text
-G2L["33"] = Instance.new("TextLabel", G2L["31"]);
-G2L["33"]["TextWrapped"] = true;
-G2L["33"]["BorderSizePixel"] = 0;
-G2L["33"]["TextScaled"] = true;
-G2L["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["33"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["33"]["TextSize"] = 14;
-G2L["33"]["TextColor3"] = Color3.fromRGB(155, 255, 132);
-G2L["33"]["Size"] = UDim2.new(0.5577051639556885, 0, 0.12967577576637268, 0);
-G2L["33"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["33"]["Text"] = [[GREEN LIGHT!]];
-G2L["33"]["Name"] = [[Text]];
-G2L["33"]["BackgroundTransparency"] = 1;
-G2L["33"]["Position"] = UDim2.new(0.22081385552883148, 0, 0.03740648552775383, 0);
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight.GreenLight.Text.UIStroke
-G2L["34"] = Instance.new("UIStroke", G2L["33"]);
-G2L["34"]["Color"] = Color3.fromRGB(115, 140, 105);
-G2L["34"]["Thickness"] = 5.199999809265137;
-
--- StarterGui.ChaosMod.GameUI.redlightgreenlight.GreenLight.Text.UIGradient
-G2L["35"] = Instance.new("UIGradient", G2L["33"]);
-G2L["35"]["Rotation"] = -90;
-G2L["35"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(148, 255, 129))};
-
--- StarterGui.ChaosMod.EventHandler
-G2L["36"] = Instance.new("ModuleScript", G2L["1"]);
-G2L["36"]["Name"] = [[EventHandler]];
-
--- StarterGui.ChaosMod.EventHandler.Sounds
-G2L["37"] = Instance.new("Folder", G2L["36"]);
-G2L["37"]["Name"] = [[Sounds]];
-
--- StarterGui.ChaosMod.EventHandler.Sounds.Explode
-G2L["38"] = Instance.new("Sound", G2L["37"]);
-G2L["38"]["Name"] = [[Explode]];
-G2L["38"]["SoundId"] = [[rbxassetid://5706776276]];
-
--- StarterGui.ChaosMod.EventHandler.Sounds.Explode.ParticleEmitter
-G2L["39"] = Instance.new("ParticleEmitter", G2L["38"]);
-G2L["39"]["LightInfluence"] = 1;
-G2L["39"]["FlipbookLayout"] = Enum.ParticleFlipbookLayout.Grid8x8;
-G2L["39"]["Texture"] = [[rbxassetid://9135699136]];
-G2L["39"]["LockedToPart"] = true;
-G2L["39"]["Size"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 30),NumberSequenceKeypoint.new(1.000, 30)};
-G2L["39"]["Enabled"] = false;
-G2L["39"]["Rate"] = 40;
-G2L["39"]["EmissionDirection"] = Enum.NormalId.Front;
-G2L["39"]["FlipbookMode"] = Enum.ParticleFlipbookMode.OneShot;
-
--- StarterGui.ChaosMod.EventHandler.Sounds.green
-G2L["3a"] = Instance.new("Sound", G2L["37"]);
-G2L["3a"]["Volume"] = 3;
-G2L["3a"]["Name"] = [[green]];
-G2L["3a"]["SoundId"] = [[rbxassetid://7738210779]];
-
--- StarterGui.ChaosMod.EventHandler.Sounds.stopmoving
-G2L["3b"] = Instance.new("Sound", G2L["37"]);
-G2L["3b"]["Volume"] = 3;
-G2L["3b"]["Name"] = [[stopmoving]];
-G2L["3b"]["SoundId"] = [[rbxassetid://5630473776]];
-
--- StarterGui.ChaosMod.EventHandler.Sounds.scream
-G2L["3c"] = Instance.new("Sound", G2L["37"]);
-G2L["3c"]["Volume"] = 1;
-G2L["3c"]["Name"] = [[scream]];
-G2L["3c"]["SoundId"] = [[rbxassetid://6343741731]];
-
--- StarterGui.ChaosMod.DevMenuWIP
-G2L["3d"] = Instance.new("Frame", G2L["1"]);
-G2L["3d"]["Active"] = true;
-G2L["3d"]["BorderSizePixel"] = 0;
-G2L["3d"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3d"]["Size"] = UDim2.new(0.6844562888145447, 0, 1, 0);
-G2L["3d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3d"]["Visible"] = false;
-G2L["3d"]["Name"] = [[DevMenuWIP]];
-
--- StarterGui.ChaosMod.DevMenuWIP.UIGradient
-G2L["3e"] = Instance.new("UIGradient", G2L["3d"]);
-G2L["3e"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.38251370191574097),NumberSequenceKeypoint.new(0.457, 0.4863387942314148),NumberSequenceKeypoint.new(1.000, 1)};
-G2L["3e"]["Rotation"] = 90;
-
--- StarterGui.ChaosMod.DevMenuWIP.UIListLayout
-G2L["3f"] = Instance.new("UIListLayout", G2L["3d"]);
-G2L["3f"]["FillDirection"] = Enum.FillDirection.Horizontal;
-G2L["3f"]["Padding"] = UDim.new(0, 19);
-G2L["3f"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.ChaosMod.DevMenuWIP.Spacer
-G2L["40"] = Instance.new("Frame", G2L["3d"]);
-G2L["40"]["BorderSizePixel"] = 0;
-G2L["40"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["40"]["BackgroundTransparency"] = 1;
-G2L["40"]["LayoutOrder"] = -1;
-G2L["40"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["40"]["Name"] = [[Spacer]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage
-G2L["41"] = Instance.new("ScrollingFrame", G2L["3d"]);
-G2L["41"]["Active"] = true;
-G2L["41"]["BorderSizePixel"] = 0;
-G2L["41"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["41"]["BackgroundTransparency"] = 1;
-G2L["41"]["Size"] = UDim2.new(0.16276803612709045, 0, 0.723192036151886, 0);
-G2L["41"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["41"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["41"]["Position"] = UDim2.new(0.028831563889980316, 0, 0, 0);
-G2L["41"]["Name"] = [[Lethal_Damage]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.UIListLayout
-G2L["42"] = Instance.new("UIListLayout", G2L["41"]);
-G2L["42"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-G2L["42"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.RLGL
-G2L["43"] = Instance.new("TextButton", G2L["41"]);
-G2L["43"]["TextWrapped"] = true;
-G2L["43"]["BorderSizePixel"] = 0;
-G2L["43"]["TextScaled"] = true;
-G2L["43"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["43"]["TextSize"] = 14;
-G2L["43"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["43"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["43"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["43"]["LayoutOrder"] = 12;
-G2L["43"]["Name"] = [[RLGL]];
-G2L["43"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["43"]["Text"] = [[Red Light Green Light]];
-G2L["43"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.RLGL.LocalScript
-G2L["44"] = Instance.new("LocalScript", G2L["43"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Homies
-G2L["45"] = Instance.new("TextButton", G2L["41"]);
-G2L["45"]["TextWrapped"] = true;
-G2L["45"]["BorderSizePixel"] = 0;
-G2L["45"]["TextScaled"] = true;
-G2L["45"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["45"]["TextSize"] = 14;
-G2L["45"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["45"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["45"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["45"]["LayoutOrder"] = 9;
-G2L["45"]["Name"] = [[Homies]];
-G2L["45"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["45"]["Text"] = [[The Homies]];
-G2L["45"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Homies.LocalScript
-G2L["46"] = Instance.new("LocalScript", G2L["45"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.StandDeath
-G2L["47"] = Instance.new("TextButton", G2L["41"]);
-G2L["47"]["TextWrapped"] = true;
-G2L["47"]["BorderSizePixel"] = 0;
-G2L["47"]["TextScaled"] = true;
-G2L["47"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["47"]["TextSize"] = 14;
-G2L["47"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["47"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["47"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["47"]["LayoutOrder"] = 6;
-G2L["47"]["Name"] = [[StandDeath]];
-G2L["47"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["47"]["Text"] = [[Crouch or Die]];
-G2L["47"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.StandDeath.LocalScript
-G2L["48"] = Instance.new("LocalScript", G2L["47"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.HideDeath
-G2L["49"] = Instance.new("TextButton", G2L["41"]);
-G2L["49"]["TextWrapped"] = true;
-G2L["49"]["BorderSizePixel"] = 0;
-G2L["49"]["TextScaled"] = true;
-G2L["49"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["49"]["TextSize"] = 14;
-G2L["49"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["49"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["49"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["49"]["LayoutOrder"] = 3;
-G2L["49"]["Name"] = [[HideDeath]];
-G2L["49"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["49"]["Text"] = [[Death on Hide]];
-G2L["49"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.HideDeath.LocalScript
-G2L["4a"] = Instance.new("LocalScript", G2L["49"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.CrouchDeath
-G2L["4b"] = Instance.new("TextButton", G2L["41"]);
-G2L["4b"]["TextWrapped"] = true;
-G2L["4b"]["BorderSizePixel"] = 0;
-G2L["4b"]["TextScaled"] = true;
-G2L["4b"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["4b"]["TextSize"] = 14;
-G2L["4b"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["4b"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["4b"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["4b"]["Name"] = [[CrouchDeath]];
-G2L["4b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["4b"]["Text"] = [[Death on Crouch]];
-G2L["4b"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.CrouchDeath.LocalScript
-G2L["4c"] = Instance.new("LocalScript", G2L["4b"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.CrouchDeathTime
-G2L["4d"] = Instance.new("TextBox", G2L["41"]);
-G2L["4d"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["4d"]["BorderSizePixel"] = 0;
-G2L["4d"]["TextSize"] = 14;
-G2L["4d"]["TextWrapped"] = true;
-G2L["4d"]["TextScaled"] = true;
-G2L["4d"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["4d"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["4d"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["4d"]["LayoutOrder"] = 1;
-G2L["4d"]["PlaceholderText"] = [[10]];
-G2L["4d"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["4d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["4d"]["Text"] = [[10]];
-G2L["4d"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["4d"]["Name"] = [[CrouchDeathTime]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.HideDeathTime
-G2L["4e"] = Instance.new("TextBox", G2L["41"]);
-G2L["4e"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["4e"]["BorderSizePixel"] = 0;
-G2L["4e"]["TextSize"] = 14;
-G2L["4e"]["TextWrapped"] = true;
-G2L["4e"]["TextScaled"] = true;
-G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["4e"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["4e"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["4e"]["LayoutOrder"] = 4;
-G2L["4e"]["PlaceholderText"] = [[10]];
-G2L["4e"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["4e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["4e"]["Text"] = [[10]];
-G2L["4e"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["4e"]["Name"] = [[HideDeathTime]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.StandDeathTime
-G2L["4f"] = Instance.new("TextBox", G2L["41"]);
-G2L["4f"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["4f"]["BorderSizePixel"] = 0;
-G2L["4f"]["TextSize"] = 14;
-G2L["4f"]["TextWrapped"] = true;
-G2L["4f"]["TextScaled"] = true;
-G2L["4f"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["4f"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["4f"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["4f"]["LayoutOrder"] = 7;
-G2L["4f"]["PlaceholderText"] = [[10]];
-G2L["4f"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["4f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["4f"]["Text"] = [[10]];
-G2L["4f"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["4f"]["Name"] = [[StandDeathTime]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.HomiesTime
-G2L["50"] = Instance.new("TextBox", G2L["41"]);
-G2L["50"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["50"]["BorderSizePixel"] = 0;
-G2L["50"]["TextSize"] = 14;
-G2L["50"]["TextWrapped"] = true;
-G2L["50"]["TextScaled"] = true;
-G2L["50"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["50"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["50"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["50"]["LayoutOrder"] = 10;
-G2L["50"]["PlaceholderText"] = [[7]];
-G2L["50"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["50"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["50"]["Text"] = [[7]];
-G2L["50"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["50"]["Name"] = [[HomiesTime]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.RLGLCount
-G2L["51"] = Instance.new("TextBox", G2L["41"]);
-G2L["51"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["51"]["BorderSizePixel"] = 0;
-G2L["51"]["TextSize"] = 14;
-G2L["51"]["TextWrapped"] = true;
-G2L["51"]["TextScaled"] = true;
-G2L["51"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["51"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["51"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["51"]["LayoutOrder"] = 13;
-G2L["51"]["PlaceholderText"] = [[6]];
-G2L["51"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["51"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["51"]["Text"] = [[6]];
-G2L["51"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["51"]["Name"] = [[RLGLCount]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Label
-G2L["52"] = Instance.new("TextLabel", G2L["41"]);
-G2L["52"]["TextWrapped"] = true;
-G2L["52"]["BorderSizePixel"] = 0;
-G2L["52"]["TextScaled"] = true;
-G2L["52"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["52"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["52"]["TextSize"] = 14;
-G2L["52"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["52"]["LayoutOrder"] = -1;
-G2L["52"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.0517241396009922, 0);
-G2L["52"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["52"]["Text"] = [[Lethal / Damage]];
-G2L["52"]["Name"] = [[Label]];
-G2L["52"]["BackgroundTransparency"] = 1;
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Spacer
-G2L["53"] = Instance.new("TextLabel", G2L["41"]);
-G2L["53"]["TextWrapped"] = true;
-G2L["53"]["BorderSizePixel"] = 0;
-G2L["53"]["TextScaled"] = true;
-G2L["53"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["53"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["53"]["TextSize"] = 14;
-G2L["53"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["53"]["LayoutOrder"] = 2;
-G2L["53"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["53"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["53"]["Text"] = [[]];
-G2L["53"]["Name"] = [[Spacer]];
-G2L["53"]["BackgroundTransparency"] = 1;
-G2L["53"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Spacer
-G2L["54"] = Instance.new("TextLabel", G2L["41"]);
-G2L["54"]["TextWrapped"] = true;
-G2L["54"]["BorderSizePixel"] = 0;
-G2L["54"]["TextScaled"] = true;
-G2L["54"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["54"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["54"]["TextSize"] = 14;
-G2L["54"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["54"]["LayoutOrder"] = 5;
-G2L["54"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["54"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["54"]["Text"] = [[]];
-G2L["54"]["Name"] = [[Spacer]];
-G2L["54"]["BackgroundTransparency"] = 1;
-G2L["54"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Spacer
-G2L["55"] = Instance.new("TextLabel", G2L["41"]);
-G2L["55"]["TextWrapped"] = true;
-G2L["55"]["BorderSizePixel"] = 0;
-G2L["55"]["TextScaled"] = true;
-G2L["55"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["55"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["55"]["TextSize"] = 14;
-G2L["55"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["55"]["LayoutOrder"] = 8;
-G2L["55"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["55"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["55"]["Text"] = [[]];
-G2L["55"]["Name"] = [[Spacer]];
-G2L["55"]["BackgroundTransparency"] = 1;
-G2L["55"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Spacer
-G2L["56"] = Instance.new("TextLabel", G2L["41"]);
-G2L["56"]["TextWrapped"] = true;
-G2L["56"]["BorderSizePixel"] = 0;
-G2L["56"]["TextScaled"] = true;
-G2L["56"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["56"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["56"]["TextSize"] = 14;
-G2L["56"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["56"]["LayoutOrder"] = 11;
-G2L["56"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["56"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["56"]["Text"] = [[]];
-G2L["56"]["Name"] = [[Spacer]];
-G2L["56"]["BackgroundTransparency"] = 1;
-G2L["56"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Spacer
-G2L["57"] = Instance.new("TextLabel", G2L["41"]);
-G2L["57"]["TextWrapped"] = true;
-G2L["57"]["BorderSizePixel"] = 0;
-G2L["57"]["TextScaled"] = true;
-G2L["57"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["57"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["57"]["TextSize"] = 14;
-G2L["57"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["57"]["LayoutOrder"] = 13;
-G2L["57"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["57"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["57"]["Text"] = [[]];
-G2L["57"]["Name"] = [[Spacer]];
-G2L["57"]["BackgroundTransparency"] = 1;
-G2L["57"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Explosion
-G2L["58"] = Instance.new("TextButton", G2L["41"]);
-G2L["58"]["TextWrapped"] = true;
-G2L["58"]["BorderSizePixel"] = 0;
-G2L["58"]["TextScaled"] = true;
-G2L["58"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["58"]["TextSize"] = 14;
-G2L["58"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["58"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["58"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["58"]["LayoutOrder"] = 15;
-G2L["58"]["Name"] = [[Explosion]];
-G2L["58"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["58"]["Text"] = [[Explosion]];
-G2L["58"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Explosion.LocalScript
-G2L["59"] = Instance.new("LocalScript", G2L["58"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.ExplosionTime
-G2L["5a"] = Instance.new("TextBox", G2L["41"]);
-G2L["5a"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["5a"]["BorderSizePixel"] = 0;
-G2L["5a"]["TextSize"] = 14;
-G2L["5a"]["TextWrapped"] = true;
-G2L["5a"]["TextScaled"] = true;
-G2L["5a"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["5a"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["5a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["5a"]["LayoutOrder"] = 16;
-G2L["5a"]["PlaceholderText"] = [[3]];
-G2L["5a"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["5a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5a"]["Text"] = [[3]];
-G2L["5a"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["5a"]["Name"] = [[ExplosionTime]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.ExplosionDamage
-G2L["5b"] = Instance.new("TextBox", G2L["41"]);
-G2L["5b"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["5b"]["BorderSizePixel"] = 0;
-G2L["5b"]["TextSize"] = 14;
-G2L["5b"]["TextWrapped"] = true;
-G2L["5b"]["TextScaled"] = true;
-G2L["5b"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["5b"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["5b"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["5b"]["LayoutOrder"] = 17;
-G2L["5b"]["PlaceholderText"] = [[10]];
-G2L["5b"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["5b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5b"]["Text"] = [[10]];
-G2L["5b"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["5b"]["Name"] = [[ExplosionDamage]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares
-G2L["5c"] = Instance.new("ScrollingFrame", G2L["3d"]);
-G2L["5c"]["Active"] = true;
-G2L["5c"]["BorderSizePixel"] = 0;
-G2L["5c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["5c"]["BackgroundTransparency"] = 1;
-G2L["5c"]["LayoutOrder"] = 1;
-G2L["5c"]["Size"] = UDim2.new(0.16276803612709045, 0, 0.723192036151886, 0);
-G2L["5c"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5c"]["Name"] = [[Entities_Scares]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.UIListLayout
-G2L["5d"] = Instance.new("UIListLayout", G2L["5c"]);
-G2L["5d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-G2L["5d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.GlitchAmount
-G2L["5e"] = Instance.new("TextBox", G2L["5c"]);
-G2L["5e"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["5e"]["BorderSizePixel"] = 0;
-G2L["5e"]["TextSize"] = 14;
-G2L["5e"]["TextWrapped"] = true;
-G2L["5e"]["TextScaled"] = true;
-G2L["5e"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["5e"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["5e"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["5e"]["LayoutOrder"] = 1;
-G2L["5e"]["PlaceholderText"] = [[10]];
-G2L["5e"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["5e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5e"]["Text"] = [[10]];
-G2L["5e"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["5e"]["Name"] = [[GlitchAmount]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.GlitchJS
-G2L["5f"] = Instance.new("TextButton", G2L["5c"]);
-G2L["5f"]["TextWrapped"] = true;
-G2L["5f"]["BorderSizePixel"] = 0;
-G2L["5f"]["TextScaled"] = true;
-G2L["5f"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["5f"]["TextSize"] = 14;
-G2L["5f"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["5f"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["5f"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["5f"]["Name"] = [[GlitchJS]];
-G2L["5f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5f"]["Text"] = [[Glitch Scare]];
-G2L["5f"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.GlitchJS.LocalScript
-G2L["60"] = Instance.new("LocalScript", G2L["5f"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.ScreechAmount
-G2L["61"] = Instance.new("TextBox", G2L["5c"]);
-G2L["61"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["61"]["BorderSizePixel"] = 0;
-G2L["61"]["TextSize"] = 14;
-G2L["61"]["TextWrapped"] = true;
-G2L["61"]["TextScaled"] = true;
-G2L["61"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["61"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["61"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["61"]["LayoutOrder"] = 7;
-G2L["61"]["PlaceholderText"] = [[10]];
-G2L["61"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["61"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["61"]["Text"] = [[10]];
-G2L["61"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["61"]["Name"] = [[ScreechAmount]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.ScreechJS
-G2L["62"] = Instance.new("TextButton", G2L["5c"]);
-G2L["62"]["TextWrapped"] = true;
-G2L["62"]["BorderSizePixel"] = 0;
-G2L["62"]["TextScaled"] = true;
-G2L["62"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["62"]["TextSize"] = 14;
-G2L["62"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["62"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["62"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["62"]["LayoutOrder"] = 6;
-G2L["62"]["Name"] = [[ScreechJS]];
-G2L["62"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["62"]["Text"] = [[Screech Scare]];
-G2L["62"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.ScreechJS.LocalScript
-G2L["63"] = Instance.new("LocalScript", G2L["62"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.TimothyAmount
-G2L["64"] = Instance.new("TextBox", G2L["5c"]);
-G2L["64"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["64"]["BorderSizePixel"] = 0;
-G2L["64"]["TextSize"] = 14;
-G2L["64"]["TextWrapped"] = true;
-G2L["64"]["TextScaled"] = true;
-G2L["64"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["64"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["64"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["64"]["LayoutOrder"] = 4;
-G2L["64"]["PlaceholderText"] = [[50]];
-G2L["64"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["64"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["64"]["Text"] = [[50]];
-G2L["64"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["64"]["Name"] = [[TimothyAmount]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.FoolsTime
-G2L["65"] = Instance.new("TextBox", G2L["5c"]);
-G2L["65"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["65"]["BorderSizePixel"] = 0;
-G2L["65"]["TextSize"] = 14;
-G2L["65"]["TextWrapped"] = true;
-G2L["65"]["TextScaled"] = true;
-G2L["65"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["65"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["65"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["65"]["LayoutOrder"] = 10;
-G2L["65"]["PlaceholderText"] = [[3]];
-G2L["65"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["65"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["65"]["Text"] = [[3]];
-G2L["65"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["65"]["Name"] = [[FoolsTime]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.TimothyJS
-G2L["66"] = Instance.new("TextButton", G2L["5c"]);
-G2L["66"]["TextWrapped"] = true;
-G2L["66"]["BorderSizePixel"] = 0;
-G2L["66"]["TextScaled"] = true;
-G2L["66"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["66"]["TextSize"] = 14;
-G2L["66"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["66"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["66"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["66"]["LayoutOrder"] = 3;
-G2L["66"]["Name"] = [[TimothyJS]];
-G2L["66"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["66"]["Text"] = [[Timothy Scare]];
-G2L["66"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.TimothyJS.LocalScript
-G2L["67"] = Instance.new("LocalScript", G2L["66"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.FoolsJS
-G2L["68"] = Instance.new("TextButton", G2L["5c"]);
-G2L["68"]["TextWrapped"] = true;
-G2L["68"]["BorderSizePixel"] = 0;
-G2L["68"]["TextScaled"] = true;
-G2L["68"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["68"]["TextSize"] = 14;
-G2L["68"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["68"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["68"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["68"]["LayoutOrder"] = 9;
-G2L["68"]["Name"] = [[FoolsJS]];
-G2L["68"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["68"]["Text"] = [[Fools Scare]];
-G2L["68"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.FoolsJS.LocalScript
-G2L["69"] = Instance.new("LocalScript", G2L["68"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.Label
-G2L["6a"] = Instance.new("TextLabel", G2L["5c"]);
-G2L["6a"]["TextWrapped"] = true;
-G2L["6a"]["BorderSizePixel"] = 0;
-G2L["6a"]["TextScaled"] = true;
-G2L["6a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["6a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["6a"]["TextSize"] = 14;
-G2L["6a"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["6a"]["LayoutOrder"] = -1;
-G2L["6a"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.0517241396009922, 0);
-G2L["6a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6a"]["Text"] = [[Entities / Scares]];
-G2L["6a"]["Name"] = [[Label]];
-G2L["6a"]["BackgroundTransparency"] = 1;
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.Spacer
-G2L["6b"] = Instance.new("TextLabel", G2L["5c"]);
-G2L["6b"]["TextWrapped"] = true;
-G2L["6b"]["BorderSizePixel"] = 0;
-G2L["6b"]["TextScaled"] = true;
-G2L["6b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["6b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["6b"]["TextSize"] = 14;
-G2L["6b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6b"]["LayoutOrder"] = 2;
-G2L["6b"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["6b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6b"]["Text"] = [[]];
-G2L["6b"]["Name"] = [[Spacer]];
-G2L["6b"]["BackgroundTransparency"] = 1;
-G2L["6b"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.Spacer
-G2L["6c"] = Instance.new("TextLabel", G2L["5c"]);
-G2L["6c"]["TextWrapped"] = true;
-G2L["6c"]["BorderSizePixel"] = 0;
-G2L["6c"]["TextScaled"] = true;
-G2L["6c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["6c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["6c"]["TextSize"] = 14;
-G2L["6c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6c"]["LayoutOrder"] = 5;
-G2L["6c"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["6c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6c"]["Text"] = [[]];
-G2L["6c"]["Name"] = [[Spacer]];
-G2L["6c"]["BackgroundTransparency"] = 1;
-G2L["6c"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.Spacer
-G2L["6d"] = Instance.new("TextLabel", G2L["5c"]);
-G2L["6d"]["TextWrapped"] = true;
-G2L["6d"]["BorderSizePixel"] = 0;
-G2L["6d"]["TextScaled"] = true;
-G2L["6d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["6d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["6d"]["TextSize"] = 14;
-G2L["6d"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6d"]["LayoutOrder"] = 8;
-G2L["6d"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["6d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6d"]["Text"] = [[]];
-G2L["6d"]["Name"] = [[Spacer]];
-G2L["6d"]["BackgroundTransparency"] = 1;
-G2L["6d"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals
-G2L["6e"] = Instance.new("ScrollingFrame", G2L["3d"]);
-G2L["6e"]["Active"] = true;
-G2L["6e"]["BorderSizePixel"] = 0;
-G2L["6e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["6e"]["BackgroundTransparency"] = 1;
-G2L["6e"]["LayoutOrder"] = 2;
-G2L["6e"]["Size"] = UDim2.new(0.16276803612709045, 0, 0.723192036151886, 0);
-G2L["6e"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6e"]["Position"] = UDim2.new(0.5071336030960083, 0, 0, 0);
-G2L["6e"]["Name"] = [[Visuals]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.Spacer
-G2L["6f"] = Instance.new("TextLabel", G2L["6e"]);
-G2L["6f"]["TextWrapped"] = true;
-G2L["6f"]["BorderSizePixel"] = 0;
-G2L["6f"]["TextScaled"] = true;
-G2L["6f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["6f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["6f"]["TextSize"] = 14;
-G2L["6f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6f"]["LayoutOrder"] = 6;
-G2L["6f"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["6f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["6f"]["Text"] = [[]];
-G2L["6f"]["Name"] = [[Spacer]];
-G2L["6f"]["BackgroundTransparency"] = 1;
-G2L["6f"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.SeekEyes
-G2L["70"] = Instance.new("TextButton", G2L["6e"]);
-G2L["70"]["TextWrapped"] = true;
-G2L["70"]["BorderSizePixel"] = 0;
-G2L["70"]["TextScaled"] = true;
-G2L["70"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["70"]["TextSize"] = 14;
-G2L["70"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["70"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["70"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["70"]["LayoutOrder"] = 3;
-G2L["70"]["Name"] = [[SeekEyes]];
-G2L["70"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["70"]["Text"] = [[Seek Eyes]];
-G2L["70"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.SeekEyes.LocalScript
-G2L["71"] = Instance.new("LocalScript", G2L["70"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.BlurEffect
-G2L["72"] = Instance.new("TextButton", G2L["6e"]);
-G2L["72"]["TextWrapped"] = true;
-G2L["72"]["BorderSizePixel"] = 0;
-G2L["72"]["TextScaled"] = true;
-G2L["72"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["72"]["TextSize"] = 14;
-G2L["72"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["72"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["72"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["72"]["Name"] = [[BlurEffect]];
-G2L["72"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["72"]["Text"] = [[Blur Effect]];
-G2L["72"]["Position"] = UDim2.new(0.07784431427717209, 0, 0.14304399490356445, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.BlurEffect.LocalScript
-G2L["73"] = Instance.new("LocalScript", G2L["72"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.BlurTime
-G2L["74"] = Instance.new("TextBox", G2L["6e"]);
-G2L["74"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["74"]["BorderSizePixel"] = 0;
-G2L["74"]["TextSize"] = 14;
-G2L["74"]["TextWrapped"] = true;
-G2L["74"]["TextScaled"] = true;
-G2L["74"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["74"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["74"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["74"]["LayoutOrder"] = 1;
-G2L["74"]["PlaceholderText"] = [[10]];
-G2L["74"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["74"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["74"]["Text"] = [[10]];
-G2L["74"]["Position"] = UDim2.new(0.28143712878227234, 0, 0.17001552879810333, 0);
-G2L["74"]["Name"] = [[BlurTime]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.EyesAmount
-G2L["75"] = Instance.new("TextBox", G2L["6e"]);
-G2L["75"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["75"]["BorderSizePixel"] = 0;
-G2L["75"]["TextSize"] = 14;
-G2L["75"]["TextWrapped"] = true;
-G2L["75"]["TextScaled"] = true;
-G2L["75"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["75"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["75"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["75"]["LayoutOrder"] = 4;
-G2L["75"]["PlaceholderText"] = [[1000]];
-G2L["75"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["75"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["75"]["Text"] = [[1000]];
-G2L["75"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["75"]["Name"] = [[EyesAmount]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.EyesLoopAmount
-G2L["76"] = Instance.new("TextBox", G2L["6e"]);
-G2L["76"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["76"]["BorderSizePixel"] = 0;
-G2L["76"]["TextSize"] = 14;
-G2L["76"]["TextWrapped"] = true;
-G2L["76"]["TextScaled"] = true;
-G2L["76"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["76"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["76"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["76"]["LayoutOrder"] = 4;
-G2L["76"]["PlaceholderText"] = [[5]];
-G2L["76"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["76"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["76"]["Text"] = [[5]];
-G2L["76"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["76"]["Name"] = [[EyesLoopAmount]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.Label
-G2L["77"] = Instance.new("TextLabel", G2L["6e"]);
-G2L["77"]["TextWrapped"] = true;
-G2L["77"]["BorderSizePixel"] = 0;
-G2L["77"]["TextScaled"] = true;
-G2L["77"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["77"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["77"]["TextSize"] = 14;
-G2L["77"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["77"]["LayoutOrder"] = -1;
-G2L["77"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.0517241396009922, 0);
-G2L["77"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["77"]["Text"] = [[Visuals]];
-G2L["77"]["Name"] = [[Label]];
-G2L["77"]["BackgroundTransparency"] = 1;
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.Spacer
-G2L["78"] = Instance.new("TextLabel", G2L["6e"]);
-G2L["78"]["TextWrapped"] = true;
-G2L["78"]["BorderSizePixel"] = 0;
-G2L["78"]["TextScaled"] = true;
-G2L["78"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["78"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["78"]["TextSize"] = 14;
-G2L["78"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["78"]["LayoutOrder"] = 2;
-G2L["78"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["78"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["78"]["Text"] = [[]];
-G2L["78"]["Name"] = [[Spacer]];
-G2L["78"]["BackgroundTransparency"] = 1;
-G2L["78"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.UIListLayout
-G2L["79"] = Instance.new("UIListLayout", G2L["6e"]);
-G2L["79"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-G2L["79"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances
-G2L["7a"] = Instance.new("ScrollingFrame", G2L["3d"]);
-G2L["7a"]["Active"] = true;
-G2L["7a"]["BorderSizePixel"] = 0;
-G2L["7a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["7a"]["BackgroundTransparency"] = 1;
-G2L["7a"]["LayoutOrder"] = 3;
-G2L["7a"]["Size"] = UDim2.new(0.16276803612709045, 0, 0.723192036151886, 0);
-G2L["7a"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7a"]["Name"] = [[Annoyances]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.UIListLayout
-G2L["7b"] = Instance.new("UIListLayout", G2L["7a"]);
-G2L["7b"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-G2L["7b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.SlimedTime
-G2L["7c"] = Instance.new("TextBox", G2L["7a"]);
-G2L["7c"]["PlaceholderColor3"] = Color3.fromRGB(128, 115, 90);
-G2L["7c"]["BorderSizePixel"] = 0;
-G2L["7c"]["TextSize"] = 14;
-G2L["7c"]["TextWrapped"] = true;
-G2L["7c"]["TextScaled"] = true;
-G2L["7c"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["7c"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["7c"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["7c"]["LayoutOrder"] = 1;
-G2L["7c"]["PlaceholderText"] = [[20]];
-G2L["7c"]["Size"] = UDim2.new(0.43700000643730164, 0, 0.01899999938905239, 0);
-G2L["7c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7c"]["Text"] = [[20]];
-G2L["7c"]["Position"] = UDim2.new(0, 0, 0.06551723927259445, 0);
-G2L["7c"]["Name"] = [[SlimedTime]];
-
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.SettingsPopup
-G2L["7d"] = Instance.new("TextButton", G2L["7a"]);
-G2L["7d"]["TextWrapped"] = true;
-G2L["7d"]["BorderSizePixel"] = 0;
-G2L["7d"]["TextScaled"] = true;
-G2L["7d"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["7d"]["TextSize"] = 14;
-G2L["7d"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["7d"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["7d"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["7d"]["LayoutOrder"] = 3;
-G2L["7d"]["Name"] = [[SettingsPopup]];
-G2L["7d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7d"]["Text"] = [[Settings Popup]];
-G2L["7d"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.SettingsPopup.LocalScript
-G2L["7e"] = Instance.new("LocalScript", G2L["7d"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Slimed
-G2L["7f"] = Instance.new("TextButton", G2L["7a"]);
-G2L["7f"]["TextWrapped"] = true;
-G2L["7f"]["BorderSizePixel"] = 0;
-G2L["7f"]["TextScaled"] = true;
-G2L["7f"]["BackgroundColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["7f"]["TextSize"] = 14;
-G2L["7f"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["7f"]["TextColor3"] = Color3.fromRGB(85, 77, 60);
-G2L["7f"]["Size"] = UDim2.new(0.843999981880188, 0, 0.027000000700354576, 0);
-G2L["7f"]["Name"] = [[Slimed]];
-G2L["7f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7f"]["Text"] = [[Get Slimed]];
-G2L["7f"]["Position"] = UDim2.new(0.2783018946647644, 0, 0, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Slimed.LocalScript
-G2L["80"] = Instance.new("LocalScript", G2L["7f"]);
-
-
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Label
-G2L["81"] = Instance.new("TextLabel", G2L["7a"]);
-G2L["81"]["TextWrapped"] = true;
-G2L["81"]["BorderSizePixel"] = 0;
-G2L["81"]["TextScaled"] = true;
-G2L["81"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["81"]["FontFace"] = Font.new([[rbxasset://fonts/families/Oswald.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["81"]["TextSize"] = 14;
-G2L["81"]["TextColor3"] = Color3.fromRGB(246, 224, 174);
-G2L["81"]["LayoutOrder"] = -1;
-G2L["81"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.0517241396009922, 0);
-G2L["81"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["81"]["Text"] = [[Annoyances]];
-G2L["81"]["Name"] = [[Label]];
-G2L["81"]["BackgroundTransparency"] = 1;
-
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Spacer
-G2L["82"] = Instance.new("TextLabel", G2L["7a"]);
-G2L["82"]["TextWrapped"] = true;
-G2L["82"]["BorderSizePixel"] = 0;
-G2L["82"]["TextScaled"] = true;
-G2L["82"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["82"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["82"]["TextSize"] = 14;
-G2L["82"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["82"]["LayoutOrder"] = 2;
-G2L["82"]["Size"] = UDim2.new(0.8443113565444946, 0, 0.022413793951272964, 0);
-G2L["82"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["82"]["Text"] = [[]];
-G2L["82"]["Name"] = [[Spacer]];
-G2L["82"]["BackgroundTransparency"] = 1;
-G2L["82"]["Position"] = UDim2.new(0, 0, 0.15172414481639862, 0);
-
--- StarterGui.ChaosMod.DevMenuWIP.LocalScript
-G2L["83"] = Instance.new("LocalScript", G2L["3d"]);
-
+G2L["11"]["TextSize"] = 14;
+G2L["11"]["TextColor3"] = Color3.fromRGB(255, 231, 202);
+G2L["11"]["Size"] = UDim2.new(0.8655781745910645, 0, 0.0758742094039917, 0);
+G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["Text"] = [[Loading Assets...]];
+G2L["11"]["Name"] = [[Loading]];
+G2L["11"]["BackgroundTransparency"] = 1;
+G2L["11"]["Position"] = UDim2.new(0.06349342316389084, 0, 0.6451783776283264, 0);
+
+-- StarterGui.MainMenu.Loading.Logo
+G2L["12"] = Instance.new("ImageLabel", G2L["10"]);
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["12"]["Image"] = [[rbxassetid://17151158295]];
+G2L["12"]["Size"] = UDim2.new(1.4806430339813232, 0, 0.47512850165367126, 0);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["Name"] = [[Logo]];
+G2L["12"]["BackgroundTransparency"] = 1;
+G2L["12"]["Position"] = UDim2.new(0.49803465604782104, 0, 0.484950453042984, 0);
+
+-- StarterGui.MainMenu.Loading.UIGradient
+G2L["13"] = Instance.new("UIGradient", G2L["10"]);
+G2L["13"]["Rotation"] = -9090;
+G2L["13"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 221, 221))};
 
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
@@ -1425,815 +178,1649 @@ local function require(Module:ModuleScript)
     return G2L_REQUIRE(Module);
 end
 
+G2L_MODULES[G2L["5"]] = {
+Closure = function()
+    local script = G2L["5"];
+-- Camera Shaker
+-- Stephen Leitnick
+-- February 26, 2018
+
+--[[
+	
+	CameraShaker.CameraShakeInstance
+	
+	cameraShaker = CameraShaker.new(renderPriority, callbackFunction)
+	
+	CameraShaker:Start()
+	CameraShaker:Stop()
+	CameraShaker:StopSustained([fadeOutTime])
+	CameraShaker:Shake(shakeInstance)
+	CameraShaker:ShakeSustain(shakeInstance)
+	CameraShaker:ShakeOnce(magnitude, roughness [, fadeInTime, fadeOutTime, posInfluence, rotInfluence])
+	CameraShaker:StartShake(magnitude, roughness [, fadeInTime, posInfluence, rotInfluence])
+	
+	
+	
+	EXAMPLE:
+	
+		local camShake = CameraShaker.new(Enum.RenderPriority.Camera.Value, function(shakeCFrame)
+			camera.CFrame = playerCFrame * shakeCFrame
+		end)
+		
+		camShake:Start()
+		
+		-- Explosion shake:
+		camShake:Shake(CameraShaker.Presets.Explosion)
+		
+		wait(1)
+		
+		-- Custom shake:
+		camShake:ShakeOnce(3, 1, 0.2, 1.5)
+
+		-- Sustained shake:
+		camShake:ShakeSustain(CameraShaker.Presets.Earthquake)
+
+		-- Stop all sustained shakes:
+		camShake:StopSustained(1) -- Argument is the fadeout time (defaults to the same as fadein time if not supplied)
+
+		-- Stop only one sustained shake:
+		shakeInstance = camShake:ShakeSustain(CameraShaker.Presets.Earthquake)
+		wait(2)
+		shakeInstance:StartFadeOut(1) -- Argument is the fadeout time
+	
+	
+	NOTE:
+	
+		This was based entirely on the EZ Camera Shake asset for Unity3D. I was given written
+		permission by the developer, Road Turtle Games, to port this to Roblox.
+		
+		Original asset link: https://assetstore.unity.com/packages/tools/camera/ez-camera-shake-33148
+
+		GitHub repository: https://github.com/Sleitnick/RbxCameraShaker
+	
+	
+--]]
+
+
+
+local CameraShaker = {}
+CameraShaker.__index = CameraShaker
+
+local profileBegin = debug.profilebegin
+local profileEnd = debug.profileend
+local profileTag = "CameraShakerUpdate"
+
+local V3 = Vector3.new
+local CF = CFrame.new
+local ANG = CFrame.Angles
+local RAD = math.rad
+local v3Zero = V3()
+
+local CameraShakeInstance = require(script.CameraShakeInstance)
+local CameraShakeState = CameraShakeInstance.CameraShakeState
+
+local defaultPosInfluence = V3(0.15, 0.15, 0.15)
+local defaultRotInfluence = V3(1, 1, 1)
+
+
+CameraShaker.CameraShakeInstance = CameraShakeInstance
+CameraShaker.Presets = require(script.CameraShakePresets)
+
+
+function CameraShaker.new(renderPriority, callback)
+	
+	assert(type(renderPriority) == "number", "RenderPriority must be a number (e.g.: Enum.RenderPriority.Camera.Value)")
+	assert(type(callback) == "function", "Callback must be a function")
+	
+	local self = setmetatable({
+		_running = false;
+		_renderName = "CameraShaker";
+		_renderPriority = renderPriority;
+		_posAddShake = v3Zero;
+		_rotAddShake = v3Zero;
+		_camShakeInstances = {};
+		_removeInstances = {};
+		_callback = callback;
+	}, CameraShaker)
+	
+	return self
+	
+end
+
+
+function CameraShaker:Start()
+	if (self._running) then return end
+	self._running = true
+	local callback = self._callback
+	game:GetService("RunService"):BindToRenderStep(self._renderName, self._renderPriority, function(dt)
+		profileBegin(profileTag)
+		local cf = self:Update(dt)
+		profileEnd()
+		callback(cf)
+	end)
+end
+
+
+function CameraShaker:Stop()
+	if (not self._running) then return end
+	game:GetService("RunService"):UnbindFromRenderStep(self._renderName)
+	self._running = false
+end
+
+
+function CameraShaker:StopSustained(duration)
+	for _,c in pairs(self._camShakeInstances) do
+		if (c.fadeOutDuration == 0) then
+			c:StartFadeOut(duration or c.fadeInDuration)
+		end
+	end
+end
+
+
+function CameraShaker:Update(dt)
+	
+	local posAddShake = v3Zero
+	local rotAddShake = v3Zero
+	
+	local instances = self._camShakeInstances
+	
+	-- Update all instances:
+	for i = 1,#instances do
+		
+		local c = instances[i]
+		local state = c:GetState()
+		
+		if (state == CameraShakeState.Inactive and c.DeleteOnInactive) then
+			self._removeInstances[#self._removeInstances + 1] = i
+		elseif (state ~= CameraShakeState.Inactive) then
+			local shake = c:UpdateShake(dt)
+			posAddShake = posAddShake + (shake * c.PositionInfluence)
+			rotAddShake = rotAddShake + (shake * c.RotationInfluence)
+		end
+		
+	end
+	
+	-- Remove dead instances:
+	for i = #self._removeInstances,1,-1 do
+		local instIndex = self._removeInstances[i]
+		table.remove(instances, instIndex)
+		self._removeInstances[i] = nil
+	end
+	
+	return CF(posAddShake) *
+			ANG(0, RAD(rotAddShake.Y), 0) *
+			ANG(RAD(rotAddShake.X), 0, RAD(rotAddShake.Z))
+	
+end
+
+
+function CameraShaker:Shake(shakeInstance)
+	assert(type(shakeInstance) == "table" and shakeInstance._camShakeInstance, "ShakeInstance must be of type CameraShakeInstance")
+	self._camShakeInstances[#self._camShakeInstances + 1] = shakeInstance
+	return shakeInstance
+end
+
+
+function CameraShaker:ShakeSustain(shakeInstance)
+	assert(type(shakeInstance) == "table" and shakeInstance._camShakeInstance, "ShakeInstance must be of type CameraShakeInstance")
+	self._camShakeInstances[#self._camShakeInstances + 1] = shakeInstance
+	shakeInstance:StartFadeIn(shakeInstance.fadeInDuration)
+	return shakeInstance
+end
+
+
+function CameraShaker:ShakeOnce(magnitude, roughness, fadeInTime, fadeOutTime, posInfluence, rotInfluence)
+	local shakeInstance = CameraShakeInstance.new(magnitude, roughness, fadeInTime, fadeOutTime)
+	shakeInstance.PositionInfluence = (typeof(posInfluence) == "Vector3" and posInfluence or defaultPosInfluence)
+	shakeInstance.RotationInfluence = (typeof(rotInfluence) == "Vector3" and rotInfluence or defaultRotInfluence)
+	self._camShakeInstances[#self._camShakeInstances + 1] = shakeInstance
+	return shakeInstance
+end
+
+
+function CameraShaker:StartShake(magnitude, roughness, fadeInTime, posInfluence, rotInfluence)
+	local shakeInstance = CameraShakeInstance.new(magnitude, roughness, fadeInTime)
+	shakeInstance.PositionInfluence = (typeof(posInfluence) == "Vector3" and posInfluence or defaultPosInfluence)
+	shakeInstance.RotationInfluence = (typeof(rotInfluence) == "Vector3" and rotInfluence or defaultRotInfluence)
+	shakeInstance:StartFadeIn(fadeInTime)
+	self._camShakeInstances[#self._camShakeInstances + 1] = shakeInstance
+	return shakeInstance
+end
+
+
+return CameraShaker
+end;
+};
 G2L_MODULES[G2L["6"]] = {
 Closure = function()
     local script = G2L["6"];
-local module = {}
-local notifs = script.Parent.Notifications
-local ts = game:GetService("TweenService")
+-- Camera Shake Instance
+-- Stephen Leitnick
+-- February 26, 2018
 
---Normal Notifs -----------------------------------------------------------------------------------------------------------
-module.Notif = function(Text, timebeforefade, fadetime)
-	local NewNotif = notifs.WarningBase:Clone()
-	NewNotif.Name = "Warning"
-	NewNotif.Text = Text
-	NewNotif.Visible = true
-	NewNotif.Parent = notifs
-	task.delay(timebeforefade, function()
-		ts:Create(NewNotif, TweenInfo.new(fadetime), {TextTransparency = 1}):Play()
-		task.delay(fadetime, function()
-			NewNotif:Destroy()
-		end)
-	end)
+--[[
+	
+	cameraShakeInstance = CameraShakeInstance.new(magnitude, roughness, fadeInTime, fadeOutTime)
+	
+--]]
+
+
+
+local CameraShakeInstance = {}
+CameraShakeInstance.__index = CameraShakeInstance
+
+local V3 = Vector3.new
+local NOISE = math.noise
+
+
+CameraShakeInstance.CameraShakeState = {
+	FadingIn = 0;
+	FadingOut = 1;
+	Sustained = 2;
+	Inactive = 3;
+}
+
+
+function CameraShakeInstance.new(magnitude, roughness, fadeInTime, fadeOutTime)
+	
+	if (fadeInTime == nil) then fadeInTime = 0 end
+	if (fadeOutTime == nil) then fadeOutTime = 0 end
+	
+	assert(type(magnitude) == "number", "Magnitude must be a number")
+	assert(type(roughness) == "number", "Roughness must be a number")
+	assert(type(fadeInTime) == "number", "FadeInTime must be a number")
+	assert(type(fadeOutTime) == "number", "FadeOutTime must be a number")
+	
+	local self = setmetatable({
+		Magnitude = magnitude;
+		Roughness = roughness;
+		PositionInfluence = V3();
+		RotationInfluence = V3();
+		DeleteOnInactive = true;
+		roughMod = 1;
+		magnMod = 1;
+		fadeOutDuration = fadeOutTime;
+		fadeInDuration = fadeInTime;
+		sustain = (fadeInTime > 0);
+		currentFadeTime = (fadeInTime > 0 and 0 or 1);
+		tick = Random.new():NextNumber(-100, 100);
+		_camShakeInstance = true;
+	}, CameraShakeInstance)
+	
+	return self
+	
 end
-module.NotifShow = function(Text)
-	local NewNotif = notifs.WarningBase:Clone()
-	NewNotif.Name = Text
-	NewNotif.Text = Text
-	NewNotif.Visible = true
-	NewNotif.Parent = notifs
-end
 
-module.NotifHide = function(Name ,fadetime)
-	local NewNotif = notifs[Name]
-	ts:Create(NewNotif, TweenInfo.new(fadetime), {TextTransparency = 1}):Play()
-	task.delay(fadetime, function()
-		NewNotif:Destroy()
-	end)
-end
 
-return module
-
-end;
-};
-G2L_MODULES[G2L["24"]] = {
-Closure = function()
-    local script = G2L["24"];
-local module = {}
-
-local mouse = game.Players.LocalPlayer:GetMouse()
-local on = false
-local cursor = script.Parent.Cursor
-cursor.Visible = false
-
-game:GetService("RunService").RenderStepped:Connect(function()
-	if on  == true then
-		cursor.Position = UDim2.new(0, mouse.X, 0.06, mouse.Y)
+function CameraShakeInstance:UpdateShake(dt)
+	
+	local _tick = self.tick
+	local currentFadeTime = self.currentFadeTime
+	
+	local offset = V3(
+		NOISE(_tick, 0) * 0.5,
+		NOISE(0, _tick) * 0.5,
+		NOISE(_tick, _tick) * 0.5
+	)
+	
+	if (self.fadeInDuration > 0 and self.sustain) then
+		if (currentFadeTime < 1) then
+			currentFadeTime = currentFadeTime + (dt / self.fadeInDuration)
+		elseif (self.fadeOutDuration > 0) then
+			self.sustain = false
+		end
 	end
-end)
-
-function module.Show()
-	if on ~= true then
-		on = true
-		cursor.Visible = true
+	
+	if (not self.sustain) then
+		currentFadeTime = currentFadeTime - (dt / self.fadeOutDuration)
 	end
-end
-
-function module.Hide()
-	if on ~= false then
-		on = false
-		cursor.Visible = false
-	end
-end
-
-return module
-
-end;
-};
-G2L_MODULES[G2L["2a"]] = {
-Closure = function()
-    local script = G2L["2a"];
-local module = {}
-
-local gameactive = false
-local notification = require(script.Parent.Parent.AlwaysOn.Notification)
-local countdown = 10
-local nextevent = nil
-local numevents = 0
-local hum:Humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
-local ts = game:GetService("TweenService")
-local uis = game:GetService("UserInputService")
-local gui = game.Players.LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("ChaosMod")
-local eventmod = require(gui:WaitForChild("EventHandler"))
-
-function settextcolor()
-	if countdown <= 3 then
-		script.Parent.TimetoNext.TextColor3 = Color3.new(1, 0.505882, 0.439216)
+	
+	if (self.sustain) then
+		self.tick = _tick + (dt * self.Roughness * self.roughMod)
 	else
-		script.Parent.TimetoNext.TextColor3 = Color3.new(0.960784, 0.87451, 0.678431)
+		self.tick = _tick + (dt * self.Roughness * self.roughMod * currentFadeTime)
+	end
+	
+	self.currentFadeTime = currentFadeTime
+	
+	return offset * self.Magnitude * self.magnMod * currentFadeTime
+	
+end
+
+
+function CameraShakeInstance:StartFadeOut(fadeOutTime)
+	if (fadeOutTime == 0) then
+		self.currentFadeTime = 0
+	end
+	self.fadeOutDuration = fadeOutTime
+	self.fadeInDuration = 0
+	self.sustain = false
+end
+
+
+function CameraShakeInstance:StartFadeIn(fadeInTime)
+	if (fadeInTime == 0) then
+		self.currentFadeTime = 1
+	end
+	self.fadeInDuration = fadeInTime or self.fadeInDuration
+	self.fadeOutDuration = 0
+	self.sustain = true
+end
+
+
+function CameraShakeInstance:GetScaleRoughness()
+	return self.roughMod
+end
+
+
+function CameraShakeInstance:SetScaleRoughness(v)
+	self.roughMod = v
+end
+
+
+function CameraShakeInstance:GetScaleMagnitude()
+	return self.magnMod
+end
+
+
+function CameraShakeInstance:SetScaleMagnitude(v)
+	self.magnMod = v
+end
+
+
+function CameraShakeInstance:GetNormalizedFadeTime()
+	return self.currentFadeTime
+end
+
+
+function CameraShakeInstance:IsShaking()
+	return (self.currentFadeTime > 0 or self.sustain)
+end
+
+
+function CameraShakeInstance:IsFadingOut()
+	return ((not self.sustain) and self.currentFadeTime > 0)
+end
+
+
+function CameraShakeInstance:IsFadingIn()
+	return (self.currentFadeTime < 1 and self.sustain and self.fadeInDuration > 0)
+end
+
+
+function CameraShakeInstance:GetState()
+	if (self:IsFadingIn()) then
+		return CameraShakeInstance.CameraShakeState.FadingIn
+	elseif (self:IsFadingOut()) then
+		return CameraShakeInstance.CameraShakeState.FadingOut
+	elseif (self:IsShaking()) then
+		return CameraShakeInstance.CameraShakeState.Sustained
+	else
+		return CameraShakeInstance.CameraShakeState.Inactive
 	end
 end
 
-function module.GameMain()
-	countdown = 10
-	gameactive = true
-	script.Parent.Visible = true
-	local nextevent = eventmod.eventslist[math.random(1,#eventmod.eventslist)]
-	script.Parent.NextEvent.Text = "Next Event: "..nextevent
-	script.Parent.Position = UDim2.new(1,0,0,0)
-	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,0,0)}):Play()
-	while gameactive == true and hum.Health ~= 0 do
-		uis.WindowFocusReleased:Connect(function()
-			script.Parent.Parent.MainMenu.FocusText.Visible = true
-		end)
-		uis.WindowFocused:Connect(function()
-			script.Parent.Parent.MainMenu.FocusText.Visible = false
-		end)
-		countdown = countdown - 1
-		--print(countdown)
-		settextcolor()
-		script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
-		if countdown == 0 then
-			numevents += 1
-			print(eventmod.GetCDT(nextevent))
-			print(countdown)
-			countdown = eventmod.GetCDT(nextevent)
-			nextevent = eventmod.eventslist[math.random(1,#eventmod.eventslist)]
-			script.Parent.TimetoNext.Text = tostring(countdown).." Seconds"
-			settextcolor()
-			script.Parent.NextEvent.Text = "Next Event: "..nextevent
-		end
-		task.wait(1)
-	end
-	script.Parent.TimetoNext.TextColor3 = Color3.new(1, 0.505882, 0.439216)
-	script.Parent.TimetoNext.Text = "dead 💀"
-	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(1,0,0,0)}):Play()
-	script.Parent.Parent.MainMenu.EventsSurvived.Visible = true
-	script.Parent.Parent.MainMenu.EventsSurvived.Text = "Events Survived: "..numevents
-end
 
-function module.PauseGame()
-	gameactive = false
-end
-
-return module
+return CameraShakeInstance
 end;
 };
-G2L_MODULES[G2L["36"]] = {
+G2L_MODULES[G2L["7"]] = {
 Closure = function()
-    local script = G2L["36"];
+    local script = G2L["7"];
+-- Camera Shake Presets
+-- Stephen Leitnick
+-- February 26, 2018
+
+--[[
+	
+	CameraShakePresets.Bump
+	CameraShakePresets.Explosion
+	CameraShakePresets.Earthquake
+	CameraShakePresets.BadTrip
+	CameraShakePresets.HandheldCamera
+	CameraShakePresets.Vibration
+	CameraShakePresets.RoughDriving
+	
+--]]
+
+
+
+local CameraShakeInstance = require(script.Parent.CameraShakeInstance)
+
+local CameraShakePresets = {
+	
+	
+	-- A high-magnitude, short, yet smooth shake.
+	-- Should happen once.
+	Bump = function()
+		local c = CameraShakeInstance.new(2.5, 4, 0.1, 0.75)
+		c.PositionInfluence = Vector3.new(0.15, 0.15, 0.15)
+		c.RotationInfluence = Vector3.new(1, 1, 1)
+		return c
+	end;
+	
+	
+	-- An intense and rough shake.
+	-- Should happen once.
+	Explosion = function()
+		local c = CameraShakeInstance.new(5, 10, 0, 1.5)
+		c.PositionInfluence = Vector3.new(0.25, 0.25, 0.25)
+		c.RotationInfluence = Vector3.new(4, 1, 1)
+		return c
+	end;
+	
+	
+	-- A continuous, rough shake
+	-- Sustained.
+	Earthquake = function()
+		local c = CameraShakeInstance.new(0.6, 3.5, 2, 10)
+		c.PositionInfluence = Vector3.new(0.25, 0.25, 0.25)
+		c.RotationInfluence = Vector3.new(1, 1, 4)
+		return c
+	end;
+	
+	
+	-- A bizarre shake with a very high magnitude and low roughness.
+	-- Sustained.
+	BadTrip = function()
+		local c = CameraShakeInstance.new(10, 0.15, 5, 10)
+		c.PositionInfluence = Vector3.new(0, 0, 0.15)
+		c.RotationInfluence = Vector3.new(2, 1, 4)
+		return c
+	end;
+	
+	
+	-- A subtle, slow shake.
+	-- Sustained.
+	HandheldCamera = function()
+		local c = CameraShakeInstance.new(1, 0.25, 5, 10)
+		c.PositionInfluence = Vector3.new(0, 0, 0)
+		c.RotationInfluence = Vector3.new(1, 0.5, 0.5)
+		return c
+	end;
+	
+	
+	-- A very rough, yet low magnitude shake.
+	-- Sustained.
+	Vibration = function()
+		local c = CameraShakeInstance.new(0.4, 20, 2, 2)
+		c.PositionInfluence = Vector3.new(0, 0.15, 0)
+		c.RotationInfluence = Vector3.new(1.25, 0, 4)
+		return c
+	end;
+	
+	
+	-- A slightly rough, medium magnitude shake.
+	-- Sustained.
+	RoughDriving = function()
+		local c = CameraShakeInstance.new(1, 2, 1, 1)
+		c.PositionInfluence = Vector3.new(0, 0, 0)
+		c.RotationInfluence = Vector3.new(1, 1, 1)
+		return c
+	end;
+	
+	
+}
+
+
+return setmetatable({}, {
+	__index = function(t, i)
+		local f = CameraShakePresets[i]
+		if (type(f) == "function") then
+			return f()
+		end
+		error("No preset found with index \"" .. i .. "\"")
+	end;
+})
+end;
+};
+G2L_MODULES[G2L["8"]] = {
+Closure = function()
+    local script = G2L["8"];
 local module = {}
 
-local killoncrouch = false
-local crouchorkill = false
-local killonhide = false
-local settingsmenu = false
-local dead = false
-local thehomies = false
-local slowed = false
-local redlight = false
-local MainUI = game.Players.LocalPlayer.PlayerGui.MainUI
-local player = game.Players.LocalPlayer
-local hum:Humanoid = player.Character:WaitForChild("Humanoid")
-local humroot:Part = player.Character:WaitForChild("HumanoidRootPart")
-local collision:Part = player.Character:FindFirstChild("Collision")
-local currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
-local currentroomobj = game.Workspace.CurrentRooms[currentroom]
-local deathcause = game:GetService("ReplicatedStorage").GameStats["Player_"..player.Name]:FindFirstChild("DeathCause", true)
-local gameactive = true
-local normalwalk = hum.WalkSpeed
-local rs = game:GetService("RunService")
-local camShakerModule = require((game:GetService("ReplicatedStorage")):WaitForChild("CameraShaker"))
+function module.Place()
+	local Model = Instance.new("Model")
+	Model.WorldPivot = CFrame.new(152.80609130859375, 10.750014305114746, -363.80645751953125)
 
-local EventTime = 0
-local EventAmount = 0
-local EventLoop = 0
+	local CameraPos = Instance.new("Part")
+	CameraPos.Name = "CameraPos"
+	CameraPos.Anchored = true
+	CameraPos.BottomSurface = Enum.SurfaceType.Smooth
+	CameraPos.CanCollide = false
+	CameraPos.Transparency = 1
+	CameraPos.TopSurface = Enum.SurfaceType.Smooth
+	CameraPos.MaterialVariant = "Plywood"
+	CameraPos.Color = Color3.fromRGB(117, 98, 94)
+	CameraPos.Material = Enum.Material.Wood
+	CameraPos.Size = Vector3.new(2.874999761581421, 2.3999998569488525, 0.9499998092651367)
+	CameraPos.CanTouch = false
+	CameraPos.CFrame = CFrame.new(148.64358520507812, 6.1875081062316895, -347.9814758300781)
+	CameraPos.Parent = Model
 
-module.eventslist = {"BlurEvent", "GlitchEvent", "DeathOnCrouchEvent", "DeathOnHideEvent", "SettingsPopupEvent", 
-	"ExplosionEvent", "SeekEyesEvent", "TimothyEvent", "HomiesEvent", "ScreechEvent", "SlimedEvent", "RLGLEvent",
-	"CrouchOrDieEvent", "FoolsScareEvent"
-}
+	local Room = Instance.new("Folder")
+	Room.Name = "Room"
+	Room.Parent = Model
 
+	local PathfindingModifier = Instance.new("PathfindingModifier")
+	PathfindingModifier.PassThrough = true
+	PathfindingModifier.Parent = Room
 
-local function removestuff()
-	task.delay(2, function()
-		MainUI:FindFirstChild("HodlerRevive").Visible = false
-	end)
-end
+	local PathfindingModifier1 = Instance.new("PathfindingModifier")
+	PathfindingModifier1.PassThrough = true
+	PathfindingModifier1.Parent = Room
 
-rs.RenderStepped:Connect(function()
-	pcall(function()
-		MainUI:FindFirstChild("HodlerRevive").Visible = false
-	end)
-	currentroom = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
-	currentroomobj = game.Workspace.CurrentRooms[currentroom]
-	if hum.Health == 0 then
-		dead = true
-	end
-	if killoncrouch == true and dead == false and collision.CollisionGroupId == 10 then
-		removestuff()
-		dead = true
-		deathcause.Value = "Crouching"
-		hum.Health = 0
-	end
-	if crouchorkill == true and dead == false and collision.CollisionGroupId == 2 then
-		removestuff()
-		dead = true
-		deathcause.Value = "Standing"
-		hum.Health = 0
-	end
-	if killonhide == true and dead == false and collision.CanCollide == false then
-		removestuff()
-		dead = true
-		deathcause.Value = "Hiding"
-		hum.Health = 0
-	end
-	if settingsmenu == true and dead == false then
-		if MainUI.Settings.Visible == false then
-			settingsmenu = false
-			humroot.Anchored = false
-		end
-	end
-	if thehomies == true and dead == false and collision.CanCollide == true then
-		removestuff()
-		dead = true
-		deathcause.Value = "The Homies"
-		hum.Health = 0
-	end
-	if slowed == true and dead == false then
-		hum.WalkSpeed = 4
-	end
-	if redlight == true and dead == false then
-		if hum.MoveDirection.Magnitude > 0 then
-			deathcause.Value = "빨간불"
-			hum.Health = 0
-		end
-	end
-end)
+	local Parts = Instance.new("Folder")
+	Parts.Name = "Parts"
+	Parts.Parent = Room
 
-local screechevent:RemoteEvent = game:GetService("ReplicatedStorage").EntityInfo.Screech
-screechevent.OnClientEvent:Connect(function(what)
-	if what == 0 then
-		hum.Health = 0
-	end
-end)
+	local DropCeiling = Instance.new("Model")
+	DropCeiling.Name = "DropCeiling"
+	DropCeiling.WorldPivot = CFrame.new(153.64361572265625, 17.937517166137695, -343.05645751953125, -1, 0, -0, 0, 0, -1, 0, -1, -0)
+	DropCeiling.Parent = Parts
 
-local function spawnscreech()
-	require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
-end
+	local Model1 = Instance.new("Model")
+	Model1.WorldPivot = CFrame.new(153.64361572265625, 18.413957595825195, -343.11871337890625, -1, 0, -0, 0, 0, -1, 0, -1, -0)
+	Model1.Parent = DropCeiling
 
-local function spawnseekeyes()
-	require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, currentroomobj, 1000)
-end
+	local Ceiling = Instance.new("Part")
+	Ceiling.Name = "Ceiling"
+	Ceiling.Anchored = true
+	Ceiling.BottomSurface = Enum.SurfaceType.Smooth
+	Ceiling.CanCollide = false
+	Ceiling.TopSurface = Enum.SurfaceType.Smooth
+	Ceiling.Color = Color3.fromRGB(107, 90, 86)
+	Ceiling.Material = Enum.Material.WoodPlanks
+	Ceiling.Size = Vector3.new(45.849998474121094, 19.426921844482422, 1)
+	Ceiling.CanTouch = false
+	Ceiling.CFrame = CFrame.new(151.3436279296875, 19.70290756225586, -363.7182312011719, -1, 0, -0, 0, 0, -1, 0, -1, -0)
+	Ceiling.Parent = Model1
 
-local events = {
-	blurevent = {
-		Name = "Blur",
-		Event = function()
-			local blur = Instance.new("BlurEffect", game.Lighting)
-			blur.Name = "EventBlur"
-			blur.Enabled = true
-			blur.Size = 38
-			task.delay(EventTime, function()
-				blur:Destroy()
-			end)
-		end,
-		cdt = 10,
-	},
-	glitchevent = {
-		Name = "Glitch",
-		Event = function()
-			local gliches = 0
-			repeat 
-				task.wait(0.01)
-				require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(MainUI.Initiator.Main_Game))
-				gliches = gliches +1
-			until gliches == EventAmount
-		end,
-		cdt = 5,
-	},
-	deathoncrouch = {
-		Name = "Death on Crouch",
-		Event = function()
-			killoncrouch = true
-			task.delay(EventTime, function()
-				killoncrouch = false
-			end)
-		end,
-		cdt = 10,
-	},
-	deathonhide = {
-		Name = "Death on Hide",
-		Event = function()
-			killonhide = true
-			task.delay(EventTime, function()
-				killonhide = false
-			end)
-		end,
-		cdt = 10,
-	},
-	settingspopup = {
-		Name = "???",
-		Event = function()
-			MainUI.Settings.Visible = true
-			settingsmenu = true
-			humroot.Anchored = true
-		end,
-		cdt = 5,
-	},
-	spook1 = {
-		Name = "???",
-		Event = function()
-			MainUI.FoolJumpscare.Visible = true
-			script.Sounds.scream:Play()
-			humroot.Anchored = true
-			task.delay(EventTime, function()
-				humroot.Anchored = false
-				MainUI.FoolJumpscare.Visible = false
-				script.Sounds.scream:Stop()
-			end)
-		end,
-		cdt = 5,
-	},
-	explode = {
-		Name = "???",
-		Event = function()
-			local explode = script.Sounds.Explode.ParticleEmitter:Clone()
-			explode.Parent = humroot
-			explode.Enabled = true
-			script.Sounds.Explode:Play()
-			hum.Health = hum.Health - EventAmount
-			task.delay(EventTime, function()
-				explode:Destroy()
-			end)
+	local Ceiling_Detail = Instance.new("Part")
+	Ceiling_Detail.Name = "Ceiling_Detail"
+	Ceiling_Detail.Anchored = true
+	Ceiling_Detail.BottomSurface = Enum.SurfaceType.Smooth
+	Ceiling_Detail.CanCollide = false
+	Ceiling_Detail.TopSurface = Enum.SurfaceType.Smooth
+	Ceiling_Detail.Color = Color3.fromRGB(107, 90, 86)
+	Ceiling_Detail.Material = Enum.Material.Wood
+	Ceiling_Detail.Size = Vector3.new(43.07500076293945, 1.125, 1.75)
+	Ceiling_Detail.CanTouch = false
+	Ceiling_Detail.CFrame = CFrame.new(148.8560791015625, 15.937509536743164, -373.68145751953125, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Ceiling_Detail.Parent = DropCeiling
 
-		end,
-		cdt = 5,
-	},
-	seekeyes = {
-		Name = "???",
-		Event = function()
-			local eyes = 0
-			repeat 
-				task.wait(0.3)
-				eyes = eyes + 1
-				print(eyes)
-				spawn(spawnseekeyes)
-			until eyes == EventLoop
-		end,
-		cdt = 3
-	},
-	timothy = {
-		Name = "???",
-		Event = function()
-			local tims = 0
-			local timdresser = game:GetService("ReplicatedStorage").FurnitureTemplate.Dresser:Clone()
-			timdresser.Parent = currentroomobj.Assets
-			repeat 
-				task.wait(0.01)
-				require(MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare)(require(MainUI.Initiator.Main_Game), timdresser.DrawerContainer, 0)
-				tims += 1
-			until tims == EventAmount
-			timdresser:Destroy()
-		end,
-		cdt = 5
-	},
-	screechx10 = {
-		Name = "ScreecheS",
-		Event = function()
-			local i = 1
-			while i <= EventAmount do
-				require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(MainUI.Initiator.Main_Game))
-				i += 1
-				task.wait(0.3)
-			end
-		end,
-		cdt = 10
-	},
-	halt10 = {
-		Name = "The Homies",
-		Event = function()
-			thehomies = true
-			require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(MainUI.Initiator.Main_Game),currentroomobj)
-			local halts = 0
-			repeat 
-				task.wait(0.1)
-				require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(MainUI.Initiator.Main_Game),currentroomobj)
-				halts = halts +1
-			until halts == 10
-			task.delay(EventTime, function()
-				thehomies = false
-				local number = game.Players.LocalPlayer:GetAttribute("CurrentRoom")
-				game.Players.LocalPlayer:SetAttribute("CurrentRoom", number +1)
-				task.delay(0.7, function()
-					game.Players.LocalPlayer:SetAttribute("CurrentRoom", number)
-				end)
+	local Ceiling_Detail1 = Instance.new("Part")
+	Ceiling_Detail1.Name = "Ceiling_Detail"
+	Ceiling_Detail1.Anchored = true
+	Ceiling_Detail1.BottomSurface = Enum.SurfaceType.Smooth
+	Ceiling_Detail1.CanCollide = false
+	Ceiling_Detail1.TopSurface = Enum.SurfaceType.Smooth
+	Ceiling_Detail1.Color = Color3.fromRGB(107, 90, 86)
+	Ceiling_Detail1.Material = Enum.Material.WoodPlanks
+	Ceiling_Detail1.Size = Vector3.new(43.89999771118164, 1.125, 1)
+	Ceiling_Detail1.CanTouch = false
+	Ceiling_Detail1.CFrame = CFrame.new(149.19358825683594, 16.937515258789062, -372.93145751953125, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Ceiling_Detail1.Parent = DropCeiling
 
-			end)
-		end,
-		cdt = 5
-	},
-	slow = {
-		Name = "get slimed 🔥🔥🔥",
-		Event = function()
-			slowed = true
-			task.delay(EventTime, function()
-				slowed = false
-				hum.WalkSpeed = normalwalk
-			end)
-		end,
-		cdt = 5
-	},
-	redlightgreenlight = {
-		Name = "빨간불 초록불",
-		Event = function()
-			local sounds = script.Sounds
-			local ui = script.Parent.redlightgreenlight
-			ui.Visible = true
-			ui.GreenLight.Visible = true
-			local count = EventAmount
-			while count ~= 0 and gameactive == true do
-				ui.Visible = true
-				sounds.green:Play()
-				task.wait(math.random(5,10))
-				sounds.stopmoving:Play()
-				ui.GreenLight.Visible = false
-				ui.RedLight.Visible = true
-				task.wait(0.5)
-				redlight = true
-				task.wait(math.random(4.5,9.5))
-				redlight = false
-				ui.RedLight.Visible = false
-				ui.GreenLight.Visible = true
-				count = count -1
-			end
-			ui.Visible = false
-		end,
-		cdt = 100
-	},
-	crouchordie = {
-		Name = "Crouch or Die",
-		Event = function()
-			crouchorkill = true
-			task.delay(EventTime, function()
-				crouchorkill = false
-			end)
-		end,
-		cdt = 10
-	}
-}
+	local Ceiling_Detail2 = Instance.new("Part")
+	Ceiling_Detail2.Name = "Ceiling_Detail"
+	Ceiling_Detail2.Anchored = true
+	Ceiling_Detail2.BottomSurface = Enum.SurfaceType.Smooth
+	Ceiling_Detail2.CanCollide = false
+	Ceiling_Detail2.TopSurface = Enum.SurfaceType.Smooth
+	Ceiling_Detail2.Color = Color3.fromRGB(107, 90, 86)
+	Ceiling_Detail2.Material = Enum.Material.Wood
+	Ceiling_Detail2.Size = Vector3.new(3, 43.099998474121094, 0.375)
+	Ceiling_Detail2.CanTouch = false
+	Ceiling_Detail2.CFrame = CFrame.new(149.7935791015625, 19.000015258789062, -372.74395751953125, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+	Ceiling_Detail2.Parent = DropCeiling
 
--- --Event Spawns
-local DeathOnCrouchEvent = events["deathoncrouch"] --Time
-local DeathOnHideEvent = events["deathonhide"] --Time
-local CrouchOrDieEvent = events["crouchordie"] --Time
-local HomiesEvent = events["halt10"] --Time
-local RLGLEvent = events["redlightgreenlight"] --Amount
-local ExplosionEvent = events["explode"] --Time, Amount
+	local Start_DoorFrame = Instance.new("Model")
+	Start_DoorFrame.Name = "Start_DoorFrame"
+	Start_DoorFrame.WorldPivot = CFrame.new(158.64358520507812, 6.312515735626221, -311.49395751953125, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Start_DoorFrame.Parent = Parts
 
-local GlitchEvent = events["glitchevent"] --Amount
-local TimothyEvent = events["timothy"] --Amount
-local ScreechEvent = events["screechx10"] --Amount
-local FoolsScareEvent = events["spook1"] --Time
+	local End_DoorFrame = Instance.new("Model")
+	End_DoorFrame.Name = "End_DoorFrame"
+	End_DoorFrame.WorldPivot = CFrame.new(148.64358520507812, 6.312515735626221, -374.61895751953125)
+	End_DoorFrame.Parent = Parts
 
-local BlurEvent = events["blurevent"] --Time
-local SeekEyesEvent = events["seekeyes"] --Amount, Loop
+	local Wall_Strip = Instance.new("Part")
+	Wall_Strip.Name = "Wall_Strip"
+	Wall_Strip.Anchored = true
+	Wall_Strip.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip.CanCollide = false
+	Wall_Strip.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip.Material = Enum.Material.Wood
+	Wall_Strip.Size = Vector3.new(8.375, 0.5, 0.75)
+	Wall_Strip.CanTouch = false
+	Wall_Strip.CFrame = CFrame.new(145.89358520507812, 6.1875081062316895, -374.68145751953125, 0, -1, 0, 1, 0, -0, 0, 0, 1)
+	Wall_Strip.Parent = End_DoorFrame
 
-local SlimedEvent = events["slow"] --Time
-local SettingsPopupEvent = events["settingspopup"] --None
+	local Wall_Strip1 = Instance.new("Part")
+	Wall_Strip1.Name = "Wall_Strip"
+	Wall_Strip1.Anchored = true
+	Wall_Strip1.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip1.CanCollide = false
+	Wall_Strip1.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip1.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip1.Material = Enum.Material.Wood
+	Wall_Strip1.Size = Vector3.new(5, 0.5, 0.75)
+	Wall_Strip1.CanTouch = false
+	Wall_Strip1.CFrame = CFrame.new(148.64358520507812, 10.125001907348633, -374.68145751953125)
+	Wall_Strip1.Parent = End_DoorFrame
 
--- --Button Functions
--- LD
+	local Wall_Strip2 = Instance.new("Part")
+	Wall_Strip2.Name = "Wall_Strip"
+	Wall_Strip2.Anchored = true
+	Wall_Strip2.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip2.CanCollide = false
+	Wall_Strip2.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip2.MaterialVariant = "Plywood"
+	Wall_Strip2.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip2.Material = Enum.Material.Wood
+	Wall_Strip2.Size = Vector3.new(8.375, 0.5, 0.75)
+	Wall_Strip2.CanTouch = false
+	Wall_Strip2.CFrame = CFrame.new(151.39358520507812, 6.1875081062316895, -374.68145751953125, 0, -1, 0, 1, 0, -0, 0, 0, 1)
+	Wall_Strip2.Parent = End_DoorFrame
 
-function module.DOCEvent(Time, Amount, LoopAmount)
-	EventTime = Time
-	task.spawn(DeathOnCrouchEvent.Event)
-end
-function module.DOHEvent(Time, Amount, LoopAmount)
-	EventTime = Time
-	task.spawn(DeathOnHideEvent.Event)
-end
-function module.CODEvent(Time, Amount, LoopAmount)
-	EventTime = Time
-	task.spawn(CrouchOrDieEvent.Event)
-end
-function module.HomiesEvent(Time, Amount, LoopAmount)
-	EventTime = Time
-	task.spawn(HomiesEvent.Event)
-end
-function module.RLGLEvent(Time, Amount, LoopAmount)
-	EventAmount = Amount
-	task.spawn(RLGLEvent.Event)
-end
-function module.ExplosionEvent(Time, Amount, LoopAmount)
-	EventTime = Time
-	EventAmount = Amount
-	task.spawn(ExplosionEvent.Event)
-end
+	local Wall_Strip3 = Instance.new("Part")
+	Wall_Strip3.Name = "Wall_Strip"
+	Wall_Strip3.Anchored = true
+	Wall_Strip3.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip3.CanCollide = false
+	Wall_Strip3.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip3.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip3.Material = Enum.Material.Wood
+	Wall_Strip3.Size = Vector3.new(6.25, 0.5, 0.875)
+	Wall_Strip3.CanTouch = false
+	Wall_Strip3.CFrame = CFrame.new(148.64358520507812, 10.375001907348633, -374.61895751953125)
+	Wall_Strip3.Parent = End_DoorFrame
 
--- ES
+	local Wall_Strip4 = Instance.new("Part")
+	Wall_Strip4.Name = "Wall_Strip"
+	Wall_Strip4.Anchored = true
+	Wall_Strip4.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip4.CanCollide = false
+	Wall_Strip4.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip4.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip4.Material = Enum.Material.Wood
+	Wall_Strip4.Size = Vector3.new(17.725000381469727, 0.625, 0.75)
+	Wall_Strip4.CanTouch = false
+	Wall_Strip4.CFrame = CFrame.new(136.78109741210938, 2.3125152587890625, -374.68145751953125)
+	Wall_Strip4.Parent = Parts
 
-function module.GlitchEvent(Time, Amount, LoopAmount)
-	EventAmount = Amount
-	task.spawn(GlitchEvent.Event)
-end
-function module.TimothyEvent(Time, Amount, LoopAmount)
-	EventAmount = Amount
-	task.spawn(TimothyEvent.Event)
-end
-function module.ScreechEvent(Time, Amount, LoopAmount)
-	EventAmount = Amount
-	task.spawn(ScreechEvent.Event)
-end
-function module.FoolsScareEvent(Time, Amount, LoopAmount)
-	EventTime = Time
-	task.spawn(FoolsScareEvent.Event)
-end
+	local Wall_Strip5 = Instance.new("Part")
+	Wall_Strip5.Name = "Wall_Strip"
+	Wall_Strip5.Anchored = true
+	Wall_Strip5.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip5.CanCollide = false
+	Wall_Strip5.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip5.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip5.Material = Enum.Material.Wood
+	Wall_Strip5.Size = Vector3.new(20.125, 0.625, 0.75)
+	Wall_Strip5.CanTouch = false
+	Wall_Strip5.CFrame = CFrame.new(161.70608520507812, 2.3125152587890625, -374.68145751953125)
+	Wall_Strip5.Parent = Parts
 
--- Vi
+	local Wall_Strip6 = Instance.new("Part")
+	Wall_Strip6.Name = "Wall_Strip"
+	Wall_Strip6.Anchored = true
+	Wall_Strip6.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip6.CanCollide = false
+	Wall_Strip6.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip6.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip6.Material = Enum.Material.Wood
+	Wall_Strip6.Size = Vector3.new(20.125, 0.625, 0.75)
+	Wall_Strip6.CanTouch = false
+	Wall_Strip6.CFrame = CFrame.new(161.70608520507812, 4.9375081062316895, -374.68145751953125)
+	Wall_Strip6.Parent = Parts
 
-function module.BlurScreenEvent(Time, Amount, LoopAmount)
-	EventTime = Time
-	task.spawn(BlurEvent.Event)
-end
-function module.SeekEyesEvent(Time, Amount, LoopAmount)
-	EventAmount = Amount
-	EventLoop = LoopAmount
-	task.wait(.1)
-	task.spawn(SeekEyesEvent.Event)
-end
+	local Floor = Instance.new("Part")
+	Floor.Name = "Floor"
+	Floor.Anchored = true
+	Floor.BottomSurface = Enum.SurfaceType.Smooth
+	Floor.TopSurface = Enum.SurfaceType.Smooth
+	Floor.Color = Color3.fromRGB(95, 83, 81)
+	Floor.Material = Enum.Material.WoodPlanks
+	Floor.Size = Vector3.new(32, 1, 36.899993896484375)
+	Floor.CFrame = CFrame.new(148.74359130859375, 1.5000123977661133, -363.80645751953125)
+	Floor.Parent = Parts
 
--- An
+	local Wall_Strip7 = Instance.new("Part")
+	Wall_Strip7.Name = "Wall_Strip"
+	Wall_Strip7.Anchored = true
+	Wall_Strip7.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip7.CanCollide = false
+	Wall_Strip7.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip7.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip7.Material = Enum.Material.WoodPlanks
+	Wall_Strip7.Size = Vector3.new(16.725000381469727, 2, 0.625)
+	Wall_Strip7.CanTouch = false
+	Wall_Strip7.CFrame = CFrame.new(137.28109741210938, 3.625011920928955, -374.74395751953125)
+	Wall_Strip7.Parent = Parts
 
-function module.SlimedEvent(Time, Amount, LoopAmount)
-	EventTime = Time
-	task.spawn(SlimedEvent.Event)
-end
-function module.SettingsPopupEvent()
-	task.spawn(SettingsPopupEvent.Event)
-end
+	local Wall_Strip8 = Instance.new("Part")
+	Wall_Strip8.Name = "Wall_Strip"
+	Wall_Strip8.Anchored = true
+	Wall_Strip8.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip8.CanCollide = false
+	Wall_Strip8.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip8.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip8.Material = Enum.Material.WoodPlanks
+	Wall_Strip8.Size = Vector3.new(20.125, 2, 0.625)
+	Wall_Strip8.CanTouch = false
+	Wall_Strip8.CFrame = CFrame.new(161.70608520507812, 3.625011920928955, -374.74395751953125)
+	Wall_Strip8.Parent = Parts
 
+	local Wall_Strip9 = Instance.new("Part")
+	Wall_Strip9.Name = "Wall_Strip"
+	Wall_Strip9.Anchored = true
+	Wall_Strip9.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip9.CanCollide = false
+	Wall_Strip9.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip9.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip9.Material = Enum.Material.WoodPlanks
+	Wall_Strip9.Size = Vector3.new(42.75, 1, 0.625)
+	Wall_Strip9.CanTouch = false
+	Wall_Strip9.CFrame = CFrame.new(150.14358520507812, 14.250001907348633, -374.74395751953125)
+	Wall_Strip9.Parent = Parts
 
+	local Wall_Strip10 = Instance.new("Part")
+	Wall_Strip10.Name = "Wall_Strip"
+	Wall_Strip10.Anchored = true
+	Wall_Strip10.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip10.CanCollide = false
+	Wall_Strip10.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip10.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip10.Material = Enum.Material.Wood
+	Wall_Strip10.Size = Vector3.new(42.849998474121094, 0.625, 0.75)
+	Wall_Strip10.CanTouch = false
+	Wall_Strip10.CFrame = CFrame.new(150.34359741210938, 15.062501907348633, -374.68145751953125)
+	Wall_Strip10.Parent = Parts
 
-function module.GetCDT(Event)
-	return table.find(events, Event).cdt
+	local Wall_Strip11 = Instance.new("Part")
+	Wall_Strip11.Name = "Wall_Strip"
+	Wall_Strip11.Anchored = true
+	Wall_Strip11.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip11.CanCollide = false
+	Wall_Strip11.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip11.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip11.Material = Enum.Material.Wood
+	Wall_Strip11.Size = Vector3.new(43.45000076293945, 0.625, 0.75)
+	Wall_Strip11.CanTouch = false
+	Wall_Strip11.CFrame = CFrame.new(150.04359436035156, 13.437501907348633, -374.68145751953125)
+	Wall_Strip11.Parent = Parts
+
+	local Wall_Strip12 = Instance.new("Part")
+	Wall_Strip12.Name = "Wall_Strip"
+	Wall_Strip12.Anchored = true
+	Wall_Strip12.BottomSurface = Enum.SurfaceType.Smooth
+	Wall_Strip12.CanCollide = false
+	Wall_Strip12.TopSurface = Enum.SurfaceType.Smooth
+	Wall_Strip12.Color = Color3.fromRGB(117, 98, 94)
+	Wall_Strip12.Material = Enum.Material.Wood
+	Wall_Strip12.Size = Vector3.new(16.625, 0.625, 0.75)
+	Wall_Strip12.CanTouch = false
+	Wall_Strip12.CFrame = CFrame.new(137.33108520507812, 4.9375081062316895, -374.68145751953125)
+	Wall_Strip12.Parent = Parts
+
+	local Wall = Instance.new("Part")
+	Wall.Name = "Wall"
+	Wall.Anchored = true
+	Wall.BottomSurface = Enum.SurfaceType.Smooth
+	Wall.TopSurface = Enum.SurfaceType.Smooth
+	Wall.Color = Color3.fromRGB(109, 70, 70)
+	Wall.Material = Enum.Material.Wood
+	Wall.Size = Vector3.new(16, 19.333332061767578, 0.499969482421875)
+	Wall.CFrame = CFrame.new(161.07691955566406, 10.000001907348633, -374.8064270019531, 0, 0.9999999403953552, 0, 1, 0, 0, 0, 0, -1)
+	Wall.Parent = Parts
+
+	local Wall1 = Instance.new("Part")
+	Wall1.Name = "Wall"
+	Wall1.Anchored = true
+	Wall1.BottomSurface = Enum.SurfaceType.Smooth
+	Wall1.TopSurface = Enum.SurfaceType.Smooth
+	Wall1.Color = Color3.fromRGB(109, 70, 70)
+	Wall1.Material = Enum.Material.Wood
+	Wall1.Size = Vector3.new(7.625, 5.699999809265137, 0.4999693036079407)
+	Wall1.CFrame = CFrame.new(148.5602569580078, 14.187501907348633, -374.8064270019531, 0, 0.9999999403953552, 0, 0.9999999403953552, 0, 0, 0, 0, -1)
+	Wall1.Parent = Parts
+
+	local Wall2 = Instance.new("Part")
+	Wall2.Name = "Wall"
+	Wall2.Anchored = true
+	Wall2.BottomSurface = Enum.SurfaceType.Smooth
+	Wall2.TopSurface = Enum.SurfaceType.Smooth
+	Wall2.Color = Color3.fromRGB(109, 70, 70)
+	Wall2.Material = Enum.Material.Wood
+	Wall2.Size = Vector3.new(16, 16.96666717529297, 0.499969482421875)
+	Wall2.CFrame = CFrame.new(137.2269287109375, 10.000001907348633, -374.8064270019531, 0, 0.9999999403953552, 0, 1, 0, 0, 0, 0, -1)
+	Wall2.Parent = Parts
+
+	local Nodes = Instance.new("Folder")
+	Nodes.Name = "Nodes"
+	Nodes.Parent = Room
+
+	local Part = Instance.new("Part")
+	Part.Name = "1"
+	Part.Anchored = true
+	Part.BottomSurface = Enum.SurfaceType.Smooth
+	Part.CanCollide = false
+	Part.Transparency = 1
+	Part.TopSurface = Enum.SurfaceType.Smooth
+	Part.Color = Color3.fromRGB(0, 255, 255)
+	Part.Massless = true
+	Part.CollisionGroupId = 1
+	Part.Material = Enum.Material.ForceField
+	Part.Size = Vector3.new(2, 2, 2)
+	Part.CFrame = CFrame.new(148.64358520507812, 2.5000152587890625, -375.55645751953125)
+	Part.Shape = Enum.PartType.Ball
+	Part.Parent = Nodes
+
+	local Colors = Instance.new("Folder")
+	Colors.Name = "Colors"
+	Colors.Parent = Room
+
+	local Wall3 = Instance.new("Folder")
+	Wall3.Name = "Wall"
+	Wall3.Parent = Colors
+
+	local color = Instance.new("Color3Value")
+	color.Name = "color"
+	color.Value = Color3.fromRGB(109, 70, 70)
+	color.Parent = Wall3
+
+	local color1 = Instance.new("Color3Value")
+	color1.Name = "color"
+	color1.Value = Color3.fromRGB(69, 81, 109)
+	color1.Parent = Wall3
+
+	local color2 = Instance.new("Color3Value")
+	color2.Name = "color"
+	color2.Value = Color3.fromRGB(76, 109, 91)
+	color2.Parent = Wall3
+
+	local color3 = Instance.new("Color3Value")
+	color3.Name = "color"
+	color3.Value = Color3.fromRGB(134, 116, 95)
+	color3.Parent = Wall3
+
+	local color4 = Instance.new("Color3Value")
+	color4.Name = "color"
+	color4.Value = Color3.fromRGB(89, 116, 117)
+	color4.Parent = Wall3
+
+	local Wall_Strip13 = Instance.new("Folder")
+	Wall_Strip13.Name = "Wall_Strip"
+	Wall_Strip13.Parent = Colors
+
+	local color5 = Instance.new("Color3Value")
+	color5.Name = "color"
+	color5.Value = Color3.fromRGB(117, 98, 94)
+	color5.Parent = Wall_Strip13
+
+	local color6 = Instance.new("Color3Value")
+	color6.Name = "color"
+	color6.Value = Color3.fromRGB(102, 74, 62)
+	color6.Parent = Wall_Strip13
+
+	local Carpet = Instance.new("Folder")
+	Carpet.Name = "Carpet"
+	Carpet.Parent = Colors
+
+	local color7 = Instance.new("Color3Value")
+	color7.Name = "color"
+	color7.Value = Color3.fromRGB(168, 180, 169)
+	color7.Parent = Carpet
+
+	local color8 = Instance.new("Color3Value")
+	color8.Name = "color"
+	color8.Value = Color3.fromRGB(133, 134, 180)
+	color8.Parent = Carpet
+
+	local color9 = Instance.new("Color3Value")
+	color9.Name = "color"
+	color9.Value = Color3.fromRGB(180, 130, 156)
+	color9.Parent = Carpet
+
+	local color10 = Instance.new("Color3Value")
+	color10.Name = "color"
+	color10.Value = Color3.fromRGB(124, 159, 112)
+	color10.Parent = Carpet
+
+	local color11 = Instance.new("Color3Value")
+	color11.Name = "color"
+	color11.Value = Color3.fromRGB(159, 114, 114)
+	color11.Parent = Carpet
+
+	local Floor1 = Instance.new("Folder")
+	Floor1.Name = "Floor"
+	Floor1.Parent = Colors
+
+	local color12 = Instance.new("Color3Value")
+	color12.Name = "color"
+	color12.Value = Color3.fromRGB(117, 111, 110)
+	color12.Parent = Floor1
+
+	local Assets = Instance.new("Folder")
+	Assets.Name = "Assets"
+	Assets.Parent = Room
+
+	local Alternate = Instance.new("Folder")
+	Alternate.Name = "Alternate"
+	Alternate.Parent = Assets
+
+	local Rafter = Instance.new("Model")
+	Rafter.Name = "Rafter"
+	Rafter.WorldPivot = CFrame.new(153.64358520507812, 19.078014373779297, -333.24273681640625, -1, 0, -0, 0, 0, -1, 0, -1, -0)
+	Rafter.Parent = Assets
+
+	local Rafter1 = Instance.new("Model")
+	Rafter1.Name = "Rafter"
+	Rafter1.WorldPivot = CFrame.new(153.64358520507812, 19.078014373779297, -352.99273681640625, -1, 0, -0, 0, 0, -1, 0, -1, -0)
+	Rafter1.Parent = Assets
+
+	local Pillar = Instance.new("Model")
+	Pillar.Name = "Pillar"
+	Pillar.WorldPivot = CFrame.new(141.58157348632812, 9.726500511169434, -333.23736572265625, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Pillar.Parent = Assets
+
+	local Pillar1 = Instance.new("Model")
+	Pillar1.Name = "Pillar"
+	Pillar1.WorldPivot = CFrame.new(165.70657348632812, 9.726500511169434, -333.23736572265625, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Pillar1.Parent = Assets
+
+	local Bookcase = Instance.new("Model")
+	Bookcase.Name = "Bookcase"
+	Bookcase.WorldPivot = CFrame.new(139.2579345703125, 7.421645641326904, -349.14581298828125, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Bookcase.Parent = Assets
+
+	local Bookcase1 = Instance.new("Model")
+	Bookcase1.Name = "Bookcase"
+	Bookcase1.WorldPivot = CFrame.new(139.2579345703125, 7.421645641326904, -337.02081298828125, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Bookcase1.Parent = Assets
+
+	local Bookcase2 = Instance.new("Model")
+	Bookcase2.Name = "Bookcase"
+	Bookcase2.WorldPivot = CFrame.new(139.2579345703125, 7.421645641326904, -357.14581298828125, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Bookcase2.Parent = Assets
+
+	local Bookcase3 = Instance.new("Model")
+	Bookcase3.Name = "Bookcase"
+	Bookcase3.WorldPivot = CFrame.new(139.2579345703125, 7.421645641326904, -329.02081298828125, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Bookcase3.Parent = Assets
+
+	local Animated = Instance.new("Folder")
+	Animated.Name = "Animated"
+	Animated.Parent = Room
+
+	local Cube = Instance.new("MeshPart")
+	Cube.Name = "Cube"
+	Cube.Anchored = true
+	Cube.Color = Color3.fromRGB(104, 61, 58)
+	Cube.Material = Enum.Material.Neon
+	Cube.Size = Vector3.new(7.1999969482421875, 7.499999523162842, 0.10000000149011612)
+	Cube.CFrame = CFrame.new(159.59359741210938, 2.150008201599121, -378.6564636230469, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+	Cube.CastShadow = false
+	Cube.PivotOffset = CFrame.new(0, 0, 0, 1, -1.9952024631587254e-23, -2.4492934404725397e-16, -2.4492934404725397e-16, -1.6292067073209182e-07, -1, -1.9952027787030875e-23, 1, -1.6292067073209182e-07)
+	Cube.Parent = Room
+
+	local Cube1 = Instance.new("MeshPart")
+	Cube1.Name = "Cube"
+	Cube1.Anchored = true
+	Cube1.Transparency = 0.011
+	Cube1.Color = Color3.fromRGB(104, 61, 58)
+	Cube1.Material = Enum.Material.Neon
+	Cube1.Size = Vector3.new(7.1999969482421875, 4.599999904632568, 0.10000000149011612)
+	Cube1.CFrame = CFrame.new(153.64358520507812, 2.1500120162963867, -378.6564636230469, 0, -1, 0, 0, 0, -1, 1, 0, 0)
+	Cube1.CastShadow = false
+	Cube1.PivotOffset = CFrame.new(0, 0, 0, 1, -1.9952024631587254e-23, -2.4492934404725397e-16, -2.4492934404725397e-16, -1.6292067073209182e-07, -1, -1.9952027787030875e-23, 1, -1.6292067073209182e-07)
+	Cube1.Parent = Room
+
+	local Door = Instance.new("Model")
+	Door.Name = "Door"
+	Door.WorldPivot = CFrame.new(150.59271240234375, 6.0000128746032715, -376.9930725097656, 0.258819043636322, 0, -0.9659258127212524, 0, 1, 0, 0.9659258127212524, 0, 0.258819043636322)
+	Door.Parent = Room
+
+	local Func_Close = Instance.new("BindableEvent")
+	Func_Close.Name = "Func_Close"
+	Func_Close.Parent = Door
+
+	local KnobConstraint = Instance.new("HingeConstraint")
+	KnobConstraint.Name = "KnobConstraint"
+	KnobConstraint.LowerAngle = 0
+	KnobConstraint.ServoMaxTorque = 999
+	KnobConstraint.AngularVelocity = -1
+	KnobConstraint.LimitsEnabled = true
+	KnobConstraint.AngularSpeed = 25
+	KnobConstraint.MotorMaxAcceleration = 4
+	KnobConstraint.MotorMaxTorque = 150000
+	KnobConstraint.ActuatorType = Enum.ActuatorType.Servo
+	KnobConstraint.Parent = Door
+
+	local Door1 = Instance.new("MeshPart")
+	Door1.Name = "Door"
+	Door1.Anchored = true
+	Door1.EnableFluidForces = false
+	Door1.Color = Color3.fromRGB(129, 111, 100)
+	Door1.Material = Enum.Material.Wood
+	Door1.Size = Vector3.new(5.021152973175049, 7.813793659210205, 0.40963679552078247)
+	Door1.CFrame = CFrame.new(150.59271240234375, 6.0000128746032715, -376.9930725097656, 0.258819043636322, 0, -0.9659258127212524, 0, 1, 0, 0.9659258127212524, 0, 0.258819043636322)
+	Door1.CustomPhysicalProperties = PhysicalProperties.new(0.5, 0.3, 0)
+	Door1.Parent = Door
+
+	local OriginalCFrameValue = Instance.new("CFrameValue")
+	OriginalCFrameValue.Name = "OriginalCFrameValue"
+	OriginalCFrameValue.Value = CFrame.new(460.62554931640625, 16, 3219.625, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+	OriginalCFrameValue.Parent = Door1
+
+	local LightAttach = Instance.new("Attachment")
+	LightAttach.Name = "LightAttach"
+	LightAttach.WorldOrientation = Vector3.new(-0, 104.99999237060547, 0)
+	LightAttach.CFrame = CFrame.new(0.12602892518043518, 0, 11.090546607971191, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	LightAttach.WorldPosition = Vector3.new(139.91268920898438, 6.0000128746032715, -374.0008850097656)
+	LightAttach.Axis = Vector3.new(-1, 0, 0)
+	LightAttach.Rotation = Vector3.new(-180, 0, -180)
+	LightAttach.WorldCFrame = CFrame.new(139.91268920898438, 6.0000128746032715, -374.0008850097656, -0.258819043636322, 0, 0.9659258127212524, 0, 1, 0, -0.9659258127212524, 0, -0.258819043636322)
+	LightAttach.Position = Vector3.new(0.12602892518043518, 0, 11.090546607971191)
+	LightAttach.Orientation = Vector3.new(-0, 180, 0)
+	LightAttach.WorldAxis = Vector3.new(-0.258819043636322, 0, -0.9659258127212524)
+	LightAttach.Parent = Door1
+
+	local HelpParticle = Instance.new("ParticleEmitter")
+	HelpParticle.Name = "HelpParticle"
+	HelpParticle.ShapeStyle = Enum.ParticleEmitterShapeStyle.Surface
+	HelpParticle.LightInfluence = 0.2
+	HelpParticle.Lifetime = NumberRange.new(2, 6)
+	HelpParticle.SpreadAngle = Vector2.new(45, 45)
+	HelpParticle.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.199686, 1), NumberSequenceKeypoint.new(0.403302, 0.263473, 0.221557), NumberSequenceKeypoint.new(0.535377, 0.898204, 0.101796), NumberSequenceKeypoint.new(0.613208, 0.293413, 0.0892226), NumberSequenceKeypoint.new(0.705189, 0.898204, 0.0758029), NumberSequenceKeypoint.new(0.794025, 0.646707, 0.0553867), NumberSequenceKeypoint.new(0.859277, 0.952096, 0.0397431), NumberSequenceKeypoint.new(1, 1)})
+	HelpParticle.LightEmission = 1
+	HelpParticle.Color = ColorSequence.new(Color3.fromRGB(120, 233, 255))
+	HelpParticle.Drag = 0.2
+	HelpParticle.VelocitySpread = 45
+	HelpParticle.Squash = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.111366, -0.253334), NumberSequenceKeypoint.new(0.2124, 0.253333), NumberSequenceKeypoint.new(0.281286, -0.493333), NumberSequenceKeypoint.new(0.409874, 0.44), NumberSequenceKeypoint.new(0.468427, -0.2), NumberSequenceKeypoint.new(0.575201, 0.28), NumberSequenceKeypoint.new(0.649828, -0.28), NumberSequenceKeypoint.new(0.718714, 0.573333), NumberSequenceKeypoint.new(0.803674, -0.36), NumberSequenceKeypoint.new(0.86682, 0.306667), NumberSequenceKeypoint.new(0.936854, -0.413333), NumberSequenceKeypoint.new(1, 0)})
+	HelpParticle.Speed = NumberRange.new(1, 5)
+	HelpParticle.Brightness = 2.7850001
+	HelpParticle.Size = NumberSequence.new(0.2, 0.254777)
+	HelpParticle.Enabled = false
+	HelpParticle.Acceleration = Vector3.new(0, 0.30000001192092896, 0)
+	HelpParticle.RotSpeed = NumberRange.new(-5, 5)
+	HelpParticle.Rate = 4
+	HelpParticle.EmissionDirection = Enum.NormalId.Back
+	HelpParticle.ShapePartial = 0.45
+	HelpParticle.Texture = "rbxassetid://2581223252"
+	HelpParticle.Rotation = NumberRange.new(-5, 5)
+	HelpParticle.Parent = LightAttach
+
+	local HelpLight = Instance.new("SpotLight")
+	HelpLight.Name = "HelpLight"
+	HelpLight.Color = Color3.fromRGB(140, 234, 255)
+	HelpLight.Brightness = 0.5
+	HelpLight.Enabled = false
+	HelpLight.Angle = 72
+	HelpLight.Range = 21
+	HelpLight.Face = Enum.NormalId.Back
+	HelpLight.Parent = LightAttach
+
+	local SlamOpen = Instance.new("Sound")
+	SlamOpen.Name = "SlamOpen"
+	SlamOpen.EmitterSize = 15
+	SlamOpen.RollOffMaxDistance = 1000
+	SlamOpen.Volume = 0.25
+	SlamOpen.MinDistance = 15
+	SlamOpen.MaxDistance = 1000
+	SlamOpen.RollOffMinDistance = 15
+	SlamOpen.SoundId = "rbxassetid://9114149321"
+	SlamOpen.Parent = Door1
+
+	local DistortionSoundEffect = Instance.new("DistortionSoundEffect")
+	DistortionSoundEffect.Level = 0.76
+	DistortionSoundEffect.Parent = SlamOpen
+
+	local Break = Instance.new("Sound")
+	Break.Name = "Break"
+	Break.EmitterSize = 15
+	Break.PlaybackSpeed = 0.8
+	Break.RollOffMaxDistance = 1000
+	Break.MinDistance = 15
+	Break.MaxDistance = 1000
+	Break.RollOffMinDistance = 15
+	Break.Pitch = 0.8
+	Break.SoundId = "rbxassetid://4988580646"
+	Break.Parent = Door1
+
+	local DistortionSoundEffect1 = Instance.new("DistortionSoundEffect")
+	DistortionSoundEffect1.Level = 0.53
+	DistortionSoundEffect1.Parent = Break
+
+	local Knock = Instance.new("Sound")
+	Knock.Name = "Knock"
+	Knock.EmitterSize = 15
+	Knock.RollOffMaxDistance = 1000
+	Knock.Volume = 0.7
+	Knock.MinDistance = 15
+	Knock.MaxDistance = 1000
+	Knock.RollOffMinDistance = 15
+	Knock.SoundId = "rbxassetid://5188314808"
+	Knock.Parent = Door1
+
+	local DistortionSoundEffect2 = Instance.new("DistortionSoundEffect")
+	DistortionSoundEffect2.Level = 0.53
+	DistortionSoundEffect2.Parent = Knock
+
+	local Fall = Instance.new("Sound")
+	Fall.Name = "Fall"
+	Fall.EmitterSize = 4
+	Fall.PlaybackSpeed = 0.97
+	Fall.RollOffMaxDistance = 500
+	Fall.Volume = 0.24
+	Fall.MinDistance = 4
+	Fall.MaxDistance = 500
+	Fall.RollOffMinDistance = 4
+	Fall.Pitch = 0.97
+	Fall.SoundId = "rbxassetid://257422322"
+	Fall.Parent = Door1
+
+	local EqualizerSoundEffect = Instance.new("EqualizerSoundEffect")
+	EqualizerSoundEffect.LowGain = -4
+	EqualizerSoundEffect.HighGain = 2
+	EqualizerSoundEffect.MidGain = 0
+	EqualizerSoundEffect.Parent = Fall
+
+	local DistortionSoundEffect3 = Instance.new("DistortionSoundEffect")
+	DistortionSoundEffect3.Parent = Fall
+
+	local Unlock = Instance.new("Sound")
+	Unlock.Name = "Unlock"
+	Unlock.EmitterSize = 4
+	Unlock.RollOffMaxDistance = 500
+	Unlock.Volume = 0.25
+	Unlock.MinDistance = 4
+	Unlock.MaxDistance = 500
+	Unlock.RollOffMinDistance = 4
+	Unlock.SoundId = "rbxassetid://404411038"
+	Unlock.Parent = Door1
+
+	local EqualizerSoundEffect1 = Instance.new("EqualizerSoundEffect")
+	EqualizerSoundEffect1.LowGain = 0
+	EqualizerSoundEffect1.HighGain = -3
+	EqualizerSoundEffect1.MidGain = 0
+	EqualizerSoundEffect1.Parent = Unlock
+
+	local DistortionSoundEffect4 = Instance.new("DistortionSoundEffect")
+	DistortionSoundEffect4.Parent = Unlock
+
+	local ParticleEmitter = Instance.new("ParticleEmitter")
+	ParticleEmitter.LightInfluence = 1
+	ParticleEmitter.Lifetime = NumberRange.new(0.8, 1.4)
+	ParticleEmitter.SpreadAngle = Vector2.new(50, 50)
+	ParticleEmitter.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.0034443, 0), NumberSequenceKeypoint.new(0.136625, 0.675, 0.14375), NumberSequenceKeypoint.new(1, 1)})
+	ParticleEmitter.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 214, 178)), ColorSequenceKeypoint.new(0.166389, Color3.fromRGB(152, 128, 106)), ColorSequenceKeypoint.new(1, Color3.fromRGB(152, 128, 106))})
+	ParticleEmitter.Drag = 5
+	ParticleEmitter.VelocitySpread = 50
+	ParticleEmitter.Speed = NumberRange.new(15, 15)
+	ParticleEmitter.Size = NumberSequence.new(2.5625, 3.4375)
+	ParticleEmitter.Enabled = false
+	ParticleEmitter.ZOffset = 1
+	ParticleEmitter.Rate = 2332
+	ParticleEmitter.EmissionDirection = Enum.NormalId.Front
+	ParticleEmitter.Texture = "rbxassetid://1946917526"
+	ParticleEmitter.Parent = Door1
+
+	local Attachment = Instance.new("Attachment")
+	Attachment.WorldSecondaryAxis = Vector3.new(0.258819043636322, 0, 0.9659258127212524)
+	Attachment.WorldOrientation = Vector3.new(-0, -75, -90)
+	Attachment.CFrame = CFrame.new(2.520578622817993, 0, 0, 0, 1, -0, -1, 0, 0, 0, 0, 1)
+	Attachment.WorldPosition = Vector3.new(151.24508666992188, 6.0000128746032715, -374.5583801269531)
+	Attachment.Axis = Vector3.new(0, -1, 0)
+	Attachment.Rotation = Vector3.new(-0, -0, -90)
+	Attachment.WorldCFrame = CFrame.new(151.24508666992188, 6.0000128746032715, -374.5583801269531, 0, 0.258819043636322, -0.9659258127212524, -1, 0, 0, 0, 0.9659258127212524, 0.258819043636322)
+	Attachment.SecondaryAxis = Vector3.new(1, 0, 0)
+	Attachment.Position = Vector3.new(2.520578622817993, 0, 0)
+	Attachment.Orientation = Vector3.new(-0, -0, -90)
+	Attachment.WorldAxis = Vector3.new(0, -1, 0)
+	Attachment.Parent = Door1
+
+	local Hit = Instance.new("Sound")
+	Hit.Name = "Hit"
+	Hit.EmitterSize = 4
+	Hit.RollOffMaxDistance = 500
+	Hit.MinDistance = 4
+	Hit.MaxDistance = 500
+	Hit.RollOffMinDistance = 4
+	Hit.SoundId = "rbxassetid://510935326"
+	Hit.Parent = Door1
+
+	local DistortionSoundEffect5 = Instance.new("DistortionSoundEffect")
+	DistortionSoundEffect5.Parent = Hit
+
+	local Open = Instance.new("Sound")
+	Open.Name = "Open"
+	Open.EmitterSize = 4
+	Open.PlaybackSpeed = 0.96
+	Open.RollOffMaxDistance = 500
+	Open.Volume = 0.6
+	Open.MinDistance = 4
+	Open.MaxDistance = 500
+	Open.RollOffMinDistance = 4
+	Open.Pitch = 0.96
+	Open.SoundId = "rbxassetid://320946744"
+	Open.Parent = Door1
+
+	local DistortionSoundEffect6 = Instance.new("DistortionSoundEffect")
+	DistortionSoundEffect6.Parent = Open
+
+	local EqualizerSoundEffect2 = Instance.new("EqualizerSoundEffect")
+	EqualizerSoundEffect2.LowGain = 0
+	EqualizerSoundEffect2.HighGain = -3
+	EqualizerSoundEffect2.MidGain = 0
+	EqualizerSoundEffect2.Parent = Open
+
+	local BodyGyro = Instance.new("BodyGyro")
+	BodyGyro.P = 100
+	BodyGyro.MaxTorque = Vector3.new(400, 0, 400)
+	BodyGyro.D = 60
+	BodyGyro.Parent = Door1
+
+	local Plate = Instance.new("MeshPart")
+	Plate.Name = "Plate"
+	Plate.Anchored = true
+	Plate.CanCollide = false
+	Plate.EnableFluidForces = false
+	Plate.Color = Color3.fromRGB(150, 137, 132)
+	Plate.Massless = true
+	Plate.CollisionGroupId = 1
+	Plate.Material = Enum.Material.Metal
+	Plate.Reflectance = 0.2
+	Plate.Size = Vector3.new(0.35870879888534546, 0.9106547236442566, 0.3515402674674988)
+	Plate.CFrame = CFrame.new(150.1371612548828, 5.471069812774658, -378.6932373046875, -0.258819043636322, 0, 0.9659258127212524, 0, 1, 0, -0.9659258127212524, 0, -0.258819043636322)
+	Plate.Parent = Door1
+
+	local Attachment1 = Instance.new("Attachment")
+	Attachment1.WorldOrientation = Vector3.new(-0, -165, 0)
+	Attachment1.CFrame = CFrame.new(0.0004425048828125, 0.03452301025390625, -0.000244140625, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+	Attachment1.WorldPosition = Vector3.new(150.13681030273438, 5.5055928230285645, -378.693603515625)
+	Attachment1.Axis = Vector3.new(0, 0, -1)
+	Attachment1.Rotation = Vector3.new(0, 90, 0)
+	Attachment1.WorldCFrame = CFrame.new(150.13681030273438, 5.5055928230285645, -378.693603515625, -0.9659258127212524, 0, -0.258819043636322, 0, 1, 0, 0.258819043636322, 0, -0.9659258127212524)
+	Attachment1.Position = Vector3.new(0.0004425048828125, 0.03452301025390625, -0.000244140625)
+	Attachment1.Orientation = Vector3.new(0, 90, 0)
+	Attachment1.WorldAxis = Vector3.new(-0.9659258127212524, 0, 0.258819043636322)
+	Attachment1.Parent = Plate
+
+	local ManualWeld = Instance.new("ManualWeld")
+	ManualWeld.C1 = CFrame.new(-1.760157585144043, -0.5289435982704163, 0)
+	ManualWeld.C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	ManualWeld.Parent = Plate
+
+	local Sign = Instance.new("MeshPart")
+	Sign.Name = "Sign"
+	Sign.Anchored = true
+	Sign.CanCollide = false
+	Sign.EnableFluidForces = false
+	Sign.Color = Color3.fromRGB(161, 138, 126)
+	Sign.Massless = true
+	Sign.CollisionGroupId = 1
+	Sign.Material = Enum.Material.Wood
+	Sign.Size = Vector3.new(2.3295881748199463, 1.2002776861190796, 0.3311011791229248)
+	Sign.CFrame = CFrame.new(150.45802307128906, 8.053128242492676, -376.94732666015625, -0.258819043636322, 0, 0.9659258127212524, 0, 1, 0, -0.9659258127212524, 0, -0.258819043636322)
+	Sign.Parent = Door1
+
+	local ManualWeld1 = Instance.new("ManualWeld")
+	ManualWeld1.C1 = CFrame.new(0.009307555854320526, 2.0531165599823, 0.14193639159202576)
+	ManualWeld1.C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	ManualWeld1.Parent = Sign
+
+	local Knob = Instance.new("MeshPart")
+	Knob.Name = "Knob"
+	Knob.Anchored = true
+	Knob.CanCollide = false
+	Knob.EnableFluidForces = false
+	Knob.Color = Color3.fromRGB(150, 137, 132)
+	Knob.Massless = true
+	Knob.CollisionGroupId = 1
+	Knob.Material = Enum.Material.Metal
+	Knob.Reflectance = 0.2
+	Knob.Size = Vector3.new(0.9939603805541992, 0.2394210547208786, 1.277670979499817)
+	Knob.CFrame = CFrame.new(150.2413330078125, 5.504897117614746, -378.3039855957031, -0.25881898403167725, 0, 0.9659258127212524, 0, 1, 0, -0.9659258127212524, 0, -0.25881898403167725)
+	Knob.Parent = Door1
+
+	local Attachment2 = Instance.new("Attachment")
+	Attachment2.WorldOrientation = Vector3.new(-0, -165, 0)
+	Attachment2.CFrame = CFrame.new(0.4038238525390625, 0.00048828125, -0.000244140625, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+	Attachment2.WorldPosition = Vector3.new(150.13658142089844, 5.505385398864746, -378.6940002441406)
+	Attachment2.Axis = Vector3.new(0, 0, -1)
+	Attachment2.Rotation = Vector3.new(0, 90, 0)
+	Attachment2.WorldCFrame = CFrame.new(150.13658142089844, 5.505385398864746, -378.6940002441406, -0.9659258127212524, 0, -0.25881898403167725, 0, 1, 0, 0.25881898403167725, 0, -0.9659258127212524)
+	Attachment2.Position = Vector3.new(0.4038238525390625, 0.00048828125, -0.000244140625)
+	Attachment2.Orientation = Vector3.new(0, 90, 0)
+	Attachment2.WorldAxis = Vector3.new(-0.9659258127212524, 0, 0.25881898403167725)
+	Attachment2.Parent = Knob
+
+	local Cube2 = Instance.new("MeshPart")
+	Cube2.Name = "Cube"
+	Cube2.Anchored = true
+	Cube2.Transparency = 0.011
+	Cube2.Color = Color3.fromRGB(104, 61, 58)
+	Cube2.Material = Enum.Material.Neon
+	Cube2.Size = Vector3.new(35.099998474121094, 4.599999904632568, 0.10000000149011612)
+	Cube2.CFrame = CFrame.new(152.19358825683594, 2.1500120162963867, -379.95648193359375, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+	Cube2.CastShadow = false
+	Cube2.PivotOffset = CFrame.new(0, 0, 0, 1, -1.9952024631587254e-23, -2.4492934404725397e-16, -2.4492934404725397e-16, -1.6292067073209182e-07, -1, -1.9952027787030875e-23, 1, -1.6292067073209182e-07)
+	Cube2.Parent = Room
+
+	local Cube3 = Instance.new("MeshPart")
+	Cube3.Name = "Cube"
+	Cube3.Anchored = true
+	Cube3.Transparency = 0.011
+	Cube3.Color = Color3.fromRGB(104, 61, 58)
+	Cube3.Material = Enum.Material.Neon
+	Cube3.Size = Vector3.new(7.1999969482421875, 4.599999904632568, 0.10000000149011612)
+	Cube3.CFrame = CFrame.new(143.74359130859375, 2.1500120162963867, -378.6564636230469, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+	Cube3.CastShadow = false
+	Cube3.PivotOffset = CFrame.new(0, 0, 0, 1, -1.9952024631587254e-23, -2.4492934404725397e-16, -2.4492934404725397e-16, -1.6292067073209182e-07, -1, -1.9952027787030875e-23, 1, -1.6292067073209182e-07)
+	Cube3.Parent = Room
+
+	local Cube4 = Instance.new("MeshPart")
+	Cube4.Name = "Cube"
+	Cube4.Anchored = true
+	Cube4.Transparency = 0.011
+	Cube4.Color = Color3.fromRGB(104, 61, 58)
+	Cube4.Material = Enum.Material.Neon
+	Cube4.Size = Vector3.new(35.099998474121094, 0.09999990463256836, 12.90000057220459)
+	Cube4.CFrame = CFrame.new(152.19358825683594, 8.450005531311035, -382.20648193359375, 1, -2.4492934404725397e-16, -1.9952027787030875e-23, 1.9952024631587254e-23, 1.6292067073209182e-07, -1, 2.4492934404725397e-16, 1, 1.6292067073209182e-07)
+	Cube4.CastShadow = false
+	Cube4.PivotOffset = CFrame.new(0, 0, 0, 1, -1.9952024631587254e-23, -2.4492934404725397e-16, -2.4492934404725397e-16, -1.6292067073209182e-07, -1, -1.9952027787030875e-23, 1, -1.6292067073209182e-07)
+	Cube4.Parent = Room
+
+	local Cube5 = Instance.new("MeshPart")
+	Cube5.Name = "Cube"
+	Cube5.Anchored = true
+	Cube5.Transparency = 0.011
+	Cube5.Color = Color3.fromRGB(104, 61, 58)
+	Cube5.Material = Enum.Material.Neon
+	Cube5.Size = Vector3.new(35.099998474121094, 7.199999809265137, 3.700000047683716)
+	Cube5.CFrame = CFrame.new(152.19358825683594, 13.050005912780762, -378.6564636230469, 1, -2.4492934404725397e-16, -1.9952027787030875e-23, 1.9952024631587254e-23, 1.6292067073209182e-07, -1, 2.4492934404725397e-16, 1, 1.6292067073209182e-07)
+	Cube5.CastShadow = false
+	Cube5.PivotOffset = CFrame.new(0, 0, 0, 1, -1.9952024631587254e-23, -2.4492934404725397e-16, -2.4492934404725397e-16, -1.6292067073209182e-07, -1, -1.9952027787030875e-23, 1, -1.6292067073209182e-07)
+	Cube5.Parent = Room
+
+	local Cube6 = Instance.new("MeshPart")
+	Cube6.Name = "Cube"
+	Cube6.Anchored = true
+	Cube6.Color = Color3.fromRGB(104, 61, 58)
+	Cube6.Material = Enum.Material.Neon
+	Cube6.Size = Vector3.new(7.1999969482421875, 7.499999523162842, 0.10000000149011612)
+	Cube6.CFrame = CFrame.new(137.7935791015625, 2.1500120162963867, -378.6564636230469, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+	Cube6.CastShadow = false
+	Cube6.PivotOffset = CFrame.new(0, 0, 0, 1, -1.9952024631587254e-23, -2.4492934404725397e-16, -2.4492934404725397e-16, -1.6292067073209182e-07, -1, -1.9952027787030875e-23, 1, -1.6292067073209182e-07)
+	Cube6.Parent = Room
+
+	local Fog = Instance.new("Part")
+	Fog.Name = "Fog"
+	Fog.Anchored = true
+	Fog.BottomSurface = Enum.SurfaceType.Smooth
+	Fog.Transparency = 1
+	Fog.TopSurface = Enum.SurfaceType.Smooth
+	Fog.Color = Color3.fromRGB(95, 83, 81)
+	Fog.Material = Enum.Material.WoodPlanks
+	Fog.Size = Vector3.new(32, 19.30000114440918, 28.599992752075195)
+	Fog.CFrame = CFrame.new(148.74359130859375, 10.650001525878906, -357.55645751953125)
+	Fog.Parent = Model
+
+	local ParticleEmitter1 = Instance.new("ParticleEmitter")
+	ParticleEmitter1.LightInfluence = 0.95
+	ParticleEmitter1.Lifetime = NumberRange.new(5, 6)
+	ParticleEmitter1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.4387417, 0.95625), NumberSequenceKeypoint.new(1, 1)})
+	ParticleEmitter1.LightEmission = 1
+	ParticleEmitter1.Color = ColorSequence.new(Color3.fromRGB(191, 163, 135))
+	ParticleEmitter1.Speed = NumberRange.new(0, 0)
+	ParticleEmitter1.Size = NumberSequence.new(20)
+	ParticleEmitter1.RotSpeed = NumberRange.new(-10, 10)
+	ParticleEmitter1.Rate = 35
+	ParticleEmitter1.Texture = "rbxassetid://284205403"
+	ParticleEmitter1.Rotation = NumberRange.new(-360, 360)
+	ParticleEmitter1.Parent = Fog
+
+	local Floatin = Instance.new("ParticleEmitter")
+	Floatin.Name = "Floatin"
+	Floatin.LightInfluence = 0.95
+	Floatin.Lifetime = NumberRange.new(5, 6)
+	Floatin.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.4966888, 0.35625), NumberSequenceKeypoint.new(1, 1)})
+	Floatin.LightEmission = 1
+	Floatin.Color = ColorSequence.new(Color3.fromRGB(191, 163, 135))
+	Floatin.Speed = NumberRange.new(0, 0)
+	Floatin.Size = NumberSequence.new(10)
+	Floatin.RotSpeed = NumberRange.new(-10, 10)
+	Floatin.Rate = 35
+	Floatin.Texture = "rbxassetid://17152554149"
+	Floatin.Rotation = NumberRange.new(-360, 360)
+	Floatin.Parent = Fog
+
+	local Fog2 = Instance.new("Part")
+	Fog2.Name = "Fog2"
+	Fog2.Anchored = true
+	Fog2.BottomSurface = Enum.SurfaceType.Smooth
+	Fog2.Transparency = 1
+	Fog2.TopSurface = Enum.SurfaceType.Smooth
+	Fog2.Color = Color3.fromRGB(95, 83, 81)
+	Fog2.Material = Enum.Material.WoodPlanks
+	Fog2.Size = Vector3.new(26.399999618530273, 15.5, 11.299991607666016)
+	Fog2.CFrame = CFrame.new(148.74359130859375, 8.750001907348633, -372.4064636230469)
+	Fog2.Parent = Model
+
+	local Attachment3 = Instance.new("Attachment")
+	Attachment3.CFrame = CFrame.new(0, -2.5, -4.80000114440918)
+	Attachment3.WorldPosition = Vector3.new(148.74359130859375, 6.250001907348633, -377.2064514160156)
+	Attachment3.WorldCFrame = CFrame.new(148.74359130859375, 6.250001907348633, -377.2064514160156)
+	Attachment3.Position = Vector3.new(0, -2.5, -4.80000114440918)
+	Attachment3.Parent = Fog2
+
+	local SpotLight = Instance.new("SpotLight")
+	SpotLight.Color = Color3.fromRGB(255, 155, 115)
+	SpotLight.Brightness = 0.4
+	SpotLight.Angle = 180
+	SpotLight.Range = 36
+	SpotLight.Face = Enum.NormalId.Back
+	SpotLight.Parent = Attachment3
+
+	local SpotLight1 = Instance.new("SpotLight")
+	SpotLight1.Color = Color3.fromRGB(255, 155, 115)
+	SpotLight1.Brightness = 0.4
+	SpotLight1.Angle = 180
+	SpotLight1.Range = 36
+	SpotLight1.Face = Enum.NormalId.Back
+	SpotLight1.Parent = Attachment3
+
+	local sound1 = Instance.new("Sound")
+	sound1.Name = "sound1"
+	sound1.Playing = true
+	sound1.Looped = true
+	sound1.SoundId = "rbxassetid://9112838468"
+	sound1.Parent = Attachment3
+
+	local EqualizerSoundEffect3 = Instance.new("EqualizerSoundEffect")
+	EqualizerSoundEffect3.LowGain = 10
+	EqualizerSoundEffect3.HighGain = -80
+	EqualizerSoundEffect3.MidGain = -80
+	EqualizerSoundEffect3.Parent = sound1
+
+	local sound2 = Instance.new("Sound")
+	sound2.Name = "sound2"
+	sound2.Volume = 0.45
+	sound2.Playing = true
+	sound2.Looped = true
+	sound2.SoundId = "rbxassetid://9112879114"
+	sound2.Parent = Attachment3
+
+	local Floatin1 = Instance.new("ParticleEmitter")
+	Floatin1.Name = "Floatin"
+	Floatin1.LightInfluence = 1
+	Floatin1.Lifetime = NumberRange.new(0.3, 1.3)
+	Floatin1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.5, 0), NumberSequenceKeypoint.new(1, 1)})
+	Floatin1.LightEmission = 1
+	Floatin1.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(191, 163, 135)), ColorSequenceKeypoint.new(0.4186851, Color3.fromRGB(201, 136, 113)), ColorSequenceKeypoint.new(0.8564014, Color3.fromRGB(228, 69, 57)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 0))})
+	Floatin1.Speed = NumberRange.new(0, 0)
+	Floatin1.Size = NumberSequence.new(20, 3)
+	Floatin1.RotSpeed = NumberRange.new(10, 10)
+	Floatin1.ZOffset = 10
+	Floatin1.Rate = 100
+	Floatin1.Texture = "rbxassetid://17152554149"
+	Floatin1.Rotation = NumberRange.new(-360, 360)
+	Floatin1.Parent = Attachment3
+
+	local Fog1 = Instance.new("ParticleEmitter")
+	Fog1.Name = "Fog"
+	Fog1.LightInfluence = 1
+	Fog1.Lifetime = NumberRange.new(1, 2)
+	Fog1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.4966888, 0.8), NumberSequenceKeypoint.new(1, 1)})
+	Fog1.LightEmission = 1
+	Fog1.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(191, 163, 135)), ColorSequenceKeypoint.new(0.4186851, Color3.fromRGB(201, 136, 113)), ColorSequenceKeypoint.new(0.8564014, Color3.fromRGB(228, 69, 57)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 0))})
+	Fog1.Squash = NumberSequence.new(4)
+	Fog1.Speed = NumberRange.new(0, 0)
+	Fog1.Size = NumberSequence.new(15)
+	Fog1.RotSpeed = NumberRange.new(10, 10)
+	Fog1.ZOffset = 20
+	Fog1.Texture = "rbxassetid://284205403"
+	Fog1.Rotation = NumberRange.new(-360, 360)
+	Fog1.Parent = Attachment3
+
+	Door.PrimaryPart = Door1
+
+	KnobConstraint.Attachment0 = Attachment2
+	KnobConstraint.Attachment1 = Attachment1
+
+	ManualWeld.Part1 = Door1
+	ManualWeld.Part0 = Plate
+
+	ManualWeld1.Part1 = Door1
+	ManualWeld1.Part0 = Sign
+
+	Model.Parent = workspace
+	return Model
 end
 
 return module
+
 end;
 };
--- StarterGui.ChaosMod.MainMenu.Holder.Play.LocalScript
-local function C_10()
-local script = G2L["10"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local ts = game:GetService("TweenService")
-		local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-		local buttons = script.Parent.Parent
-		buttons.Credits.Visible = false
-		cmoudule.Hide()
-		ts:Create(buttons:FindFirstChild("Music"), TweenInfo.new(3), {Volume = 0}):Play()
-		ts:Create(buttons.Background, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Size = UDim2.new(3,0,3,0), Position = UDim2.new(-1, 0,-1, 0), Rotation = 35, ImageColor3 = Color3.new(0, 0, 0)}):Play()
-		ts:Create(buttons.Logo, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {ImageTransparency = 1}):Play()
-		ts:Create(buttons.List, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(0.071, 0, 1.672, 0)}):Play()
-		task.wait(0.1)
-		ts:Create(buttons.Settings, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(0.071, 0, 1.553, 0)}):Play()
-		task.wait(0.1)
-		ts:Create(buttons.Play, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(0.071, 0, 1.429, 0)}):Play()
-		task.wait(2)
-		buttons.Visible = false
-		ts:Create(script.Parent.Parent.Parent, TweenInfo.new(1), {BackgroundTransparency = 1}):Play()
-		task.delay(5, function()
-			local g = require(script.Parent.Parent.Parent.Parent.GameUI.ModuleScript)
-			g.GameMain()
-		end)
-	end)
+-- StarterGui.MainMenu.LocalScript
+local function C_4()
+local script = G2L["4"];
+	repeat task.wait() until game:IsLoaded()
+	
+	local players = game:GetService("Players")
+	local player = players.LocalPlayer
+	local mouse = player:GetMouse()
+	local runService = game:GetService("RunService")
+	local cameraShaker = require(script.CameraShaker)
 	local uis = game:GetService("UserInputService")
-	local camShakerModule = require((game:GetService("ReplicatedStorage")):WaitForChild("CameraShaker"))
-	uis.InputBegan:Connect(function(Key)
-		if Key.KeyCode == Enum.KeyCode.Y then
-			print("fart")
-			--0.5, 1, 2, Vector3.new(0, 0, 0)
-			camShakerModule:StartShake(0.5, 1, 2, Vector3.new(5, 5, 5), Vector3.new(5, 5, 5), Vector3.new(5, 5, 5))
-		end
-	end)
-end;
-task.spawn(C_10);
--- StarterGui.ChaosMod.MainMenu.Holder.Background.LocalScript
-local function C_19()
-local script = G2L["19"];
-	local backgrounds = {
-		"rbxassetid://14515693977",
-		"rbxassetid://14515760224",
-		"rbxassetid://14515777756"
-	}
-	pcall(function()
-		local remoteshop:RemoteEvent = ((game:GetService("ReplicatedStorage")):WaitForChild("EntityInfo")):WaitForChild("PreRunShop")
-		remoteshop:FireServer({})
-		game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Visible = false
-		local freemouse = require(game:GetService("Players").LegoDuploIsGod.PlayerGui.MainUI.Initiator["Main_Game"])
-		freemouse.freemouse = false
-	end)
-	pcall(function()
-		game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.PreRun.Music:Stop()
-	end)
+	local selectedFloorImageConnection
+	--local model = script.Model
+	local contentProvider = game:GetService("ContentProvider")
+	local Camera = workspace.CurrentCamera
 	local ts = game:GetService("TweenService")
-	local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-	print("V0.5")
-	local sound = Instance.new("Sound", script.Parent.Parent)
-	sound.Name = "Music"
-	sound.SoundId = "rbxassetid://9039982062"
-	sound.Volume = 1
-	sound.Looped = true
-	script.Parent.Parent.Parent.Visible = true
-	script.Parent.Size = UDim2.new(3,0,3,0)
-	script.Parent.Position = UDim2.new(-1, 0,-1, 0)
-	script.Parent.Image = backgrounds[math.random(1,#backgrounds)]
-	script.Parent.Rotation = 35
-	script.Parent.ImageColor3 = Color3.new(0, 0, 0)
-	local buttons = script.Parent.Parent
-	buttons.Play.Position = UDim2.new(0.071, 0, buttons.Play.Position.Y.Scale + 1.429, 0)
-	buttons.Settings.Position = UDim2.new(0.071, 0, buttons.Settings.Position.Y.Scale + 1.553, 0)
-	buttons.List.Position = UDim2.new(0.071, 0, buttons.List.Position.Y.Scale + 1.672, 0)
-	buttons.Logo.ImageTransparency = 1
-	wait(2)
-	ts:Create(script.Parent, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Size = UDim2.new(1,0,1,0), Position = UDim2.new(0,0,0,0), Rotation = 0, ImageColor3 = Color3.new(1, 1, 1)}):Play()
-	ts:Create(buttons.Logo, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {ImageTransparency = 0}):Play()
-	sound:Play()
-	wait(0.5)
-	ts:Create(buttons.Play, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.071, 0, 0.429, 0)}):Play()
-	task.wait(0.1)
-	ts:Create(buttons.Settings, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.071, 0, 0.553, 0)}):Play()
-	task.wait(0.1)
-	ts:Create(buttons.List, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.071, 0, 0.672, 0)}):Play()
-	buttons.Credits.Visible = true
-	cmoudule.Show()
-end;
-task.spawn(C_19);
--- StarterGui.ChaosMod.MainMenu.Holder.DevButton.LocalScript
-local function C_1c()
-local script = G2L["1c"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local ts = game:GetService("TweenService")
-		local cmoudule = require(script.Parent.Parent.Parent.Parent.CursorHandeler)
-		local buttons = script.Parent.Parent
-		buttons.Credits.Visible = false
-		ts:Create(buttons:FindFirstChild("Music"), TweenInfo.new(3), {Volume = 0}):Play()
-		ts:Create(buttons.Background, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Size = UDim2.new(3,0,3,0), Position = UDim2.new(-1, 0,-1, 0), Rotation = 35, ImageColor3 = Color3.new(0, 0, 0)}):Play()
-		ts:Create(buttons.Logo, TweenInfo.new(3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {ImageTransparency = 1}):Play()
-		ts:Create(buttons.List, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(0.071, 0, 1.672, 0)}):Play()
-		task.wait(0.1)
-		ts:Create(buttons.Settings, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(0.071, 0, 1.553, 0)}):Play()
-		task.wait(0.1)
-		ts:Create(buttons.Play, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Position = UDim2.new(0.071, 0, 1.429, 0)}):Play()
-		task.wait(2)
-		buttons.Visible = false
-		ts:Create(script.Parent.Parent.Parent, TweenInfo.new(1), {BackgroundTransparency = 1}):Play()
-		
-		task.delay(5, function()
-			buttons.Parent.Parent.DevMenuWIP.Visible = true
-		end)
+	local soundservice = game:GetService("SoundService")
+	local mainsounds = soundservice:WaitForChild("Main")
+	local windsound = script.Parent.Wind
+	local loadingScreen = script.Parent.Loading
+	local main = script.Parent.Main
+	local newcamera = Instance.new("Camera")
+	local oldcamera = workspace.CurrentCamera
+	local world = require(script.World)
+	oldcamera.Parent = script
+	newcamera.Name = "ChaosCamera"
+	newcamera.Parent = workspace
+	workspace.CurrentCamera = newcamera
+	
+	local camShake = cameraShaker.new(97, function(shakeCf)
+		newcamera.CFrame = newcamera.CFrame * shakeCf
 	end)
-end;
-task.spawn(C_1c);
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.RLGL.LocalScript
-local function C_44()
-local script = G2L["44"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.RLGLEvent(nil, tonumber(script.Parent.Parent.RLGLCount), nil)
-	end)
-end;
-task.spawn(C_44);
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Homies.LocalScript
-local function C_46()
-local script = G2L["46"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.HomiesEvent(tonumber(script.Parent.Parent.HomiesTime), nil, nil)
-	end)
-end;
-task.spawn(C_46);
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.StandDeath.LocalScript
-local function C_48()
-local script = G2L["48"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.CODEvent(tonumber(script.Parent.Parent.StandDeathTime), nil, nil)
-	end)
-end;
-task.spawn(C_48);
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.HideDeath.LocalScript
-local function C_4a()
-local script = G2L["4a"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.DOHEvent(tonumber(script.Parent.Parent.HideDeathTime), nil, nil)
-	end)
-end;
-task.spawn(C_4a);
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.CrouchDeath.LocalScript
-local function C_4c()
-local script = G2L["4c"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.DOCEvent(tonumber(script.Parent.Parent.CrouchDeathTime), nil, nil)
-	end)
-end;
-task.spawn(C_4c);
--- StarterGui.ChaosMod.DevMenuWIP.Lethal_Damage.Explosion.LocalScript
-local function C_59()
-local script = G2L["59"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.ExplosionEvent(tonumber(script.Parent.Parent.ExplosionTime.Text), tonumber(script.Parent.Parent.ExplosionDamage.Text), nil)
-	end)
-end;
-task.spawn(C_59);
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.GlitchJS.LocalScript
-local function C_60()
-local script = G2L["60"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.GlitchEvent(nil, tonumber(script.Parent.Parent.GlitchAmount), nil)
-	end)
-end;
-task.spawn(C_60);
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.ScreechJS.LocalScript
-local function C_63()
-local script = G2L["63"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.ScreechEvent(nil, tonumber(script.Parent.Parent.ScreechAmount), nil)
-	end)
-end;
-task.spawn(C_63);
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.TimothyJS.LocalScript
-local function C_67()
-local script = G2L["67"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.TimothyEvent(nil, tonumber(script.Parent.Parent.TimothyAmount), nil)
-	end)
-end;
-task.spawn(C_67);
--- StarterGui.ChaosMod.DevMenuWIP.Entities_Scares.FoolsJS.LocalScript
-local function C_69()
-local script = G2L["69"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.FoolsScareEvent(tonumber(script.Parent.Parent.FoolsTime), nil, nil)
-	end)
-end;
-task.spawn(C_69);
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.SeekEyes.LocalScript
-local function C_71()
-local script = G2L["71"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.SeekEyesEvent(nil, tonumber(script.Parent.Parent.EyesAmount), tonumber(script.Parent.Parent.EyesLoopAmount))
-	end)
-end;
-task.spawn(C_71);
--- StarterGui.ChaosMod.DevMenuWIP.Visuals.BlurEffect.LocalScript
-local function C_73()
-local script = G2L["73"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.BlurScreenEvent(tonumber(script.Parent.Parent.BlurTime), nil, nil)
-	end)
-end;
-task.spawn(C_73);
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.SettingsPopup.LocalScript
-local function C_7e()
-local script = G2L["7e"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local DevMod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		DevMod.SettingsPopupEvent()
-	end)
-end;
-task.spawn(C_7e);
--- StarterGui.ChaosMod.DevMenuWIP.Annoyances.Slimed.LocalScript
-local function C_80()
-local script = G2L["80"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local Mod = require(script.Parent.Parent.Parent.Parent.EventHandler)
-		Mod.SlimedEvent(tonumber(script.Parent.Parent.SlimedTime.Text), nil, nil)
-	end)
-end;
-task.spawn(C_80);
--- StarterGui.ChaosMod.DevMenuWIP.LocalScript
-local function C_83()
-local script = G2L["83"];
-	local uis = game:GetService("UserInputService")
-	local cmoudule = require(script.Parent.Parent.CursorHandeler)
-	local active = true
-	local MainFrame = script.Parent
-	while wait() do
-		uis.InputBegan:Connect(function(input)
-			if input.KeyCode == Enum.KeyCode.F then
-				if active then
-					active = false
-					MainFrame.Visible = false
-					cmoudule.Hide()
-				else
-					active = true
-					MainFrame.Visible = true
-					cmoudule.Show()
-				end
-			end
-		end)
+	
+	local chaossong = script.Parent.CHAOSMODSONG
+	
+	local cameraConnection
+	
+	main.Visible = false
+	loadingScreen.GroupTransparency = 1
+	loadingScreen.Visible = true
+	
+	ts:Create(mainsounds, TweenInfo.new(1.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {Volume = 0}):Play()
+	ts:Create(loadingScreen, TweenInfo.new(0.15, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {GroupTransparency = 0}):Play()
+	
+	for i, v in pairs(script.Parent:GetDescendants()) do
+		contentProvider:PreloadAsync({v})
+		print(v)
 	end
+	
+	
+	ts:Create(loadingScreen, TweenInfo.new(0.15, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), {GroupTransparency = 1}):Play()
+	task.delay(0.15, function()
+		loadingScreen = false
+	end)
+	main.Visible = true
+	
+	local clonedModel = world.Place()
+	--clonedModel.Parent = workspace
+	clonedModel:PivotTo(player.Character:GetPivot() + Vector3.new(0,50,0))
+	
+	
+	newcamera.CameraType = Enum.CameraType.Scriptable
+	newcamera.FieldOfView = 40
+	
+	newcamera.CFrame = clonedModel.CameraPos.CFrame
+	
+	local DefaultCFrame = newcamera.CFrame
+	
+	local Scale = 200
+	
+	local maxTilt = 10
+	local lastmousePos = Vector2.new(mouse.X, mouse.Y)
+	
+	windsound:Play()
+	
+	camShake:Start()
+	
+	-- Explosion shake:
+	camShake:StartShake(0.45,0.35, 0, Vector3.new(0,0,0), Vector3.new(1,1,4))
+	camShake:StartShake(0.5,0.15, 0, Vector3.new(0,0,1), Vector3.new(0,0,0))
+	camShake:StartShake(0.1,9, 0, Vector3.new(0,0,0), Vector3.new(1,1,1))
+	chaossong:Play()
+	
+	--runService.Heartbeat:Connect(function()
+	--	local currentmouse = Vector2.new(mouse.X, mouse.Y)
+	--	local delta = (lastmousePos - currentmouse).Magnitude
+	--	lastmousePos = currentmouse
+		
+	--	ts:Create(windsound, TweenInfo.new(0.4, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Volume = delta/250}):Play()
+		
+	--	local resultCamera = DefaultCFrame * CFrame.Angles(
+	--		math.rad((((mouse.Y - mouse.ViewSizeY / 2) / mouse.ViewSizeY)) * -maxTilt),
+	--		math.rad((((mouse.X - mouse.ViewSizeX / 2) / mouse.ViewSizeX)) * -maxTilt),
+	--		0
+	--	)
+	--	ts:Create(Camera, TweenInfo.new(0.8, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {CFrame = resultCamera}):Play()
+	--end)
+	
+	runService:BindToRenderStep("cameraoverride", 96, function()
+		local currentmouse = Vector2.new(mouse.X, mouse.Y)
+		local delta = (lastmousePos - currentmouse).Magnitude
+		lastmousePos = currentmouse
+	
+		ts:Create(windsound, TweenInfo.new(0.4, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Volume = delta/250}):Play()
+	
+		local resultCamera = DefaultCFrame * CFrame.Angles(
+			math.rad((((mouse.Y - mouse.ViewSizeY / 2) / mouse.ViewSizeY)) * -maxTilt),
+			math.rad((((mouse.X - mouse.ViewSizeX / 2) / mouse.ViewSizeX)) * -maxTilt),
+			0
+		)
+		ts:Create(newcamera, TweenInfo.new(0.8, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {CFrame = resultCamera}):Play()
+	end)
+	
+	
 end;
-task.spawn(C_83);
+task.spawn(C_4);
 
 return G2L["1"], require;
